@@ -35,6 +35,13 @@
 </script>
 
 <template>
+    <header>
+        <img src="../assets/logo.svg">
+
+        <a href="settings.vue">
+            Settings
+        </a>
+    </header>
 </template>
 
 <style>
