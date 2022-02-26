@@ -10,8 +10,15 @@
     // Import other Vue Components using 'import'
     import HelloWorld from './components/HelloWorld.vue'
 
-    // No idea what export default means, it just contains all the methods and structs Vue uses
+    // See https://www.geeksforgeeks.org/what-is-export-default-in-javascript/ for more
+    // 'export' in JavaScript allows other files to read variables/functions that are defined
+    //     i.e export {name1, name2, nameN};  // A JS object with name1, name2, nameN (braces can be removed to export them individually)
+    // These can be 'import'ed by other files
+    // 'export default' exports a single object (hence, the reason for braces) and can be renamed upon importing 
+    //     i.e export default {};
+    //         import VueSFC from './filepath.vue'
     export default {
+        // WARNING: If these exist with nothing in them you WILL get errors.
         // Variables (data) that Vue can access in the template (and maybe style)
         data() {
             return {
@@ -116,7 +123,7 @@
 
 </template>
 
-<!-- The CSS -->
+<!-- The CSS, this whole thing gets moved into <head> when the program is run -->
 <style>
 </style>
 

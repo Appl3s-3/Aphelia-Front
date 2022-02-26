@@ -37,24 +37,25 @@
 </script>
 
 <template>
-    <div class="centered"> <!-- Group of all settings-->
+    <div class="centered">
+        <!-- Group of all settings -->
         <h1 class="centered">Settings</h1>
         <!-- Settings are below here -->
         <div>
             <p>Enable Notifications</p>
-            <!-- Stuff goes here-->
+            <!-- Stuff goes here -->
         </div>
         <div>
             <p>Enable Notifications</p>
-            <!-- Stuff goes here-->
+            <!-- Stuff goes here -->
         </div>
         <div>
             <p>Enable Notifications</p>
-            <!-- Stuff goes here-->
+            <!-- Stuff goes here -->
         </div>
         <div>
             <p>Enable Notifications</p>
-            <!-- Stuff goes here-->
+            <!-- Stuff goes here -->
         </div>
     </div>
 </template>

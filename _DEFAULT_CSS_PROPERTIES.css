@@ -1,0 +1,33 @@
+/* Keep the (unedited) default CSS properties for HTML elements in here. Also some extra notes on CSS. 
+ * Since CSS has such an extensive number of properties, we probably won't log each avaliable value for each one.
+ * This information is taken from w3schools.com
+ * 
+ * Notes:
+ *     // This is not a valid comment in CSS
+ *     .class {
+ *     }
+ *     #id {
+ *     }
+ *     div {
+ *     }
+ * Directory:
+ *     Major tags <main>, <header>, <footer>, etc
+ *     Containers <div>, <article>, etc
+ *     Links <a>, <video>, <embed>, etc
+ *     Lists <li>, <ul>, <ol>
+ *     Text <p>, etc
+ */
+
+li {
+    display: list-item;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
