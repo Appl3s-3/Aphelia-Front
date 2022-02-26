@@ -1,11 +1,13 @@
 <script setup>
 //import HelloWorld from './components/HelloWorld.vue'
 //import TheWelcome from './components/TheWelcome.vue'
+import SettingsPage from './pages/Settings.vue'
 
 </script>
 
 <template>
   <header>
+      
     <!--
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
     
@@ -17,6 +19,7 @@
 
   <main>
     <!--<TheWelcome />-->
+    <SettingsPage/>
   </main>
 </template>
 
