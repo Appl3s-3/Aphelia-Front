@@ -1,4 +1,5 @@
-<script setup>
+<script>
+// note that this is a script, not a script setup
     let user_id = 0
     let role_id = 0
 
@@ -51,7 +52,7 @@
 </script>
 
 <template>
-
+    <h1>Users and Roles</h1>
     <div>
         <!-- Filter options, etc -->
         <p>This is a filter option.</p>
@@ -81,17 +82,6 @@
     </div>
 </template>
 
-<style>
-ul {
-    /*display: block;*/
-    list-style-type: none;
-    /*
-        margin-top: 1em;
-        margin-bottom: 1 em;
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 40px;
-        */
-}
+<style scoped>
+    @import "../css/list.css";
 </style>
-

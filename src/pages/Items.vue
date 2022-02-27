@@ -1,41 +1,23 @@
 <script setup>
-    export default {
-        data() {
-            return {
-            }
-        },
-
-        mounted() {
-        },
-
-        components: {
-        },
-
-        computed: {
-        },
-
-        watch: {
-        },
-
-        props: {
-        },
-
-        emits: ['response'],
-        created() {
-            this.$emit('response', 'hello from child')
-        },
-
-        methods: {
-            myMethod() {
-            },
-            myEventListener() {
-            }
-        }
-    }
 </script>
 
 <template>
+    <h1>Items</h1>
+    <div>
+        <!-- Filter options, etc -->
+        <p>This is a filter option.</p>
+    </div>
+    <div>
+        <!-- Container for the list of items -->
+        <ul>
+            <li>This is an item.</li>
+            <li v-for="item in items" :key="item.item_id">
+                {{item.text}}
+            </li>
+        </ul>
+    </div>
 </template>
 
-<style>
+<style scoped>
+    @import "../css/list.css";
 </style>

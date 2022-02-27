@@ -11,13 +11,24 @@
  *     div {
  *     }
  * Directory:
+ *     Tags without default values
  *     Major tags <main>, <header>, <footer>, etc
  *     Containers <div>, <article>, etc
- *     Links <a>, <video>, <embed>, etc
+ *     Links <a>, <video>, <embed>, <form> etc
  *     Lists <li>, <ul>, <ol>
  *     Text <p>, etc
  */
 
+/* The following tags do not have default CSS
+input
+*/
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+/* Lists */
 li {
     display: list-item;
 }
@@ -31,3 +42,13 @@ ul {
     margin-right: 0;
     padding-left: 40px;
 }
+
+ol {
+    display: block;
+    list-style-type: decimal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+  }

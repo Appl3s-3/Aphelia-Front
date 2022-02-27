@@ -1,8 +1,12 @@
 <script setup>
     // Import your stuff here
     // Add it to the page in <main>
-    import SettingsPage from './pages/Settings.vue'
-    import RolesPage from './pages/Roles.vue'
+    import LandingPage from       './pages/Landing.vue';
+    import DashboardPage from     './pages/Dashboard.vue';
+    import ItemsPage from         './pages/Items.vue';
+    import RolesPage from         './pages/Roles.vue';
+    import NotificationsPage from './pages/Notifications.vue';
+    import SettingsPage from      './pages/Settings.vue';
 
 </script>
 
@@ -18,14 +22,25 @@
     </header>
 
     <main>
-        <SettingsPage />
+        <hr>
+        <LandingPage />
+        <hr>
+        <DashboardPage />
+        <hr>
+        <ItemsPage />
+        <hr>
         <RolesPage />
+        <hr>
+        <NotificationsPage />
+        <hr>
+        <SettingsPage />
+        <hr>
     </main>
 </template>
 
 <style>
-@import "./assets/base.css";
-
+    @import "./assets/base.css";
+/*
 #app {
     max-width: 1280px;
     margin: 0 auto;
@@ -84,4 +99,5 @@ a,
         margin: 0 2rem 0 0;
     }
 }
+*/
 </style>

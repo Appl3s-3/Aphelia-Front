@@ -124,12 +124,25 @@
 </template>
 
 <!-- The CSS, this whole thing gets moved into <head> when the program is run -->
-<style>
+<!-- scoped means that the CSS will not affect other files, there is no reason not to use it since we can import CSS anyway -->
+<style scoped>
+    @import 'filepath.css';
 </style>
 
 
 <!-- Below is the entire summary without the comments -->
 <!--
+Minimal:
+<script setup>
+</script>
+
+<template>
+</template>
+
+<style scoped>
+</style>
+
+Full:
 <script setup>
     export default {
         data() {
@@ -169,6 +182,6 @@
 <template>
 </template>
 
-<style>
+<style scoped>
 </style>
 -->

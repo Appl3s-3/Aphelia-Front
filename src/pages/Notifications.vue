@@ -1,41 +1,13 @@
 <script setup>
-    export default {
-        data() {
-            return {
-            }
-        },
-
-        mounted() {
-        },
-
-        components: {
-        },
-
-        computed: {
-        },
-
-        watch: {
-        },
-
-        props: {
-        },
-
-        emits: ['response'],
-        created() {
-            this.$emit('response', 'hello from child')
-        },
-
-        methods: {
-            myMethod() {
-            },
-            myEventListener() {
-            }
-        }
-    }
 </script>
 
 <template>
+    <h1>Notifications</h1>
+    <ul>
+        <li>This is a notification.</li>
+    </ul>
 </template>
 
-<style>
+<style scoped>
+    @import "../css/list.css";
 </style>
