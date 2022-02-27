@@ -23,6 +23,12 @@
 input
 */
 
+/* Major tags */
+title {
+    display: none;
+}
+
+/* Links */
 form {
     display: block;
     margin-top: 0em;

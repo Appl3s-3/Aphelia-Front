@@ -3,14 +3,14 @@
 </script>
 
 <template>
-    <div>
-        <div>
+    <div id="landing">
+        <div id="landing-left">
             <!-- Left side of landing page -->
-            <h1>Aphelia (logo)</h1>
-            <h2>Manage your s***</h2>
+            <h1 style="display: inline">Aphelia (logo)</h1>
+            <h2 style="display: inline">Manage your s***</h2>
         </div>
         <!-- Affinix put a nice dividing line here -->
-        <div>
+        <div id="landing-right">
             <!-- Right side of landing page (login) -->
             <form>
                 <input type="text" placeholder="Username"><br>
@@ -24,4 +24,11 @@
 
 <style scoped>
     @import "../css/input.css";
+    #landing {
+        margin: 0px 0px 0px 0px;
+        border: none;
+        padding: 0px 0px 0px 0px;
+        width: 100%;
+        height: 100%;
+    }
 </style>
