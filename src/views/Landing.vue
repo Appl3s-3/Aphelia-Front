@@ -23,7 +23,7 @@
 </template>
 
 <style scoped>
-    @import "../css/input.css";
+    @import "../assets/input.css";
     #landing {
         margin: 0px 0px 0px 0px;
         border: none;
