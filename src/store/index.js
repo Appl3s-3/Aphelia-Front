@@ -1,5 +1,21 @@
 // placeholder for vuex implementation
 
-import Vuex from "vuex";
+import { createStore } from 'vuex'
 
-export default new Vuex.Store()
+export default createStore({
+    state: {
+
+    },
+    getters: {
+
+    },
+    mutations: {
+
+    },
+    actions: {
+
+    },
+    modules: {
+        
+    }
+})

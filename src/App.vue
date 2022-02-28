@@ -6,7 +6,7 @@
     // TODO: If the router is on the landing page, set the variable above to false
     console.log(RouterLink)
     if (RouterLink) {
-
+        
     }
 </script>
 
