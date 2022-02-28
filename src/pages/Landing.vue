@@ -6,8 +6,8 @@
     <div id="landing">
         <div id="landing-left">
             <!-- Left side of landing page -->
-            <h1 style="display: inline">Aphelia (logo)</h1>
-            <h2 style="display: inline">Manage your s***</h2>
+            <h1>Aphelia (logo)</h1>
+            <h2>Manage your s***</h2>
         </div>
         <!-- Affinix put a nice dividing line here -->
         <div id="landing-right">
@@ -28,7 +28,46 @@
         margin: 0px 0px 0px 0px;
         border: none;
         padding: 0px 0px 0px 0px;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: brown;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center; /* spacing between */
+        align-items: center; /* alignment */
+
     }
+/*
+    #landing-left {
+        display: inline-block;
+        margin-left: 20%;
+        margin-top: 40vh;
+        position: absolute;
+        border: none;
+        background-color: red;
+        padding: 0px 0px 0px 0px;
+        
+        /*
+        top: 50%;
+        width: 100vw;
+        height: 100vh;
+        */
+        /*
+    }
+
+    #landing-right {
+        display: inline-block;
+        margin-right: 20%;
+        border: none;
+        background-color: red;
+        padding: 0px 0px 0px 0px;*/
+        /*
+        width: 100vw;
+        height: 100vh;
+        */
+    /* } */
+
+
 </style>
