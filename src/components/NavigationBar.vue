@@ -10,31 +10,31 @@
                 <img src="../assets/logo.svg" id="logo">
             </router-link>
 
-            <router-link to="Notifications" class="nav-button" id="nav-notifications">
+            <router-link to="notifications" class="nav-button" id="nav-notifications">
                 Notifications
             </router-link>
 
-            <router-link to="Loans" class="nav-button" id="nav-loans">
+            <router-link to="loans" class="nav-button" id="nav-loans">
                 Loans
             </router-link>
 
-            <router-link to="Items" class="nav-button" id="nav-items">
+            <router-link to="items" class="nav-button" id="nav-items">
                 Items
             </router-link>
 
-            <router-link to="Archetypes" class="nav-button" id="nav-archetypes">
+            <router-link to="archetypes" class="nav-button" id="nav-archetypes">
                 Archetypes
             </router-link>
 
-            <router-link to="Roles" class="nav-button" id="nav-roles">
+            <router-link to="roles" class="nav-button" id="nav-roles">
                 Roles
             </router-link>
 
-            <router-link to="Users" class="nav-button" id="nav-users">
+            <router-link to="users" class="nav-button" id="nav-users">
                 Users
             </router-link>
 
-            <router-link to="Settings" class="nav-button" id="nav-settings">
+            <router-link to="settings" class="nav-button" id="nav-settings">
                 Settings
             </router-link>
         </nav>
