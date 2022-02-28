@@ -3,20 +3,23 @@
 </script>
 
 <template>
-    <main>
-        <div id="landing-left">
+    <main class="apheleia large-area">
+        <div class="landing-flex-item">
             <!-- Left side of landing page -->
-            <h1>Aphelia (logo)</h1>
-            <h2>Manage your s***</h2>
+            <h1 class="apheleia">Aphelia (logo)</h1>
+            <h2 class="apheleia">Manage your s***</h2>
         </div>
         <!-- TODO: Affinix put a nice dividing line here -->
-        <div id="landing-right">
+        <svg width="20px" height="100vh">
+            <line x1="10" y1="25%" x2="10" y2="75%" />
+        </svg>
+        <div class="landing-flex-item">
             <!-- Right side of landing page (login) -->
             <form>
-                <input type="text" placeholder="Username"><br>
-                <input type="password" placeholder="Password"><br>
+                <input type="text" placeholder="Username" class="apheleia small-area text"><br>
+                <input type="password" placeholder="Password" class="apheleia small-area text"><br>
                 <!-- We don't have a sign up, but if we did it would probably go here as small text --><br>
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" class="apheleia small-area text">
             </form>
         </div>
         <!-- TODO: Button in the bottom right to toggle light/dark mode -->
@@ -25,25 +28,48 @@
 
 <style scoped>
     @import "../assets/input.css";
+    @import "../assets/themeOfApheleia.css";
+    /* @import "../assets/debug.css"; */
 
     main {
-        margin: 0px 0px 0px 0px;
-        border: none;
-        padding: 0px 0px 0px 0px;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background-color: brown;
-
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-
     }
 
-    div {
-        background-color: red;
-        border: 3px solid aliceblue;
+    line {
+        stroke: grey;
+        stroke-width: 2px;
+        stroke-linecap: round;
     }
+
+    input[type=text] {
+        border: none;
+        border-bottom: 1.5px solid #f1cbee;
+        font: 32px Arial, serif;
+    }
+    
+    input[type=text]:focus {
+        border: none;
+        outline: none;
+        border-bottom: 1.5px solid #a146ad;
+    }
+
+    input[type=password] {
+        border: none;
+        border-bottom: 1.5px solid #f1cbee;
+        font: 32px Arial, serif;
+    }
+    input[type=password]:focus {
+        border: none;
+        outline: none;
+        border-bottom: 1.5px solid #a146ad;
+    }
+
+    .landing-flex-item {
+        margin: auto 5% auto 5%;
+    }
+
+    
 </style>

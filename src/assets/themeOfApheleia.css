@@ -1,0 +1,33 @@
+main {
+    margin: 0px;
+    border: none;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.apheleia.large-area {
+    background-color: #3a1a3b;
+}
+
+.apheleia.sub-area {
+    background-color: #391841;
+}
+
+.apheleia.small-area {
+    background-color: #37163b;
+}
+
+.aphelia.highlight {
+    background-color: #f1cbee;
+}
+
+.apheleia.text {
+    color: #EFEFEF;
+}
+
+h1.apheleia {
+    font: 72px Arial, serif;
+    color: #EFEFEF;
+}
