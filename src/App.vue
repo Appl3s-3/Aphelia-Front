@@ -23,7 +23,7 @@
     @import "./assets/base.css";
     .app {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         min-height: 100vh;
     }
 
