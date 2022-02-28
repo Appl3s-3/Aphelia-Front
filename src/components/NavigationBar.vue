@@ -2,10 +2,7 @@
 </script>
 
 <template>
-<<<<<<< HEAD
     <!-- TODO: change links to vue links -->
-=======
->>>>>>> 20d6ce3d3a692ecebbefac7ec85b5b87fbf46219
     <div id="navbar">
         <nav id="navbar-nav">
             <router-link to="home" class="nav-button nav-logo" id="nav-home">
