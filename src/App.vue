@@ -1,103 +1,25 @@
 <script setup>
-    // Import your stuff here
-    // Add it to the page in <main>
-    import LandingPage from       './pages/Landing.vue';
-    import DashboardPage from     './pages/Dashboard.vue';
-    import ItemsPage from         './pages/Items.vue';
-    import RolesPage from         './pages/Roles.vue';
-    import NotificationsPage from './pages/Notifications.vue';
-    import SettingsPage from      './pages/Settings.vue';
-
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-    <header>
-        <!--
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div class="app-wrapper">
+        <div class="app">
+            <RouterView />
+        </div>
     </div>
-        -->
-    </header>
-
-    <main>
-        <hr>
-        <LandingPage />
-        <hr>
-        <DashboardPage />
-        <hr>
-        <ItemsPage />
-        <hr>
-        <RolesPage />
-        <hr>
-        <NotificationsPage />
-        <hr>
-        <SettingsPage />
-        <hr>
-    </main>
 </template>
 
 <style>
     @import "./assets/base.css";
-/*
-#app {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-
-    font-weight: normal;
-}
-
-header {
-    line-height: 1.5;
-}
-
-.logo {
-    display: block;
-    margin: 0 auto 2rem;
-}
-
-a,
-.green {
-    text-decoration: none;
-    color: hsla(160, 100%, 37%, 1);
-    transition: 0.4s;
-}
-
-@media (hover: hover) {
-    a:hover {
-        background-color: hsla(160, 100%, 37%, 0.2);
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
+    .app {
         display: flex;
-        place-items: center;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
-    #app {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 0 2rem;
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
     }
-
-    header {
-        display: flex;
-        place-items: center;
-        padding-right: calc(var(--section-gap) / 2);
-    }
-
-    header .wrapper {
-        display: flex;
-        place-items: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .logo {
-        margin: 0 2rem 0 0;
-    }
-}
-*/
 </style>
