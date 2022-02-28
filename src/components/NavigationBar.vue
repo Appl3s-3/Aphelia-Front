@@ -4,42 +4,51 @@
 <template>
     <!-- Appl3s to I_Agreed: I think <nav> is the correct tag to use, since technically there'd be a <header> in the <nav>, but that also doesn't make sense -->
         <!-- TODO: change links to vue links -->
-    <header>
-        <nav id="navbar">
-            <a href="dashboard.vue" class="nav-button" id="nav-dashboard">
-                <img src="../assets/logo.svg">
-            </a>
+    <div id="navbar">
+        <nav id="navbar-nav">
+            <router-link to="home" class="nav-button" id="nav-home">
+                <img src="../assets/logo.svg" id="logo">
+            </router-link>
 
-            <a href="Notifications.vue" class="nav-button" id="nav-notifications">
+            <router-link to="Notifications" class="nav-button" id="nav-notifications">
                 Notifications
-            </a>
+            </router-link>
 
-            <a href="Loans.vue" class="nav-button" id="nav-loans">
+            <router-link to="Loans" class="nav-button" id="nav-loans">
                 Loans
-            </a>
+            </router-link>
 
-            <a href="Items.vue" class="nav-button" id="nav-items">
+            <router-link to="Items" class="nav-button" id="nav-items">
                 Items
-            </a>
+            </router-link>
 
-            <a href="Archetypes.vue" class="nav-button" id="nav-archetypes">
+            <router-link to="Archetypes" class="nav-button" id="nav-archetypes">
                 Archetypes
-            </a>
+            </router-link>
 
-            <a href="Roles.vue" class="nav-button" id="nav-roles">
+            <router-link to="Roles" class="nav-button" id="nav-roles">
                 Roles
-            </a>
+            </router-link>
 
-            <a href="Users.vue" class="nav-button" id="nav-users">
+            <router-link to="Users" class="nav-button" id="nav-users">
                 Users
-            </a>
+            </router-link>
 
-            <a href="Settings.vue" class="nav-button" id="nav-settings">
+            <router-link to="Settings" class="nav-button" id="nav-settings">
                 Settings
-            </a>
+            </router-link>
         </nav>
-    </header>
+    </div>
 </template>
 
 <style scoped>
+.nav-button {
+    display: block;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+}
+
 </style>https://github.com/Appl3s-3/apheleia

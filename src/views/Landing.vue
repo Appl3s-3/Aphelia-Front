@@ -1,8 +1,10 @@
 <script setup>
-    import LogoSVG from '../assets/logo.svg' // for some reason using this in the html prevents the whole thing from rendering
+    import LogoSVG from '../assets/logo.svg'
+import NavigationBar from '../components/NavigationBar.vue'; // for some reason using this in the html prevents the whole thing from rendering
 </script>
 
 <template>
+    <NavigationBar />
     <div id="landing">
         <div id="landing-left">
             <!-- Left side of landing page -->
