@@ -1,17 +1,15 @@
 <script setup>
     import LogoSVG from '../assets/logo.svg'
-import NavigationBar from '../components/NavigationBar.vue'; // for some reason using this in the html prevents the whole thing from rendering
 </script>
 
 <template>
-    <NavigationBar />
-    <div id="landing">
+    <main>
         <div id="landing-left">
             <!-- Left side of landing page -->
             <h1>Aphelia (logo)</h1>
             <h2>Manage your s***</h2>
         </div>
-        <!-- Affinix put a nice dividing line here -->
+        <!-- TODO: Affinix put a nice dividing line here -->
         <div id="landing-right">
             <!-- Right side of landing page (login) -->
             <form>
@@ -21,12 +19,14 @@ import NavigationBar from '../components/NavigationBar.vue'; // for some reason 
                 <input type="submit" value="Login">
             </form>
         </div>
-    </div>
+        <!-- TODO: Button in the bottom right to toggle light/dark mode -->
+    </main>
 </template>
 
 <style scoped>
     @import "../assets/input.css";
-    #landing {
+
+    main {
         margin: 0px 0px 0px 0px;
         border: none;
         padding: 0px 0px 0px 0px;
@@ -37,39 +37,13 @@ import NavigationBar from '../components/NavigationBar.vue'; // for some reason 
 
         display: flex;
         flex-flow: row nowrap;
-        justify-content: center; /* spacing between */
-        align-items: center; /* alignment */
+        justify-content: center;
+        align-items: center;
 
     }
-/*
-    #landing-left {
-        display: inline-block;
-        margin-left: 20%;
-        margin-top: 40vh;
-        position: absolute;
-        border: none;
+
+    div {
         background-color: red;
-        padding: 0px 0px 0px 0px;
-        
-        /*
-        top: 50%;
-        width: 100vw;
-        height: 100vh;
-        */
-        /*
+        border: 3px solid aliceblue;
     }
-
-    #landing-right {
-        display: inline-block;
-        margin-right: 20%;
-        border: none;
-        background-color: red;
-        padding: 0px 0px 0px 0px;*/
-        /*
-        width: 100vw;
-        height: 100vh;
-        */
-    /* } */
-
-
 </style>

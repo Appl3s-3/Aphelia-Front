@@ -1,10 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+    import { RouterLink, RouterView } from 'vue-router'
+    import NavigationBar from './components/NavigationBar.vue'
+    
+    let showNavigationBar = true
+    // TODO: If the router is on the landing page, set the variable above to false
+    console.log(RouterLink)
+    if (RouterLink) {
+
+    }
 </script>
 
 <template>
     <div class="app-wrapper">
         <div class="app">
+            <NavigationBar v-if="showNavigationBar" />
             <RouterView />
         </div>
     </div>

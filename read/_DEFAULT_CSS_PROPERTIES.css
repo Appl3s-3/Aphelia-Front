@@ -24,6 +24,10 @@ input
 */
 
 /* Major tags */
+nav {
+    display: block;
+}
+
 title {
     display: none;
 }

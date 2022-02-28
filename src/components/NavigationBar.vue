@@ -2,8 +2,7 @@
 </script>
 
 <template>
-    <!-- Appl3s to I_Agreed: I think <nav> is the correct tag to use, since technically there'd be a <header> in the <nav>, but that also doesn't make sense -->
-        <!-- TODO: change links to vue links -->
+    <!-- TODO: change links to vue links -->
     <div id="navbar">
         <nav id="navbar-nav">
             <router-link to="home" class="nav-button" id="nav-home">
@@ -42,13 +41,13 @@
 </template>
 
 <style scoped>
-.nav-button {
-    display: block;
-}
+    .nav-button {
+        display: block;
+    }
 
-#logo {
-    width: 50px;
-    height: 50px;
-}
+    #logo {
+        width: 50px;
+        height: 50px;
+    }
 
-</style>https://github.com/Appl3s-3/apheleia
+</style>
