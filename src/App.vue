@@ -14,7 +14,7 @@ if (RouterLink) {
     <div class="app-wrapper">
         <div class="app">
             <NavigationBar v-if="showNavigationBar" />
-            <RouterView />
+            <main :class="{shift: showNavigationBar}"><RouterView /></main>
         </div>
     </div>
 </template>
@@ -31,5 +31,9 @@ if (RouterLink) {
 .container {
     max-width: 1440px;
     margin: 0 auto;
+}
+
+.shift {
+    left: 120px;
 }
 </style>

@@ -97,7 +97,9 @@
 
     #navbar {
         width: 120px;
+        height: 100vh;
         background-color: #a74daa;
+        position: fixed;
     }
 
     #logo {
