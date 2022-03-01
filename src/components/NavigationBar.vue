@@ -25,11 +25,6 @@
                 Users
             </router-link>
 
-            <router-link :to="{ name: 'roles' }" class="nav-button" id="nav-roles">
-                <span class="md-36 material-icons nav-icon">admin_panel_settings</span>
-                Roles
-            </router-link>
-
             <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">
                 <span class="md-36 material-icons nav-icon">inventory_2</span>
                 Loans
