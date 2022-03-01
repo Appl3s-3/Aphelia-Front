@@ -25,6 +25,11 @@
                 Users
             </router-link>
 
+            <router-link :to="{ name: 'roles' }" class="nav-button" id="nav-users">
+                <span class="md-36 material-icons nav-icon">people</span>
+                Roles (a page that scrolls)
+            </router-link>
+
             <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">
                 <span class="md-36 material-icons nav-icon">inventory_2</span>
                 Loans
