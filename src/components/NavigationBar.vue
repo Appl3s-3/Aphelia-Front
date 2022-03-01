@@ -109,7 +109,7 @@
         margin: 10px;
         width: 50px;
         height: 50px;
-        filter: saturate(0%) brightness(440%)
+        filter: saturate(0%) brightness(460%)
     }
 
     #nav-home-icon {
