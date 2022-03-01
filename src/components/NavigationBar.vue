@@ -20,6 +20,8 @@
 
             <!-- Appl3s: I doubt the common user would understand what an archetype is, so a 'Item Type/Preset' in 'Items' will probably work better -->
             <!-- <router-link :to="{ name: 'archetypes' }" class="nav-button" id="nav-archetypes">Archetypes</router-link> -->
+            <router-link :to="{ name: 'about' }" class="nav-button" id="nav-about">About</router-link>
+            <router-link :to="{ name: 'help' }" class="nav-button" id="nav-help">Help</router-link>
             <router-link :to="{ name: 'settings' }" class="nav-button" id="nav-settings">Settings</router-link>
         </nav>
     </div>
@@ -42,7 +44,7 @@
         background-color: #921e1e;
     }
 
-    .nav-button:active {
+    .nav-button:hover:active {
         background-color: #801515;
     }
 
