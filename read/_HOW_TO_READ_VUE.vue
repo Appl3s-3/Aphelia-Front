@@ -5,69 +5,10 @@
             Components- Other Vue files
 -->
 
-<!-- Vue related script is stored in here (<script>)-->
+<!-- Note that a Vue <script setup> is different from <script> -->
 <script setup>
-    // Import other Vue Components using 'import'
-    import HelloWorld from './components/HelloWorld.vue'
-
-    // See https://www.geeksforgeeks.org/what-is-export-default-in-javascript/ for more
-    // 'export' in JavaScript allows other files to read variables/functions that are defined
-    //     i.e export {name1, name2, nameN};  // A JS object with name1, name2, nameN (braces can be removed to export them individually)
-    // These can be 'import'ed by other files
-    // 'export default' exports a single object (hence, the reason for braces) and can be renamed upon importing 
-    //     i.e export default {};
-    //         import VueSFC from './filepath.vue'
-    export default {
-        // WARNING: If these exist with nothing in them you WILL get errors.
-        // Variables (data) that Vue can access in the template (and maybe style)
-        data() {
-            return {
-                // The variables go here, its basically JSON
-            }
-        },
-
-        // Run code after mount
-        mounted() {
-            
-        },
-
-        // Vue Components
-        components: {
-            // Putting components here allows them to be used in <template>
-            // e.g <ChildComp />
-        },
-
-        // Something about reactive elements
-        // Methods that return Computed Properties
-        computed: {
-
-        },
-
-        // Methods to watch elements
-        watch: {
-
-        },
-
-        // Used in child components, basically parameters
-        props: {
-
-        },
-
-        // Used in child components, basically return
-        emits: ['response'],
-        created() {
-            this.$emit('response', 'hello from child')
-        },
-
-        // Methods that can be called from Vue Elements
-        // Typically used for event listeners
-        methods: {
-            myMethod() {
-            },
-            myEventListener() {
-            }
-        }
-    }
+// Import other Vue Components using 'import'
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <!-- The HTML rendering -->
@@ -126,57 +67,13 @@
 <!-- The CSS, this whole thing gets moved into <head> when the program is run -->
 <!-- scoped means that the CSS will not affect other files, there is no reason not to use it since we can import CSS anyway -->
 <style scoped>
-    @import 'filepath.css';
+@import 'filepath.css';
 </style>
 
 
 <!-- Below is the entire summary without the comments -->
 <!--
-Minimal:
 <script setup>
-</script>
-
-<template>
-</template>
-
-<style scoped>
-</style>
-
-Full:
-<script setup>
-    export default {
-        data() {
-            return {
-            }
-        },
-
-        mounted() {
-        },
-
-        components: {
-        },
-
-        computed: {
-        },
-
-        watch: {
-        },
-
-        props: {
-        },
-
-        emits: ['response'],
-        created() {
-            this.$emit('response', 'hello from child')
-        },
-
-        methods: {
-            myMethod() {
-            },
-            myEventListener() {
-            }
-        }
-    }
 </script>
 
 <template>

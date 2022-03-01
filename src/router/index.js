@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import Landing from '../views/Landing.vue'
+
 import Dashboard from '../views/Dashboard.vue'
 import Items from '../views/Items.vue'
 import Archetypes from '../views/Archetypes.vue'
 import Roles from '../views/Roles.vue'
 import Users from '../views/Users.vue'
+
 import Loans from '../views/Loans.vue'
 import Notifications from '../views/Notifications.vue'
+
 import Settings from '../views/Settings.vue'
+import Help from '../views/Help.vue'
+import About from '../views/About.vue'
 
 const routes = [
     {
@@ -54,12 +60,56 @@ const routes = [
         path: '/settings',
         name: 'settings',
         component: Settings
+    },
+    {
+        path: '/help',
+        name: 'help',
+        component: Help
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: About
     }
 ]
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    routes
+    history: createWebHistory(import.meta.env.BASE_URL), routes
 })
 
 export default router
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Appl3s was here (version 2)

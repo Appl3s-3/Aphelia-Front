@@ -7,6 +7,10 @@ main {
     overflow: hidden;
 }
 
+.apheleia {
+    color: #EFEFEF;
+}
+
 .apheleia.large-area {
     background-color: #3a1a3b;
 }
@@ -35,4 +39,14 @@ h1.apheleia {
 h2.apheleia {
     font: 48px Arial, serif;
     color: #EFEFEF;
+}
+
+button.apheleia {
+    border: none;
+    background-color: #37163b;
+    transition: 0.2s;
+}
+
+button.apheleia:hover {
+    background-color: #391841;
 }
