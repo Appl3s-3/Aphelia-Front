@@ -72,19 +72,19 @@
         border-radius: 5px;
 
         text-align: center;
-        color: #2c3e50;
-        background-color: #a52a2a;
+        color: #EFEFEF;
+        background-color: #703172;
         text-decoration: none;
 
         transition: 0.2s;
     }
 
     .nav-button:hover {
-        background-color: #921e1e;
+        background-color: #532b5e;
     }
 
     .nav-button:hover:active {
-        background-color: #801515;
+        background-color: #3a1a3b;
     }
 
     .nav-logo {
@@ -102,7 +102,7 @@
 
     #navbar {
         width: 120px;
-        background-color: #e96f6f;
+        background-color: #a74daa;
     }
 
     #logo {
