@@ -20,6 +20,7 @@ if (RouterLink) {
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import "./assets/base.css";
 .app {
     display: flex;
