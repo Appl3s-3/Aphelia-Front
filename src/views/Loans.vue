@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <h1>Loans Archive</h1>
+    <h2 class="apheleia">Loans Archive</h2>
     <div>
         <ul>
             <li>This is a loan entry.</li>

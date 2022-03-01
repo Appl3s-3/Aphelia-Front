@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <h1>Notifications</h1>
+    <h2 class="apheleia">Notifications</h2>
     <ul>
         <li>This is a notification.</li>
     </ul>

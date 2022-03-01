@@ -2,18 +2,24 @@
 </script>
 
 <template>
+    <!-- I don't think we need the div around the <nav>, since it's already a container -->
     <div id="navbar">
         <nav id="navbar-nav">
-            <router-link :to="{ name: 'home' }" class="nav-button nav-logo" id="nav-home">
+            <router-link :to="{ name: 'home'  }" class="nav-button nav-logo" id="nav-home-icon">
                 <img src="../assets/logo.svg" id="logo">
             </router-link>
-            
-            <router-link :to="{ name: 'notifications' }" class="nav-button" id="nav-notifications">Notifications</router-link>
-            <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">Loans</router-link>
+
+            <!-- Appl3s: Added this because it's not completely obvious that the logo is the dashboard-->
+            <router-link :to="{ name: 'home'  }" class="nav-button" id="nav-home">Dashboard</router-link>
             <router-link :to="{ name: 'items' }" class="nav-button" id="nav-items">Items</router-link>
-            <router-link :to="{ name: 'archetypes' }" class="nav-button" id="nav-archetypes">Archetypes</router-link>
-            <router-link :to="{ name: 'roles' }" class="nav-button" id="nav-roles">Roles</router-link>
             <router-link :to="{ name: 'users' }" class="nav-button" id="nav-users">Users</router-link>
+            <router-link :to="{ name: 'roles' }" class="nav-button" id="nav-roles">Roles</router-link>
+            
+            <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">Loans</router-link>
+            <router-link :to="{ name: 'notifications' }" class="nav-button" id="nav-notifications">Notifications</router-link>
+
+            <!-- Appl3s: I doubt the common user would understand what an archetype is, so a 'Item Type/Preset' in 'Items' will probably work better -->
+            <!-- <router-link :to="{ name: 'archetypes' }" class="nav-button" id="nav-archetypes">Archetypes</router-link> -->
             <router-link :to="{ name: 'settings' }" class="nav-button" id="nav-settings">Settings</router-link>
         </nav>
     </div>

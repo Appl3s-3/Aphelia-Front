@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <h1>Archetypes</h1>
+    <h2 class="apheleia">Archetypes</h2>
     <ul>
         <li>Archetype, this is. Probably.</li>
     </ul>

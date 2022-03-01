@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <h1>Items</h1>
+    <h2 class="apheleia">Items</h2>
     <div>
         <!-- Filter options, etc -->
         <p>This is a filter option.</p>

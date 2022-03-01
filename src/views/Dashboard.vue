@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <h1>Dashboard</h1>
+    <h2 class="apheleia">Dashboard</h2>
     <!--  Appl3s: Any ideas for this layout? I keep thinking of canvas, but I kinda don't want to use the canvas layout-->
     <div>
         <!-- Small area for items preview -->
