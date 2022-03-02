@@ -1,21 +1,15 @@
-<script>
-export default {
-    data() {
-        return {
-            expandNavBar: true
-        }
-    },
-    methods: {
-        toggleNavBar() {
-            this.expandNavBar = !this.expandNavBar;
-        }
-    }
+<script setup>
+import { reactive } from 'vue'
+
+const state = reactive({ expandNavBar: true })
+const toggleNavBar = () => {
+    state.expandNavBar = !state.expandNavBar
 }
 </script>
 
 <template>
     <!-- I don't think we need the div around the <nav>, since it's already a container -->
-    <div id="navbar" :class="[expandNavBar ? 'navbar-expand' : 'navbar-compact', '']">
+    <div id="navbar" :class="[state.expandNavBar ? 'navbar-expand' : 'navbar-compact', '']">
         <button id="nav-expand" class="nav-expand" @click="toggleNavBar">
             expand
         </button>
@@ -28,35 +22,35 @@ export default {
             <!-- Appl3s: You can probably omit the <p> -->
             <router-link :to="{ name: 'home' }" class="nav-button" id="nav-home">
                 <span class="md-36 material-icons nav-icon">home</span>
-                <p class="nav-label" v-if="expandNavBar">
+                <p class="nav-label" v-if="state.expandNavBar">
                     Dashboard
                 </p>
             </router-link>
 
             <router-link :to="{ name: 'items' }" class="nav-button" id="nav-items">
                 <span class="md-36 material-icons nav-icon">category</span>
-                <p class="nav-label" v-if="expandNavBar">
+                <p class="nav-label" v-if="state.expandNavBar">
                     Items
                 </p>
             </router-link>
 
             <router-link :to="{ name: 'users' }" class="nav-button" id="nav-users">
                 <span class="md-36 material-icons nav-icon">people</span>
-                <p class="nav-label" v-if="expandNavBar">
+                <p class="nav-label" v-if="state.expandNavBar">
                     Users
                 </p>
             </router-link>
 
             <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">
                 <span class="md-36 material-icons nav-icon">inventory_2</span>
-                <p class="nav-label" v-if="expandNavBar">
+                <p class="nav-label" v-if="state.expandNavBar">
                     Loans
                 </p>
             </router-link>
 
             <router-link :to="{ name: 'notifications' }" class="nav-button" id="nav-notifications">
                 <span class="md-36 material-icons nav-icon">notifications</span>
-                <p class="nav-label" v-if="expandNavBar">
+                <p class="nav-label" v-if="state.expandNavBar">
                     Notifications
                 </p>
             </router-link>
@@ -66,19 +60,19 @@ export default {
 
             <router-link :to="{ name: 'about' }" class="nav-button" id="nav-about">
                 <span class="md-36 material-icons nav-icon">info</span>
-                <p class="nav-label" v-if="expandNavBar">
+                <p class="nav-label" v-if="state.expandNavBar">
                     About
                 </p>
             </router-link>
             <router-link :to="{ name: 'help' }" class="nav-button" id="nav-help">
                 <span class="md-36 material-icons nav-icon">help</span>
-                <p class="nav-label" v-if="expandNavBar">
+                <p class="nav-label" v-if="state.expandNavBar">
                     Help
                 </p>
             </router-link>
             <router-link :to="{ name: 'settings' }" class="nav-button" id="nav-settings">
                 <span class="md-36 material-icons nav-icon">settings</span>
-                <p class="nav-label" v-if="expandNavBar">
+                <p class="nav-label" v-if="state.expandNavBar">
                     Settings
                 </p>
             </router-link>

@@ -1,5 +1,18 @@
 <script setup>
-import LogoSVG from '../assets/logo.svg'
+const login_click = () => {
+    let username = document.getElementsByName("username")[0].value
+    let password = document.getElementsByName("password")[0].value
+
+    let loginSuccess = false
+    // loginSuccess = API(username, password)
+
+    if (loginSuccess == true) {
+        
+        return true
+    }
+    // Otherwise display an error and return false
+    return false
+}
 </script>
 
 <template>
@@ -7,7 +20,7 @@ import LogoSVG from '../assets/logo.svg'
         <div class="landing-layout">
             <div class="landing-component landing-left">
                 <!-- Left side of landing page -->
-                <!-- <LogoSVG /> -->
+                <img src="../assets/logo.svg" alt="Logo">
                 <h1 class="apheleia">Aphelia</h1>
                 <h2 class="apheleia">Management Made Simple</h2>
             </div>
@@ -19,13 +32,13 @@ import LogoSVG from '../assets/logo.svg'
             <div class="landing-component landing-right">
                 <!-- Right side of landing page (login) -->
                 <form>
-                    <input type="text" placeholder="Username" class="apheleia small-area text" />
+                    <input type="text" name="username" placeholder="Username" class="apheleia small-area text" />
                     <br />
-                    <input type="password" placeholder="Password" class="apheleia small-area text" />
+                    <input type="password" name="password" placeholder="Password" class="apheleia small-area text" />
                     <br />
-                    <!-- We don't have a sign up, but if we did it would probably go here as small text -->
+                    <!-- TODO: Decide whether or not to have a signup -->
                     <br />
-                    <input type="submit" value="Login" class="apheleia small-area text" />
+                    <input @click="login_click" type="submit" value="Login" class="apheleia small-area text" />
                 </form>
             </div>
         </div>
