@@ -12,42 +12,58 @@
             <!-- Appl3s: Added this because it's not completely obvious that the logo is the dashboard-->
             <router-link :to="{ name: 'home'  }" class="nav-button" id="nav-home">
                 <span class="md-36 material-icons nav-icon">home</span>
-                Dashboard
+                <p class="nav-label">
+                    Dashboard
+                </p>
             </router-link>
 
             <router-link :to="{ name: 'items' }" class="nav-button" id="nav-items">
                 <span class="md-36 material-icons nav-icon">category</span>
-                Items
+                <p class="nav-label">
+                    Items
+                </p>
             </router-link>
 
             <router-link :to="{ name: 'users' }" class="nav-button" id="nav-users">
                 <span class="md-36 material-icons nav-icon">people</span>
-                Users
+                <p class="nav-label">
+                    Users
+                </p>
             </router-link>
 
             <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">
                 <span class="md-36 material-icons nav-icon">inventory_2</span>
-                Loans
+                <p class="nav-label">
+                    Loans
+                </p>
             </router-link>
 
             <router-link :to="{ name: 'notifications' }" class="nav-button" id="nav-notifications">
                 <span class="md-36 material-icons nav-icon">notifications</span>
-                Notifications
+                <p class="nav-label">
+                    Notifications
+                </p>
             </router-link>
 
             <!-- Appl3s: I doubt the common user would understand what an archetype is, so a 'Item Type/Preset' in 'Items' will probably work better -->
             <!-- <router-link :to="{ name: 'archetypes' }" class="nav-button" id="nav-archetypes">Archetypes</router-link> -->
             <router-link :to="{ name: 'about' }" class="nav-button" id="nav-about">
                 <span class="md-36 material-icons nav-icon">info</span>
-                About
+                <p class="nav-label">
+                    About
+                </p>
             </router-link>
             <router-link :to="{ name: 'help' }" class="nav-button" id="nav-help">
                 <span class="md-36 material-icons nav-icon">help</span>
-                Help
+                <p class="nav-label">
+                    Help
+                </p>
             </router-link>
             <router-link :to="{ name: 'settings' }" class="nav-button" id="nav-settings">
                 <span class="md-36 material-icons nav-icon">settings</span>
-                Settings
+                <p class="nav-label">
+                    Settings
+                </p>
             </router-link>
         </nav>
     </div>
@@ -60,13 +76,15 @@
 .material-icons.md-48 { font-size: 48px; }
 
     .nav-button {
-        display: block;
+        display: flex;
+        align-items: center;
+        width: 180px;
+        height: 56px;
         margin: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px;
         border-radius: 5px;
 
-        text-align: center;
+        text-align: left;
         color: #EFEFEF;
         background-color: #703172;
         text-decoration: none;
@@ -85,27 +103,38 @@
     .nav-logo {
         width: 70px;
         height: 70px;
-        margin-left: 25px;
-        margin-right: 25px;
 
         border-radius: 50%;
     }
 
     .nav-icon {
-        display: block;
+        display: inline-block;
+    }
+
+    .nav-label {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    #navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 10px;
     }
 
     #navbar {
-        width: 120px;
+        width: 200px;
         height: 100vh;
         background-color: #a74daa;
         position: fixed;
     }
 
     #logo {
-        margin: 10px;
         width: 50px;
         height: 50px;
+        margin: 10px;
         filter: saturate(0%) brightness(460%)
     }
 
