@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            expandNavBar: true
+            expandNavBar: false
         }
     },
     methods: {
@@ -144,6 +144,7 @@ export default {
 
 .navbar-expand {
     width: 190px;
+    box-shadow: 0px 0px 10px;
 }
 
 .navbar-compact{
