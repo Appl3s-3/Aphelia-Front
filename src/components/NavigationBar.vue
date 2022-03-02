@@ -1,10 +1,24 @@
-<script setup>
-let expandNavBar = true;
+<script>
+export default {
+    data() {
+        return {
+            expandNavBar: true
+        }
+    },
+    methods: {
+        toggleNavBar() {
+            this.expandNavBar = !this.expandNavBar;
+        }
+    }
+}
 </script>
 
 <template>
     <!-- I don't think we need the div around the <nav>, since it's already a container -->
-    <div id="navbar">
+    <div id="navbar" :class="[expandNavBar ? 'navbar-expand' : 'navbar-compact', '']">
+        <button id="nav-expand" class="nav-expand" @click="toggleNavBar">
+            expand
+        </button>
         <nav id="navbar-nav">
             <router-link :to="{ name: 'home' }" class="nav-button nav-logo" id="nav-home-icon">
                 <img src="../assets/logo.svg" id="logo" />
@@ -89,7 +103,7 @@ let expandNavBar = true;
 .nav-button {
     display: flex;
     align-items: center;
-    width: 180px;
+    width: calc(100% - 10px);
     height: 56px;
     margin: 5px;
     padding: 10px;
@@ -112,8 +126,8 @@ let expandNavBar = true;
 }
 
 .nav-logo {
-    width: 70px;
-    height: 70px;
+    width: 56px;
+    height: 56px;
 
     border-radius: 50%;
 }
@@ -128,6 +142,21 @@ let expandNavBar = true;
     margin-left: 10px;
 }
 
+.navbar-expand {
+    width: 190px;
+}
+
+.navbar-compact{
+    width: 66px;
+}
+
+#navbar {
+    height: 100vh;
+    background-color: #a74daa;
+    position: fixed;
+    z-index: 1;
+}
+
 #navbar-nav {
     display: flex;
     flex-direction: column;
@@ -135,17 +164,9 @@ let expandNavBar = true;
     padding-top: 5px;
 }
 
-#navbar {
-    width: 190px;
-    height: 100vh;
-    background-color: #a74daa;
-    position: fixed;
-    z-index: 1;
-}
-
 #logo {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
     margin: 10px;
     filter: saturate(0%) brightness(460%);
 }
