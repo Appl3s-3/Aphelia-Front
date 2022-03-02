@@ -6,7 +6,7 @@ export default {
         }
     },
     methods: {
-        toggleNavBar() {
+        toggle_navbar() {
             this.expandNavBar = !this.expandNavBar;
         }
     }
@@ -14,11 +14,8 @@ export default {
 </script>
 
 <template>
-    <!-- I don't think we need the div around the <nav>, since it's already a container -->
     <div id="navbar" :class="[expandNavBar ? 'navbar-expand' : 'navbar-compact', '']">
-        <button id="nav-expand" class="nav-expand" @click="toggleNavBar">
-            expand
-        </button>
+        <button id="nav-expand" class="nav-expand" @click="toggle_navbar">expand</button>
         <nav id="navbar-nav">
             <router-link :to="{ name: 'home' }" class="nav-button nav-logo" id="nav-home-icon">
                 <img src="../assets/logo.svg" id="logo" />
@@ -28,37 +25,37 @@ export default {
             <!-- Appl3s: You can probably omit the <p> -->
             <router-link :to="{ name: 'home' }" class="nav-button" id="nav-home">
                 <span class="md-36 material-icons nav-icon">home</span>
-                <p class="nav-label" v-if="expandNavBar">
-                    Dashboard
-                </p>
+                <transition name="fade">
+                    <p class="nav-label" v-if="expandNavBar">Dashboard</p>
+                </transition>
             </router-link>
 
             <router-link :to="{ name: 'items' }" class="nav-button" id="nav-items">
                 <span class="md-36 material-icons nav-icon">category</span>
-                <p class="nav-label" v-if="expandNavBar">
-                    Items
-                </p>
+                <transition name="fade">
+                    <p class="nav-label" v-if="expandNavBar">Items</p>
+                </transition>
             </router-link>
 
             <router-link :to="{ name: 'users' }" class="nav-button" id="nav-users">
                 <span class="md-36 material-icons nav-icon">people</span>
-                <p class="nav-label" v-if="expandNavBar">
-                    Users
-                </p>
+                <transition name="fade">
+                    <p class="nav-label" v-if="expandNavBar">Users</p>
+                </transition>
             </router-link>
 
             <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">
                 <span class="md-36 material-icons nav-icon">inventory_2</span>
-                <p class="nav-label" v-if="expandNavBar">
-                    Loans
-                </p>
+                <transition name="fade">
+                    <p class="nav-label" v-if="expandNavBar">Loans</p>
+                </transition>
             </router-link>
 
             <router-link :to="{ name: 'notifications' }" class="nav-button" id="nav-notifications">
                 <span class="md-36 material-icons nav-icon">notifications</span>
-                <p class="nav-label" v-if="expandNavBar">
-                    Notifications
-                </p>
+                <transition name="fade">
+                    <p class="nav-label" v-if="expandNavBar">Notifications</p>
+                </transition>
             </router-link>
 
             <!-- Appl3s: I doubt the common user would understand what an archetype is, so a 'Item Type/Preset' in 'Items' will probably work better -->
@@ -66,40 +63,27 @@ export default {
 
             <router-link :to="{ name: 'about' }" class="nav-button" id="nav-about">
                 <span class="md-36 material-icons nav-icon">info</span>
-                <p class="nav-label" v-if="expandNavBar">
-                    About
-                </p>
+                <transition name="fade">
+                    <p class="nav-label" v-if="expandNavBar">About</p>
+                </transition>
             </router-link>
             <router-link :to="{ name: 'help' }" class="nav-button" id="nav-help">
                 <span class="md-36 material-icons nav-icon">help</span>
-                <p class="nav-label" v-if="expandNavBar">
-                    Help
-                </p>
+                <transition name="fade">
+                    <p class="nav-label" v-if="expandNavBar">Help</p>
+                </transition>
             </router-link>
             <router-link :to="{ name: 'settings' }" class="nav-button" id="nav-settings">
                 <span class="md-36 material-icons nav-icon">settings</span>
-                <p class="nav-label" v-if="expandNavBar">
-                    Settings
-                </p>
+                <transition name="fade">
+                    <p class="nav-label" v-if="expandNavBar">Settings</p>
+                </transition>
             </router-link>
         </nav>
     </div>
 </template>
 
 <style scoped>
-.material-icons.md-18 {
-    font-size: 18px;
-}
-.material-icons.md-24 {
-    font-size: 24px;
-}
-.material-icons.md-36 {
-    font-size: 36px;
-}
-.material-icons.md-48 {
-    font-size: 48px;
-}
-
 .nav-button {
     display: flex;
     align-items: center;
@@ -143,11 +127,11 @@ export default {
 }
 
 .navbar-expand {
-    width: 190px;
+    width: 170px;
     box-shadow: 0px 0px 10px;
 }
 
-.navbar-compact{
+.navbar-compact {
     width: 66px;
 }
 
@@ -155,6 +139,7 @@ export default {
     height: 100vh;
     background-color: #a74daa;
     position: fixed;
+    transition: width 0.5s;
     z-index: 1;
 }
 
@@ -174,5 +159,27 @@ export default {
 
 #nav-home-icon {
     padding: 0px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+.material-icons.md-18 {
+    font-size: 18px;
+}
+.material-icons.md-24 {
+    font-size: 24px;
+}
+.material-icons.md-36 {
+    font-size: 36px;
+}
+.material-icons.md-48 {
+    font-size: 48px;
 }
 </style>
