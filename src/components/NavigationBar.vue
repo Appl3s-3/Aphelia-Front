@@ -25,11 +25,6 @@
                 Users
             </router-link>
 
-            <router-link :to="{ name: 'roles' }" class="nav-button" id="nav-users">
-                <span class="md-36 material-icons nav-icon">people</span>
-                Roles (a page that scrolls)
-            </router-link>
-
             <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">
                 <span class="md-36 material-icons nav-icon">inventory_2</span>
                 Loans
@@ -72,19 +67,19 @@
         border-radius: 5px;
 
         text-align: center;
-        color: #2c3e50;
-        background-color: #a52a2a;
+        color: #EFEFEF;
+        background-color: #703172;
         text-decoration: none;
 
         transition: 0.2s;
     }
 
     .nav-button:hover {
-        background-color: #921e1e;
+        background-color: #532b5e;
     }
 
     .nav-button:hover:active {
-        background-color: #801515;
+        background-color: #3a1a3b;
     }
 
     .nav-logo {
@@ -102,13 +97,16 @@
 
     #navbar {
         width: 120px;
-        background-color: #e96f6f;
+        height: 100vh;
+        background-color: #a74daa;
+        position: fixed;
     }
 
     #logo {
         margin: 10px;
         width: 50px;
         height: 50px;
+        filter: saturate(0%) brightness(460%)
     }
 
     #nav-home-icon {

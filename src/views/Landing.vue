@@ -6,7 +6,7 @@
     <div class="landing-flex-item">
         <!-- Left side of landing page -->
         <h1 class="apheleia">Aphelia (logo)</h1>
-        <h2 class="apheleia">Manage your s***</h2>
+        <h2 class="apheleia">Management Made Simple</h2>
     </div>
     <!-- TODO: Affinix put a nice dividing line here -->
     <svg width="20px" height="100vh">
