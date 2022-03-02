@@ -1,4 +1,5 @@
 <script setup>
+let expandNavBar = true;
 </script>
 
 <template>
@@ -13,27 +14,37 @@
             <!-- Appl3s: You can probably omit the <p> -->
             <router-link :to="{ name: 'home' }" class="nav-button" id="nav-home">
                 <span class="md-36 material-icons nav-icon">home</span>
-                <p class="nav-label">Dashboard</p>
+                <p class="nav-label" v-if="expandNavBar">
+                    Dashboard
+                </p>
             </router-link>
 
             <router-link :to="{ name: 'items' }" class="nav-button" id="nav-items">
                 <span class="md-36 material-icons nav-icon">category</span>
-                <p class="nav-label">Items</p>
+                <p class="nav-label" v-if="expandNavBar">
+                    Items
+                </p>
             </router-link>
 
             <router-link :to="{ name: 'users' }" class="nav-button" id="nav-users">
                 <span class="md-36 material-icons nav-icon">people</span>
-                <p class="nav-label">Users</p>
+                <p class="nav-label" v-if="expandNavBar">
+                    Users
+                </p>
             </router-link>
 
             <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">
                 <span class="md-36 material-icons nav-icon">inventory_2</span>
-                <p class="nav-label">Loans</p>
+                <p class="nav-label" v-if="expandNavBar">
+                    Loans
+                </p>
             </router-link>
 
             <router-link :to="{ name: 'notifications' }" class="nav-button" id="nav-notifications">
                 <span class="md-36 material-icons nav-icon">notifications</span>
-                <p class="nav-label">Notifications</p>
+                <p class="nav-label" v-if="expandNavBar">
+                    Notifications
+                </p>
             </router-link>
 
             <!-- Appl3s: I doubt the common user would understand what an archetype is, so a 'Item Type/Preset' in 'Items' will probably work better -->
@@ -41,15 +52,21 @@
 
             <router-link :to="{ name: 'about' }" class="nav-button" id="nav-about">
                 <span class="md-36 material-icons nav-icon">info</span>
-                <p class="nav-label">About</p>
+                <p class="nav-label" v-if="expandNavBar">
+                    About
+                </p>
             </router-link>
             <router-link :to="{ name: 'help' }" class="nav-button" id="nav-help">
                 <span class="md-36 material-icons nav-icon">help</span>
-                <p class="nav-label">Help</p>
+                <p class="nav-label" v-if="expandNavBar">
+                    Help
+                </p>
             </router-link>
             <router-link :to="{ name: 'settings' }" class="nav-button" id="nav-settings">
                 <span class="md-36 material-icons nav-icon">settings</span>
-                <p class="nav-label">Settings</p>
+                <p class="nav-label" v-if="expandNavBar">
+                    Settings
+                </p>
             </router-link>
         </nav>
     </div>
