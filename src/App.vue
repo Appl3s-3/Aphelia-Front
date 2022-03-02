@@ -35,6 +35,6 @@ if (RouterLink) {
 }
 
 .shift {
-    left: 190px;
+    padding-left: 66px;
 }
 </style>
