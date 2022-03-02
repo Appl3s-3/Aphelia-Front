@@ -6,7 +6,6 @@ let showNavigationBar = true
 // TODO: If the router is on the landing page, set the variable above to false
 console.log(RouterLink)
 if (RouterLink) {
-
 }
 </script>
 
@@ -14,7 +13,9 @@ if (RouterLink) {
     <div class="app-wrapper">
         <div class="app">
             <NavigationBar v-if="showNavigationBar" />
-            <main :class="{shift: showNavigationBar}"><RouterView /></main>
+            <main :class="{shift: showNavigationBar}">
+                <RouterView />
+            </main>
         </div>
     </div>
 </template>
@@ -23,8 +24,8 @@ if (RouterLink) {
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import "./assets/base.css";
 .app {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
     min-height: 100vh;
 }
 
