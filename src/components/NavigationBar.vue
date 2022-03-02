@@ -80,7 +80,7 @@
         align-items: center;
         width: 180px;
         height: 56px;
-        margin: 10px;
+        margin: 5px;
         padding: 10px;
         border-radius: 5px;
 
@@ -121,11 +121,11 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding-top: 10px;
+        padding-top: 5px;
     }
 
     #navbar {
-        width: 200px;
+        width: 190px;
         height: 100vh;
         background-color: #a74daa;
         position: fixed;
