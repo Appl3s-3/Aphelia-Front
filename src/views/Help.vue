@@ -2,9 +2,12 @@
 </script>
 
 <template>
-    <main>
+    <div class="help help-container">
         <h2>Help</h2>
-    </main>
+        <div class="help-layout">
+
+        </div>
+    </div>
 </template>
 
 <style scoped>

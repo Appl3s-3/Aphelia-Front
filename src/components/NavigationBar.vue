@@ -4,6 +4,7 @@ import { reactive } from 'vue'
 const state = reactive({ expandNavBar: true })
 const toggleNavBar = () => {
     state.expandNavBar = !state.expandNavBar
+}
 </script>
 
 <template>

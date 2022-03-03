@@ -6,10 +6,14 @@
     <div>
         <ul>
             <li>This is a loan entry.</li>
+            <li>This is a loan entry.</li>
+            <li>This is a loan entry.</li>
+            <li>This is a loan entry.</li>
+            <li>This is a loan entry.</li>
         </ul>
     </div>
 </template>
 
 <style scoped>
-    @import "../assets/list.css";
+@import "../assets/list.css";
 </style>

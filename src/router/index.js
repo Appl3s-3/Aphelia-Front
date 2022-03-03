@@ -15,6 +15,8 @@ import Settings from '../views/Settings.vue'
 import Help from '../views/Help.vue'
 import About from '../views/About.vue'
 
+import Scan from '../views/Scan.vue'
+
 const routes = [
     {
         path: '/',
@@ -70,6 +72,11 @@ const routes = [
         path: '/about',
         name: 'about',
         component: About
+    },
+    {
+        path: '/scan',
+        name: 'scan',
+        component: Scan
     }
 ]
 
