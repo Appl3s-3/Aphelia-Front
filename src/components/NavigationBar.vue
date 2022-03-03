@@ -1,16 +1,16 @@
 <script setup>
 import { reactive } from 'vue'
 
-const state = reactive({ expandNavBar: true })
-const toggleNavBar = () => {
+const state = reactive({ expandNavBar: false })
+const toggle_navbar = () => {
     state.expandNavBar = !state.expandNavBar
 }
 </script>
 
 <template>
-    <div id="navbar" :class="[expandNavBar ? 'navbar-expand' : 'navbar-compact', '']">
+    <div id="navbar" :class="[state.expandNavBar ? 'navbar-expand' : 'navbar-compact', '']">
         <button id="nav-expand" class="nav-expand" @click="toggle_navbar">
-            <span class="md-24 material-icons">arrow_forward_ios</span>
+            <span class="md-36 material-icons">{{state.expandNavBar ? "chevron_left" : "chevron_right"}}</span>
         </button>
         <nav id="navbar-nav">
             <div class="nav-container">
@@ -23,28 +23,28 @@ const toggleNavBar = () => {
                 <router-link :to="{ name: 'home' }" class="nav-button" id="nav-home">
                     <span class="md-36 material-icons nav-icon">home</span>
                     <transition name="fade">
-                        <p class="nav-label" v-if="expandNavBar">Dashboard</p>
+                        <p class="nav-label" v-if="state.expandNavBar">Dashboard</p>
                     </transition>
                 </router-link>
 
                 <router-link :to="{ name: 'items' }" class="nav-button" id="nav-items">
                     <span class="md-36 material-icons nav-icon">category</span>
                     <transition name="fade">
-                        <p class="nav-label" v-if="expandNavBar">Items</p>
+                        <p class="nav-label" v-if="state.expandNavBar">Items</p>
                     </transition>
                 </router-link>
 
                 <router-link :to="{ name: 'users' }" class="nav-button" id="nav-users">
                     <span class="md-36 material-icons nav-icon">people</span>
                     <transition name="fade">
-                        <p class="nav-label" v-if="expandNavBar">Users</p>
+                        <p class="nav-label" v-if="state.expandNavBar">Users</p>
                     </transition>
                 </router-link>
 
                 <router-link :to="{ name: 'loans' }" class="nav-button" id="nav-loans">
                     <span class="md-36 material-icons nav-icon">inventory_2</span>
                     <transition name="fade">
-                        <p class="nav-label" v-if="expandNavBar">Loans</p>
+                        <p class="nav-label" v-if="state.expandNavBar">Loans</p>
                     </transition>
                 </router-link>
 
@@ -55,7 +55,7 @@ const toggleNavBar = () => {
                 >
                     <span class="md-36 material-icons nav-icon">notifications</span>
                     <transition name="fade">
-                        <p class="nav-label" v-if="expandNavBar">Notifications</p>
+                        <p class="nav-label" v-if="state.expandNavBar">Notifications</p>
                     </transition>
                 </router-link>
 
@@ -66,19 +66,19 @@ const toggleNavBar = () => {
                 <router-link :to="{ name: 'about' }" class="nav-button" id="nav-about">
                     <span class="md-36 material-icons nav-icon">info</span>
                     <transition name="fade">
-                        <p class="nav-label" v-if="expandNavBar">About</p>
+                        <p class="nav-label" v-if="state.expandNavBar">About</p>
                     </transition>
                 </router-link>
                 <router-link :to="{ name: 'help' }" class="nav-button" id="nav-help">
                     <span class="md-36 material-icons nav-icon">help</span>
                     <transition name="fade">
-                        <p class="nav-label" v-if="expandNavBar">Help</p>
+                        <p class="nav-label" v-if="state.expandNavBar">Help</p>
                     </transition>
                 </router-link>
                 <router-link :to="{ name: 'settings' }" class="nav-button" id="nav-settings">
                     <span class="md-36 material-icons nav-icon">settings</span>
                     <transition name="fade">
-                        <p class="nav-label" v-if="expandNavBar">Settings</p>
+                        <p class="nav-label" v-if="state.expandNavBar">Settings</p>
                     </transition>
                 </router-link>
             </div>
@@ -138,7 +138,7 @@ const toggleNavBar = () => {
     width: 30px;
     height: 60px;
     left: 100%;
-    padding: 18px 0 18px 0;
+    padding: 12px 0 12px 0;
     text-align: left;
     border: none;
     top: calc(50% - 10px);
@@ -146,6 +146,10 @@ const toggleNavBar = () => {
     background-color: inherit;
     cursor: pointer;
     color: #3a1a3b;
+}
+
+.nav-expand span {
+    transform: translateX(-6px);
 }
 
 .navbar-expand {
