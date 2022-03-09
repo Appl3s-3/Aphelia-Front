@@ -4,9 +4,11 @@
 <template>
     <div class="archetypes archetypes-container">
         <h2 class="apheleia">Archetypes</h2>
-        <ul>
-            <li>Archetype, this is. Probably.</li>
-        </ul>
+        <div class="archetypes-layout">
+            <ul>
+                <li>Archetype, this is. Probably.</li>
+            </ul>
+        </div>
     </div>
 </template>
 

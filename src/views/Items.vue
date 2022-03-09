@@ -40,6 +40,11 @@ let tempItems = [
         <h2 class="apheleia">Items</h2>
         <!-- Appl3s: I can't find a way to make checkboxes enabled by default -->
         <div class="items-layout">
+            <!-- Archetypes go here -->
+            <!-- <div class="items-archetypes-container">
+                
+            </div>
+            -->
             <div class="items-filters-container">
                 <!-- Sorting, searching and filtering -->
                 <div class="items-filters-left">
@@ -83,7 +88,7 @@ let tempItems = [
                     <input class="items-filter" type="text" name="items-search" placeholder="Search">
                 </div>
             </div>
-            <div class="items-table-container">
+            <div class="items-tables-container">
                 <!-- Container for the list of items -->
                 <table class="items-table">
                     <tr>
