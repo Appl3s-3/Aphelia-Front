@@ -16,7 +16,7 @@ const login_click = () => {
 </script>
 
 <template>
-    <div class="landing-container">
+    <div class="landing landing-container">
         <div class="landing-layout">
             <div class="landing-component landing-left">
                 <!-- Left side of landing page -->
@@ -31,15 +31,17 @@ const login_click = () => {
         
             <div class="landing-component landing-right">
                 <!-- Right side of landing page (login) -->
+                <input @click="student_login_click" type="submit" value="Student Portal Login" class="apheleia small-area text" />
+                <!-- TODO: Decide whether or not to have a signup
                 <form>
                     <input type="text" name="username" placeholder="Username" class="apheleia small-area text" />
                     <br />
                     <input type="password" name="password" placeholder="Password" class="apheleia small-area text" />
                     <br />
-                    <!-- TODO: Decide whether or not to have a signup -->
                     <br />
                     <input @click="login_click" type="submit" value="Login" class="apheleia small-area text" />
                 </form>
+                -->
             </div>
         </div>
         <!-- TODO: Button in the bottom right to toggle light/dark mode -->

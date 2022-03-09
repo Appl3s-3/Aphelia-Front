@@ -58,8 +58,7 @@
 </template>
 
 <style scoped>
-/* .dashboard-container {
-} */
+@import "../assets/list.css";
 
 .dashboard-layout {
     margin: 2.5%;

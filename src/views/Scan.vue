@@ -5,17 +5,19 @@ let notLoaned = true
 <template>
     <div class="scan scan-container">
         <h2>Scan</h2>
-        <div class="scan-item-container">
-            <img src="" alt="Item Image">
-            <ul class="scan-item-data-container">
-                <!-- Generate Item data here-->
-                <li>Item Data</li>
-                <li>Item Data</li>
-                <li>Item Data</li>
-            </ul>
-        </div>
-        <div class="scan-item-actions-container">
-            <input class="scan-item-action" type="submit" name="loan-item" value="Loan" v-if="notLoaned">
+        <div class="scan-layout">
+            <div class="scan-item-container">
+                <img src="" alt="Item Image">
+                <ul class="scan-item-data-container">
+                    <!-- Generate Item data here-->
+                    <li>Item Data</li>
+                    <li>Item Data</li>
+                    <li>Item Data</li>
+                </ul>
+            </div>
+            <div class="scan-item-actions-container">
+                <input class="scan-item-action" type="submit" name="loan-item" value="Loan" v-if="notLoaned">
+            </div>
         </div>
     </div>
 </template>

@@ -5,7 +5,6 @@
     <div class="help help-container">
         <h2>Help</h2>
         <div class="help-layout">
-
         </div>
     </div>
 </template>

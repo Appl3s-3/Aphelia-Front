@@ -2,15 +2,17 @@
 </script>
 
 <template>
-    <h2 class="apheleia">Loans Archive</h2>
-    <div>
-        <ul>
-            <li>This is a loan entry.</li>
-            <li>This is a loan entry.</li>
-            <li>This is a loan entry.</li>
-            <li>This is a loan entry.</li>
-            <li>This is a loan entry.</li>
-        </ul>
+    <div class="loans loans-container">
+        <h2 class="apheleia">Loans Archive</h2>
+        <div>
+            <ul>
+                <li>This is a loan entry.</li>
+                <li>This is a loan entry.</li>
+                <li>This is a loan entry.</li>
+                <li>This is a loan entry.</li>
+                <li>This is a loan entry.</li>
+            </ul>
+        </div>
     </div>
 </template>
 

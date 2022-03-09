@@ -2,9 +2,11 @@
 </script>
 
 <template>
-    <main>
+    <div class="about about-container">
         <h2>About</h2>
-    </main>
+        <div class="about-layout">
+        </div>
+    </div>
 </template>
 
 <style scoped>

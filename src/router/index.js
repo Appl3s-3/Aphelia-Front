@@ -5,7 +5,6 @@ import Landing from '../views/Landing.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Items from '../views/Items.vue'
 import Archetypes from '../views/Archetypes.vue'
-import Roles from '../views/Roles.vue'
 import Users from '../views/Users.vue'
 
 import Loans from '../views/Loans.vue'
@@ -37,11 +36,6 @@ const routes = [
         path: '/archetypes',
         name: 'archetypes',
         component: Archetypes
-    },
-    {
-        path: '/roles',
-        name: 'roles',
-        component: Roles
     },
     {
         path: '/users',
