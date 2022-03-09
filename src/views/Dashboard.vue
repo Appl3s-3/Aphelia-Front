@@ -1,4 +1,10 @@
 <script setup>
+window.onload() = function() {
+    // read the stuff from cache
+    // display the stuff
+    // attempt to update the cache
+    // display the new stuff
+}
 </script>
 
 <template>

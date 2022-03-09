@@ -5,13 +5,17 @@
     <div class="notifications notifications-container">
         <h2 class="apheleia">Notifications</h2>
         <div class="notifications-layout">
-            <ul>
-                <li>This is a notification.</li>
-            </ul>
+            <div class="notifications-filters-container">
+            </div>
+            <div class="notifications-list-container">
+                <ul>
+                    <li>This is a notification.</li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-    @import "../assets/list.css";
+@import "../assets/list.css";
 </style>

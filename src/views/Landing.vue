@@ -13,6 +13,37 @@ const login_click = () => {
     // Otherwise display an error and return false
     return false
 }
+
+const student_login_click = () => {
+    // do some request magic
+    // get their data
+    // cache their data
+    // go to dashboard
+/*
+    const CLIENT_ID = "apheleia";
+
+    location.href =
+        "https://student.sbhs.net.au/api/authorize?response_type=code" +
+        "&scope=all-ro" +
+        "&state=abc" +
+        `&client_id=${CLIENT_ID}` +
+        `&redirect_uri=${location.origin}/callback`
+
+    
+    var dailyTimetableElement
+
+    async function onUserData() {
+        var resource = await GetResourceFromCache("dailytimetable")
+
+        if (!dailyTimetableElement) {
+            dailyTimetableElement = document.createElement("daily-timetable")
+            document.getElementsByTagName("main")[0].appendChild(dailyTimetableElement)
+        }
+
+        dailyTimetableElement.setAttribute("data", resource);
+    }
+*/
+}
 </script>
 
 <template>
