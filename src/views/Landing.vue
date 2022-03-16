@@ -1,4 +1,11 @@
 <script setup>
+window.onload = function() {
+    // Check if the client is already logged in
+    // If they are, redirect to /home
+}
+
+const CLIENT_ID = "apheleia"; // what's this? I don't know, ask Kai Bo
+
 const login_click = () => {
     let username = document.getElementsByName("username")[0].value
     let password = document.getElementsByName("password")[0].value
@@ -16,12 +23,11 @@ const login_click = () => {
 
 const student_login_click = () => {
     // do some request magic
-    // get their data
-    // cache their data
+        // sent the client to login
+        // get their student id
+        // cache their student id
     // go to dashboard
 /*
-    const CLIENT_ID = "apheleia";
-
     location.href =
         "https://student.sbhs.net.au/api/authorize?response_type=code" +
         "&scope=all-ro" +

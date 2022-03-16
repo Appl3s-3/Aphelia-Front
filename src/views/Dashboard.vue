@@ -1,9 +1,12 @@
 <script setup>
 window.onload = function() {
-    // read the stuff from cache
-    // display the stuff
-    // attempt to update the cache
-    // display the new stuff
+    // LATER: read The Stuff from cache (notifs, etc) make them red to show that they aren't updated
+    
+    // The Stuff (n): Refers to a large amount of data.
+
+    // Request The Stuff
+    // Parse The Stuff
+    // Display The Stuff
 }
 </script>
 

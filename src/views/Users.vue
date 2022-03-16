@@ -1,5 +1,11 @@
 <script setup>
-// note that this is a script, not a script setup
+window.onload = function() {
+    // Request all the users from the faculty
+    // Request all the roles from the faculty
+    // Display the users
+    // Display the roles
+}
+
 let user_id = 0
 let role_id = 0
 

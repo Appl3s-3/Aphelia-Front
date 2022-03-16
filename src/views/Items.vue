@@ -1,4 +1,11 @@
 <script setup>
+window.onload = function() {
+    // Request all the archetypes from the faculty
+    // Request all the items for each archetype from the faculty
+    // Parse the items
+    // Display the items
+}
+
 let headingIndex = 0
 let tempScheme = [
     "internalID",
