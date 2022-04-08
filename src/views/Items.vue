@@ -14,6 +14,19 @@ let tempScheme = [
     "status"
 ]
 
+//let tempItems = []
+
+// for (let i = 0; i < 20; ++i) {
+//     genItem = {
+//         "internalID": i,
+//         "ID": i + 1,
+//         "tag": "#" + (i + 1),
+//         "status": Math.round(Math.random() * 20)
+//     }
+
+//     tempItems.push(genItem)
+// }
+
 let tempItems = [
     {
         "internalID": 0,
@@ -38,13 +51,25 @@ let tempItems = [
         "ID": 4,
         "tag": "#4",
         status: 0
+    },
+    {
+        "internalID": 3,
+        "ID": 4,
+        "tag": "#4",
+        status: 0
+    },
+    {
+        "internalID": 3,
+        "ID": 4,
+        "tag": "#4",
+        status: 0
     }
 ]
 </script>
 
 <template>
     <div class="items items-container">
-        <h2 class="apheleia">Items</h2>
+        <h2>Items</h2>
         <!-- Appl3s: I can't find a way to make checkboxes enabled by default -->
         <div class="items-layout">
             <!-- Archetypes go here -->
@@ -95,7 +120,7 @@ let tempItems = [
                     <input class="items-filter" type="text" name="items-search" placeholder="Search">
                 </div>
             </div>
-            <div class="items-tables-container">
+            <div class="items-table-container">
                 <!-- Container for the list of items -->
                 <table class="items-table">
                     <tr>
@@ -114,47 +139,72 @@ let tempItems = [
 </template>
 
 <style scoped>
-@import "../assets/list.css";
-div {
-    border: 1px solid red;
+/* TODO: make the table take up the remaining space */
+.items-layout {
+    --filter-table-gap-size: 0;
+
+    display: grid;
+    grid-template: auto auto / auto;
+    gap: var(--filter-table-gap-size);
 }
-/* .items-filters-container {
+
+
+/* Filters */
+
+.items-filters-container {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center; 
-}*/
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--aph-dark2);
+}
+
+/* items-filters-left and items-filters-right (The children, which are divs, of the items-fileters-container) */
+.items-filters-container > div {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    border: 1px solid blue;
+}
 
 .items-filters-left {
-    display: inline-flex;
-    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    margin: 12px 0;
 }
 
-.items-filters-right {
-    display: inline-flex;
-    flex-flow: row nowrap;
-    justify-content: right;
-    justify-items: right;
-    justify-self: right;
-    align-items: center; /* Vertical alignment */
-    /* Help this won't align to the right*/
-}
+/* .items-filters-right {
+} */
 
 .items-filter {
     margin: auto 15px;
+    border: 1px solid pink;
+}
+
+
+/* Table */
+
+.items-table-container {
+    background-color: var(--aph-dark1a);
+    margin: 0 auto;
 }
 
 .items-table {
-    width: 70vw;
-    border: 1px solid red;
+    padding: 10px;
+    width: 60vw;
+    margin: 0 20px;
+    
+    border-collapse: collapse;
 }
 
-th, td {
-    border: 1px solid red;
-    padding: 15px;
-    margin: 10px, 0;
+th {
+    padding: 28px 0;
+    background-color: var(--aph-dark2a);
+
+}
+
+td {
+    padding: 14px 12px;
+    background-color: var(--aph-dark3a);
+
 }
 </style>

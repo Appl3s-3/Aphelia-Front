@@ -4,7 +4,7 @@ import Landing from '../views/Landing.vue'
 
 import Dashboard from '../views/Dashboard.vue'
 import Items from '../views/Items.vue'
-import Users from '../views/Users.vue'
+import People from '../views/People.vue'
 
 import Loans from '../views/Loans.vue'
 import Notifications from '../views/Notifications.vue'
@@ -20,7 +20,7 @@ const routes = [
 
     { path: '/home',          name: 'home',          component: Dashboard },
     { path: '/items',         name: 'items',         component: Items },
-    { path: '/users',         name: 'users',         component: Users },
+    { path: '/people',        name: 'people',        component: People },
 
     { path: '/loans',         name: 'loans',         component: Loans },
     { path: '/notifications', name: 'notifications', component: Notifications },

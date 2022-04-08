@@ -34,7 +34,7 @@ const toggle_navbar = () => {
                     </transition>
                 </router-link>
 
-                <router-link :to="{ name: 'users' }" class="nav-button" id="nav-users">
+                <router-link :to="{ name: 'people' }" class="nav-button" id="nav-users">
                     <span class="md-36 material-icons nav-icon">people</span>
                     <transition name="fade">
                         <p class="nav-label" v-if="state.expandNavBar">Users</p>

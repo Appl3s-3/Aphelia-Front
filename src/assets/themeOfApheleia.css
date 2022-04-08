@@ -1,3 +1,26 @@
+:root {
+    --aph-dark1: rgb(10, 10, 10);
+    --aph-dark2: rgb(14, 14, 14);
+    --aph-dark3: rgb(18, 18, 18);
+
+    --aph-dark1a: rgba(10, 10, 10, 0.9);
+    --aph-dark2a: rgba(14, 14, 14, 0.85);
+    --aph-dark3a: rgba(18, 18, 18, 0.8);
+
+
+    --aph-light1: rgb(220, 220, 220);
+    --aph-light2: rgb(200, 200, 200);
+    --aph-light3: rgb(180, 180, 180);
+
+
+
+    --aph-text1: rgb(230, 230, 230);
+    --aph-text2: rgb(210, 210, 210);
+    --aph-text3: rgb(120, 120, 120);
+
+    --aph-text-highlight: rgb(140, 207, 252);
+}
+/*
 main {
     margin: 0px;
     border: none;
@@ -49,4 +72,4 @@ button.apheleia {
 
 button.apheleia:hover {
     background-color: #391841;
-}
+}*/
