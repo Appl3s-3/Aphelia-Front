@@ -1,4 +1,10 @@
 <script setup>
+import { usePeople } from '../store/usePeople'
+
+const peopleStore = usePeople()
+
+let tempUsers = peopleStore.tempUsers
+
 window.onload = function() {
     // Request all the users from the faculty
     // Request all the roles from the faculty
@@ -6,24 +12,6 @@ window.onload = function() {
     // Display the roles
 }
 
-let user_id = 0
-let role_id = 0
-
-roles: [
-    { role_id: ++role_id, text: 'This is a user with role_id = ' + role_id },
-    { role_id: ++role_id, text: 'This is a user with role_id = ' + role_id },
-    { role_id: ++role_id, text: 'This is a user with role_id = ' + role_id },
-    { role_id: ++role_id, text: 'This is a user with role_id = ' + role_id },
-    { role_id: ++role_id, text: 'This is a user with role_id = ' + role_id },
-    { role_id: ++role_id, text: 'This is a user with role_id = ' + role_id },
-    { role_id: ++role_id, text: 'This is a user with role_id = ' + role_id }
-]
-
-users: [
-    { user_id: ++user_id, text: 'This is a user with user_id = ' + user_id },
-    { user_id: ++user_id, text: 'This is a user with user_id = ' + user_id },
-    { user_id: ++user_id, text: 'This is a user with user_id = ' + user_id }
-]
 </script>
 
 <template>
@@ -57,7 +45,7 @@ users: [
                             <td>Me myself and I</td>
                             <td>Class of 2022</td>
                         </tr>
-                        <li v-for="user in users" :key="user.user_id">
+                        <li v-for="user in tempUsers" :key="user.user_id">
                             {{ user.text }}
                             <!-- <button @click="removeTodo(todo)">X</button> -->
                         </li>

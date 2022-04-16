@@ -1,4 +1,7 @@
 <script setup>
+// see pinia stuff in Items.vue
+// u might want to make a generalStore or something for the toggle
+
 import { reactive } from 'vue'
 
 const state = reactive({ expandNavBar: false })
@@ -104,18 +107,18 @@ const toggle_navbar = () => {
 
     text-align: left;
     color: #efefef;
-    background-color: #703172;
+    background-color: var(--aph-dark2);
     text-decoration: none;
 
     transition: 0.2s;
 }
 
 .nav-button:hover {
-    background-color: #532b5e;
+    background-color: var(--aph-light3);
 }
 
 .nav-button:hover:active {
-    background-color: #3a1a3b;
+    background-color: var(--aph-dark3);
 }
 
 .nav-logo {
@@ -151,7 +154,7 @@ const toggle_navbar = () => {
     border-radius: 0 30px 30px 0;
     background-color: inherit;
     cursor: pointer;
-    color: #3a1a3b;
+    color: var(--aph-dark2);
 }
 
 .nav-expand span {
@@ -169,7 +172,7 @@ const toggle_navbar = () => {
 
 #navbar {
     height: 100vh;
-    background-color: #a74daa;
+    background-color: var(--aph-dark2);
     position: fixed;
     transition: width 0.5s;
     z-index: 1;

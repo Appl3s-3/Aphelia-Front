@@ -1,4 +1,10 @@
 <script setup>
+import { useItems } from '../store/useItems'
+import { useArchetypes } from '../store/useArchetypes'
+
+const itemStore = useItems()
+const archetypeStore = useArchetypes()
+
 window.onload = function() {
     // Request all the archetypes from the faculty
     // Request all the items for each archetype from the faculty
@@ -7,13 +13,8 @@ window.onload = function() {
 }
 
 let headingIndex = 0
-let tempScheme = [
-    "internalID",
-    "ID",
-    "tag",
-    "status"
-]
-
+let tempScheme = archetypeStore.tempScheme
+let tempItems = itemStore.tempItems
 //let tempItems = []
 
 // for (let i = 0; i < 20; ++i) {
@@ -27,44 +28,6 @@ let tempScheme = [
 //     tempItems.push(genItem)
 // }
 
-let tempItems = [
-    {
-        "internalID": 0,
-        "ID": 1,
-        "tag": "#1",
-        "status": 1 // broken
-    },
-    {
-        "internalID": 1,
-        "ID": 2,
-        "tag": "#2",
-        "status": 0
-    },
-    {
-        "internalID": 2,
-        "ID": 3,
-        "tag": "#3",
-        "status": 2 // needs to be checked
-    },
-    {
-        "internalID": 3,
-        "ID": 4,
-        "tag": "#4",
-        status: 0
-    },
-    {
-        "internalID": 3,
-        "ID": 4,
-        "tag": "#4",
-        status: 0
-    },
-    {
-        "internalID": 3,
-        "ID": 4,
-        "tag": "#4",
-        status: 0
-    }
-]
 </script>
 
 <template>

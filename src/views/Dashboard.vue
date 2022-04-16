@@ -1,4 +1,9 @@
 <script setup>
+import { useItems } from '../store/useItems'
+// import { useSettings } from '../store/useSettings'
+
+const itemStore = useItems()
+
 window.onload = function() {
     // LATER: read The Stuff from cache (notifs, etc) make them red to show that they aren't updated
     
