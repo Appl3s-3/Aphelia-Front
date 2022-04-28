@@ -130,18 +130,38 @@ window.onload = function() {
 </template>
 
 <style scoped>
+@import "../css/dashboard.css";
+
+/* Local Variables */
+.dashboard * {
+    --tiles-outside-margin: 2.5%;
+    --tiles-gap: 5px;
+    --tiles-column-one-width: 50vh;
+    --tiles-column-two-width: 30vh;
+    --tiles-row-one-height: 60%;
+
+    --tile-inside-padding: 1%;
+
+    --notification-list-padding: 10px;
+    --notification-list-horizontal-margin: 6px;
+
+    --table-heading-horizontal-padding: 8px;
+
+    --table-data-horizontal-padding: 6px;
+    --table-data-vertical-padding: 12px;
+}
+
 .dashboard-layout {
-    margin: 2.5%;
+    margin: var(--tiles-outside-margin);
 
     display: grid;
-    grid-template: 50vh 30vh / 60% auto;
-    gap: 5px;
+    grid-template: var(--tiles-column-one-width) var(--tiles-column-two-width) / var(--tiles-row-one-height) auto;
+    gap: var(--tiles-gap);
 }
 
 /* All divs in the layout grid */
 .dashboard-layout > div {
-    background-color: var(--aph-dark1a);
-    padding: 1%;
+    padding: var(--tiles-inside-padding);
 }
 
 
@@ -160,52 +180,38 @@ window.onload = function() {
     grid-column: 2;
     grid-row: 1 / 3;
 }
-/*
-.dashboard-notifications-list-container {
 
-}
+/* .dashboard-notifications-list-container {
+} */
 
-.dashboard-notifications-list {
-
-}*/
+/* .dashboard-notifications-list {
+} */
 
 .dashboard-notifications-list > li {
-    background-color: var(--aph-dark3a);
-    padding: 10px;
-    margin: 6px auto;
+    padding: var(--notification-list-padding);
+    margin: var(--notification-list-horizontal-margin) auto;
 }
 
 
 /* Loan History */
 
 /* .dashboard-history {
-
 } */
 
 
 /* General */
 
 table {
-    width: 100%;
+    /* TODO: change back to 100% (testing if its centered) */
+    width: 90%;
     border-collapse: collapse;
 }
 
 th {
-    padding: 8px 0;
-    background-color: var(--aph-dark2a);
+    padding: var(--table-heading-horizontal-padding) 0;
 }
 
 td {
-    padding: 6px 12px;
-    background-color: var(--aph-dark3a);
+    padding: var(--table-data-horizontal-padding) var(--table-data-vertical-padding);
 }
-
-div {
-    font: 18px Spectral;
-}
-/* div {
-    border: 1px solid purple;
-}
-*/
-
 </style>

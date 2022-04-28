@@ -1,0 +1,63 @@
+
+/* Local Variables */
+.dashboard * {
+    --color-var: 0px;
+}
+
+/* .dashboard-layout {
+} */
+
+/* All divs in the layout grid */
+.dashboard-layout > div {
+    background-color: var(--aph-dark1a);
+}
+
+
+/* Current Loans */
+
+/* .dashboard-loans-table-container {
+} */
+
+/* .dashboard-loans-table {
+} */
+
+
+/* Notifications */
+
+/* .dashboard-notifications {
+} */
+
+
+/* .dashboard-notifications-list-container {
+} */
+
+/* .dashboard-notifications-list {
+} */
+
+/* .dashboard-notifications-list > li {
+    background-color: var(--aph-dark3a);
+} */
+
+
+/* Loan History */
+
+/* .dashboard-history {
+} */
+
+
+/* General */
+
+/* table {
+} */
+
+th {
+    background-color: var(--aph-dark2a);
+}
+
+td {
+    background-color: var(--aph-dark3a);
+}
+
+div {
+    font: 18px Spectral;
+}
