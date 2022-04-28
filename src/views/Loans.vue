@@ -17,5 +17,5 @@
 </template>
 
 <style scoped>
-@import "../assets/list.css";
+@import "../css/list.css";
 </style>

@@ -61,8 +61,8 @@ let customReminder = false;
 </template>
 
 <style scoped>
-@import "../assets/list.css";
-@import "../assets/themeOfApheleia.css";
+@import "../css/list.css";
+@import "../css/themeOfApheleia.css";
 
 h2 {
     display: block;

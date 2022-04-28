@@ -87,8 +87,8 @@ const student_login_click = () => {
 </template>
 
 <style scoped>
-@import "../assets/input.css";
-@import "../assets/themeOfApheleia.css";
+@import "../css/input.css";
+@import "../css/themeOfApheleia.css";
 
 .landing-layout {
     display: grid;

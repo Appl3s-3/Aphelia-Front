@@ -23,7 +23,7 @@ let notLoaned = true
 </template>
 
 <style scoped>
-@import '../assets/list.css';
+@import '../css/list.css';
 
 .scan-item-container {
     display: flex;
