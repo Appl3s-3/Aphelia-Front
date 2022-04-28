@@ -1,0 +1,27 @@
+/* Local Variables */
+.people * {
+    --color-var: 0;
+}
+
+/* .people-layout {
+} */
+
+
+/* Users */
+
+.people-filters-container {
+    background-color: var(--aph-dark2);
+}
+
+.people-user-table-container {
+    background-color: var(--aph-dark1a);
+}
+
+/* .people-user-table {
+} */
+
+/* Roles */
+
+.people-role-list-container {
+    background-color: var(--aph-dark1a);
+}

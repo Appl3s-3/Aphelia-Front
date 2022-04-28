@@ -135,33 +135,33 @@ window.onload = function() {
 /* Local Variables */
 .dashboard * {
     --tiles-outside-margin: 2.5%;
-    --tiles-gap: 5px;
-    --tiles-column-one-width: 50vh;
-    --tiles-column-two-width: 30vh;
-    --tiles-row-one-height: 60%;
+    --tiles-gap: 0.1em;
+    --tiles-row-one-height: 50vh;
+    --tiles-row-two-height: 39vh;
+    --tiles-column-one-width: 60%;
 
     --tile-inside-padding: 1%;
 
     --notification-list-padding: 10px;
-    --notification-list-horizontal-margin: 6px;
+    --notification-list-vertical-margin: 6px;
 
-    --table-heading-horizontal-padding: 8px;
+    --table-heading-vertical-padding: 12px;
 
-    --table-data-horizontal-padding: 6px;
     --table-data-vertical-padding: 12px;
+    --table-data-horizontal-padding: 6px;
 }
 
 .dashboard-layout {
     margin: var(--tiles-outside-margin);
 
     display: grid;
-    grid-template: var(--tiles-column-one-width) var(--tiles-column-two-width) / var(--tiles-row-one-height) auto;
+    grid-template: var(--tiles-row-one-height) var(--tiles-row-two-height) / var(--tiles-column-one-width) auto;
     gap: var(--tiles-gap);
 }
 
 /* All divs in the layout grid */
 .dashboard-layout > div {
-    padding: var(--tiles-inside-padding);
+    padding: var(--tile-inside-padding);
 }
 
 
@@ -189,7 +189,7 @@ window.onload = function() {
 
 .dashboard-notifications-list > li {
     padding: var(--notification-list-padding);
-    margin: var(--notification-list-horizontal-margin) auto;
+    margin: var(--notification-list-vertical-margin) auto;
 }
 
 
@@ -202,16 +202,15 @@ window.onload = function() {
 /* General */
 
 table {
-    /* TODO: change back to 100% (testing if its centered) */
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
 }
 
 th {
-    padding: var(--table-heading-horizontal-padding) 0;
+    padding: var(--table-heading-vertical-padding) 0;
 }
 
 td {
-    padding: var(--table-data-horizontal-padding) var(--table-data-vertical-padding);
+    padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
 }
 </style>

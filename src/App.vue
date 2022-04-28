@@ -24,7 +24,7 @@ if (RouterLink) {
 <style>
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import "./css/base.css";
-@import "./css/list.css";
+@import "./css/clean.css";
 @import "./css/themeOfApheleia.css";
 
 .app {

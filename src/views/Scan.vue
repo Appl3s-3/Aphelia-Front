@@ -23,8 +23,6 @@ let notLoaned = true
 </template>
 
 <style scoped>
-@import '../css/list.css';
-
 .scan-item-container {
     display: flex;
     flex-flow: row nowrap;

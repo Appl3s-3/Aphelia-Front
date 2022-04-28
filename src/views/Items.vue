@@ -1,9 +1,7 @@
 <script setup>
 import { useItems } from '../store/useItems'
-import { useArchetypes } from '../store/useArchetypes'
 
 const itemStore = useItems()
-const archetypeStore = useArchetypes()
 
 window.onload = function() {
     // Request all the archetypes from the faculty
@@ -13,8 +11,7 @@ window.onload = function() {
 }
 
 let headingIndex = 0
-let tempScheme = archetypeStore.tempScheme
-let tempItems = itemStore.tempItems
+let schemes = itemStore.schemes
 //let tempItems = []
 
 // for (let i = 0; i < 20; ++i) {
@@ -83,17 +80,16 @@ let tempItems = itemStore.tempItems
                     <input class="items-filter" type="text" name="items-search" placeholder="Search">
                 </div>
             </div>
-            <div class="items-table-container">
+            <div class="items-table-container" v-for="scheme in schemes">
+                <h2>ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
+                (This is a jump point)
                 <!-- Container for the list of items -->
                 <table class="items-table">
                     <tr>
-                        <th v-for="heading in tempScheme">{{ heading }}</th>
+                        <th v-for="fieldName in scheme.fieldNames">{{ fieldName }}</th>
                     </tr>
-                    <tr v-for="item in tempItems">
-                        <td>{{ item[tempScheme[0]] }}</td>
-                        <td>{{ item[tempScheme[1]] }}</td>
-                        <td>{{ item[tempScheme[2]] }}</td>
-                        <td>{{ item[tempScheme[3]] }}</td>
+                    <tr v-for="item in scheme.items">
+                        <td v-for="i in item.fields.length">{{ item.fields[i - 1] }}</td>
                     </tr>
                 </table>
             </div>
@@ -102,6 +98,21 @@ let tempItems = itemStore.tempItems
 </template>
 
 <style scoped>
+@import "../css/items.css";
+
+/* Local Variables */
+.items * {
+    --left-filter-vertical-margin: 12px;
+    --filter-horizontal-margin: 15px;
+
+    --table-horizontal-margin: 20px;
+
+    --table-heading-vertical-padding: 28px;
+
+    --table-data-vertical-padding: 14px;
+    --table-data-horizontal-padding: 12px;
+}
+
 /* TODO: make the table take up the remaining space */
 .items-layout {
     --filter-table-gap-size: 0;
@@ -119,55 +130,46 @@ let tempItems = itemStore.tempItems
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--aph-dark2);
 }
 
-/* items-filters-left and items-filters-right (The children, which are divs, of the items-fileters-container) */
+/* items-filters-left and items-filters-right (The children, which are divs, of the items-filters-container) */
 .items-filters-container > div {
     display: inline-flex;
     flex-flow: row nowrap;
-    border: 1px solid blue;
 }
 
 .items-filters-left {
     justify-content: space-between;
     align-items: center;
-    margin: 12px 0;
+    margin: var(--left-filter-vertical-margin) 0;
 }
 
 /* .items-filters-right {
 } */
 
 .items-filter {
-    margin: auto 15px;
-    border: 1px solid pink;
+    margin: auto var(--filter-horizontal-margin);
 }
 
 
 /* Table */
 
 .items-table-container {
-    background-color: var(--aph-dark1a);
     margin: 0 auto;
 }
 
 .items-table {
-    padding: 10px;
-    width: 60vw;
-    margin: 0 20px;
+    width: 70vw; /* TODO: Change the width based off the number of item fields */
+    margin: 0 var(--table-horizontal-margin);
     
     border-collapse: collapse;
 }
 
 th {
-    padding: 28px 0;
-    background-color: var(--aph-dark2a);
-
+    padding: var(--table-heading-vertical-padding) 0;
 }
 
 td {
-    padding: 14px 12px;
-    background-color: var(--aph-dark3a);
-
+    padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
 }
 </style>

@@ -87,9 +87,6 @@ const student_login_click = () => {
 </template>
 
 <style scoped>
-@import "../css/input.css";
-@import "../css/themeOfApheleia.css";
-
 .landing-layout {
     display: grid;
     grid-template: auto / 41% auto auto;

@@ -1,0 +1,47 @@
+/* Local Variables */
+.items * {
+    --color-var: 0;
+}
+
+/* .items-layout {
+} */
+
+
+/* Filters */
+
+.items-filters-container {
+    background-color: var(--aph-dark2);
+}
+
+/* items-filters-left and items-filters-right (The children, which are divs, of the items-fileters-container) */
+.items-filters-container > div {
+    border: 1px solid blue;
+}
+
+/* .items-filters-left {
+} */
+
+/* .items-filters-right {
+} */
+
+.items-filter {
+    border: 1px solid pink;
+}
+
+
+/* Table */
+
+.items-table-container {
+    background-color: var(--aph-dark1a);
+}
+
+/* .items-table {
+} */
+
+th {
+    background-color: var(--aph-dark2a);
+}
+
+td {
+    background-color: var(--aph-dark3a);
+}

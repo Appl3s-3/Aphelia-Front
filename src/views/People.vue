@@ -66,10 +66,19 @@ window.onload = function() {
 </template>
 
 <style scoped>
-.people-layout {
-    margin: 2.5%;
+@import "../css/people.css";
+
+/* Local Variables */
+.people * {
+    --outside-vertical-margin: 2.5%;
+    --outside-hotizontal-margin: 2.5%;
+
+    --table-width: 100%;
 }
 
+.people-layout {
+    margin: var(--outside-vertical-margin) var(--outside-hotizontal-margin);
+}
 
 /* Users */
 
@@ -79,15 +88,13 @@ window.onload = function() {
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--aph-dark2);
 }
 
-.people-user-table-container {
-    background-color: var(--aph-dark1a);
-}
+/* .people-user-table-container {
+} */
 
 .people-user-table {
-    width: 100%;
+    width: var(--table-width);
 }
 
 /* Roles */
@@ -95,7 +102,6 @@ window.onload = function() {
 .people-role-list-container {
     grid-column: 1;
     grid-row: 1 / 3;
-    background-color: var(--aph-dark1a);
 }
 
 </style>
