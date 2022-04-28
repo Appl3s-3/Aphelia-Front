@@ -5,6 +5,26 @@ export const useItems = defineStore('itemStore', {
     state: () => {
         return {
             // all these properties will have their type inferred automatically
+            items: [
+                {
+                    archetypeID: 0,
+                    fields: [
+                        "field value 1",
+                        "field value 2",
+                        "field value 3"
+                    ]
+                },
+                {
+                    archetypeID: 1,
+                    fields: [
+                        "field value 1",
+                        "field value 2",
+                        "field value 3",
+                        "field value 4"
+                    ]
+                }
+            ],
+            
             tempItems: [
                 {
                     "internalID": 0,

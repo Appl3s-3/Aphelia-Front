@@ -16,20 +16,20 @@ import About from '../views/About.vue'
 import Scan from '../views/Scan.vue'
 
 const routes = [
-    { path: '/',              name: 'landing',       component: Landing },
+    { path: '/',              name: 'landing',       component: Landing       },
 
-    { path: '/home',          name: 'home',          component: Dashboard },
-    { path: '/items',         name: 'items',         component: Items },
-    { path: '/people',        name: 'people',        component: People },
+    { path: '/home',          name: 'home',          component: Dashboard     },
+    { path: '/items',         name: 'items',         component: Items         },
+    { path: '/people',        name: 'people',        component: People        },
 
-    { path: '/loans',         name: 'loans',         component: Loans },
+    { path: '/loans',         name: 'loans',         component: Loans         },
     { path: '/notifications', name: 'notifications', component: Notifications },
 
-    { path: '/settings',      name: 'settings',      component: Settings },
-    { path: '/help',          name: 'help',          component: Help },
-    { path: '/about',         name: 'about',         component: About },
+    { path: '/settings',      name: 'settings',      component: Settings      },
+    { path: '/help',          name: 'help',          component: Help          },
+    { path: '/about',         name: 'about',         component: About         },
 
-    { path: '/scan',          name: 'scan',          component: Scan }
+    { path: '/scan',          name: 'scan',          component: Scan          }
 ]
 
 const router = createRouter({
