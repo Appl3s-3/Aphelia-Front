@@ -18,7 +18,7 @@ const toggle_navbar = () => {
         <nav id="navbar-nav">
             <div class="nav-container">
                 <router-link :to="{ name: 'home' }" class="nav-button nav-logo" id="nav-home-icon">
-                    <img src="../assets/logo.svg" id="logo" />
+                    <img src="../../assets/logo.svg" id="logo" />
                 </router-link>
 
                 <!-- Appl3s: Added this because it's not completely obvious that the logo is the dashboard-->

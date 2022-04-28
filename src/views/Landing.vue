@@ -57,7 +57,7 @@ const student_login_click = () => {
         <div class="landing-layout">
             <div class="landing-component landing-left">
                 <!-- Left side of landing page -->
-                <img src="../assets/logo.svg" alt="Logo">
+                <img src="../../assets/logo.svg" alt="Logo">
                 <h1 class="apheleia">Aphelia</h1>
                 <h2 class="apheleia">Management Made Simple</h2>
             </div>
