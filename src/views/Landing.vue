@@ -27,15 +27,15 @@ const student_login_click = () => {
         // get their student id
         // cache their student id
     // go to dashboard
-/*
+
     location.href =
         "https://student.sbhs.net.au/api/authorize?response_type=code" +
         "&scope=all-ro" +
         "&state=abc" +
-        `&client_id=${CLIENT_ID}` +
-        `&redirect_uri=${location.origin}/callback`
+        `&client_id=apheleia` +
+        `&redirect_uri=https://apheleia.pages.dev/callback`
 
-    
+    /*
     var dailyTimetableElement
 
     async function onUserData() {
