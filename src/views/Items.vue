@@ -80,16 +80,23 @@ let schemes = itemStore.schemes
                     <input class="items-filter" type="text" name="items-search" placeholder="Search">
                 </div>
             </div>
+            <div class="items-jump-list-container">
+                <h2>Jump to...</h2>
+                <ul class="items-jump-list">
+                    <li class="items-jump-list-element-container" v-for="scheme in schemes">
+                        <a class="items-jump-list-element" :href="'#' + scheme.id">{{ scheme.name }}</a>
+                    </li>
+                </ul>
+            </div>
             <div class="items-table-container" v-for="scheme in schemes">
-                <h2>ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
-                (This is a jump point)
+                <h2 :id="scheme.id">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
                 <!-- Container for the list of items -->
                 <table class="items-table">
                     <tr>
                         <th v-for="fieldName in scheme.fieldNames">{{ fieldName }}</th>
                     </tr>
                     <tr v-for="item in scheme.items">
-                        <td v-for="i in item.fields.length">{{ item.fields[i - 1] }}</td>
+                        <td v-for="field in item">{{ field }}</td>
                     </tr>
                 </table>
             </div>
@@ -151,6 +158,19 @@ let schemes = itemStore.schemes
     margin: auto var(--filter-horizontal-margin);
 }
 
+/* Jump List */
+.items-jump-list-container {
+    position: fixed;
+}
+
+/* .items-jump-list {
+} */
+
+/* .items-jump-list-element-container {
+} */
+
+/* .items-jump-list-element {
+} */
 
 /* Table */
 

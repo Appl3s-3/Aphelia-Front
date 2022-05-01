@@ -29,6 +29,28 @@
 }
 
 
+/* Jump List */
+.items-jump-list-container {
+    background-color: var(--aph-dark2);
+}
+
+/* .items-jump-list {
+} */
+
+/* .items-jump-list-element-container {
+} */
+
+/* .items-jump-list-element {
+} */
+
+/* ul {
+} */
+
+li {
+    margin: 20px 50px;
+    border: solid red 1px;
+}
+
 /* Table */
 
 .items-table-container {
