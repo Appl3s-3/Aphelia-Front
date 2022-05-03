@@ -1,4 +1,5 @@
 <script setup>
+import {login} from "../scripts/auth.js";
 window.onload = function() {
     // Check if the client is already logged in
     // If they are, redirect to /home
@@ -27,15 +28,10 @@ const student_login_click = () => {
         // get their student id
         // cache their student id
     // go to dashboard
-/*
-    location.href =
-        "https://student.sbhs.net.au/api/authorize?response_type=code" +
-        "&scope=all-ro" +
-        "&state=abc" +
-        `&client_id=${CLIENT_ID}` +
-        `&redirect_uri=${location.origin}/callback`
 
-    
+    login();
+
+    /*
     var dailyTimetableElement
 
     async function onUserData() {
