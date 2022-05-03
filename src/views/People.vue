@@ -3,8 +3,6 @@ import { usePeople } from '../store/usePeople'
 
 const peopleStore = usePeople()
 
-let tempUsers = peopleStore.tempUsers
-
 window.onload = function() {
     // Request all the users from the faculty
     // Request all the roles from the faculty
@@ -41,7 +39,7 @@ window.onload = function() {
                             <th>Name</th>
                             <th>Info</th>
                         </tr>
-                        <tr v-for="user in tempUsers" :key="user.internal_id">
+                        <tr v-for="user in peopleStore.tempUsers" :key="user.internal_id">
                             <td>{{ user.internal_id }}</td>
                             <td>{{ user.school_id }}</td>
                             <td>{{ user.name }}</td>

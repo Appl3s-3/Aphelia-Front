@@ -11,7 +11,6 @@ window.onload = function() {
 }
 
 let headingIndex = 0
-let schemes = itemStore.schemes
 //let tempItems = []
 
 // for (let i = 0; i < 20; ++i) {
@@ -83,12 +82,12 @@ let schemes = itemStore.schemes
             <div class="items-jump-list-container">
                 <h2>Jump to...</h2>
                 <ul class="items-jump-list">
-                    <li class="items-jump-list-element-container" v-for="scheme in schemes">
+                    <li class="items-jump-list-element-container" v-for="scheme in itemStore.schemes">
                         <a class="items-jump-list-element" :href="'#' + scheme.id">{{ scheme.name }}</a>
                     </li>
                 </ul>
             </div>
-            <div class="items-table-container" v-for="scheme in schemes">
+            <div class="items-table-container" v-for="scheme in itemStore.schemes">
                 <h2 :id="scheme.id">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
                 <!-- Container for the list of items -->
                 <table class="items-table">

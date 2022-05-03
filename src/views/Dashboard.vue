@@ -1,9 +1,11 @@
 <script setup>
 import { useItems } from '../store/useItems'
+import { useHistory } from '../store/useHistory'
 //import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 // import { useSettings } from '../store/useSettings'
 
 const itemStore = useItems()
+const historyStore = useHistory()
 
 // async function createPdf() {
 //     // Create a new PDFDocument
@@ -103,10 +105,7 @@ window.onload = function () {
                 <h3>Notifications</h3>
                 <div class="dashboard-notifications-list-container">
                     <ul class="dashboard-notifications-list">
-                        <li>(Archetype) (Item Name) is due soon! (Date Due)</li>
-                        <li>Your request to extend the loan of (Item Name) was accepted.</li>
-                        <li>Did you know? The developers have misspelt Apheleia as 'Aphelia' about 99% of the time!
-                            (Including just now!)</li>
+                        <li v-for="notification in historyStore.notifications">{{ notification }}</li>
                     </ul>
                 </div>
             </div>

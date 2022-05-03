@@ -3,23 +3,41 @@ import { useHistory } from '../store/useHistory'
 
 const historyStore = useHistory()
 
-let loans = historyStore.loans
-
 </script>
 
 <template>
     <div class="loans loans-container">
         <h2 class="apheleia">Loans Archive</h2>
         <div class="loans-layout">
+            <div class="loans-information-container">
+                <p>You have loaned 8 items in the past.</p>
+                <p>You have loaned 3 items in the past year.</p>
+                <p>Total Overdue Returns:</p>
+                <p>0. Well done!</p>
+                <p>3. You should track your belongings more carefully.</p>
+                <p>10. This number is worrying.</p>
+                <p>25! What are you doing?! Manage your stuff properly!</p>
+                <p>50! Thank you for using our application, but you should know that its original purpose was to manage your items.</p>
+            </div>
             <div class="loans-table-container">
                 <table class="loans-table">
-                    <th>
-                        <td>
-                            Loan Name
-                        </td>
-                    </th>
-                    <tr v-for="loan in loans">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Borrow Date</th>
+                        <th>Due Date</th>
+                        <th>Return Date</th>
+                        <th>Info</th>
+                    </tr>
+                    <tr v-for="loan in historyStore.loans">
                         <td>{{ loan }}</td>
+                        <td>{{ loan }}</td>
+                        <td>{{ loan }}</td>
+                        <td>{{ loan }}</td>
+                        <td>{{ loan }}</td>
+                        <td>{{ loan }}</td>
+                        <td>INfo</td>
                     </tr>
                 </table>
             </div>
@@ -55,36 +73,36 @@ let loans = historyStore.loans
 
 /* Filters */
 
-.loans-filters-container {
+/* .loans-filters-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-}
+} */
 
 /* loans-filters-left and loans-filters-right (The children, which are divs, of the loans-filters-container) */
-.loans-filters-container > div {
+/* .loans-filters-container > div {
     display: inline-flex;
     flex-flow: row nowrap;
-}
+} */
 
-.loans-filters-left {
+/* .loans-filters-left {
     justify-content: space-between;
     align-items: center;
     margin: var(--left-filter-vertical-margin) 0;
-}
+} */
 
 /* .loans-filters-right {
 } */
 
-.loans-filter {
+/* .loans-filter {
     margin: auto var(--filter-horizontal-margin);
-}
+} */
 
 /* Jump List */
-.loans-jump-list-container {
+/* .loans-jump-list-container {
     position: fixed;
-}
+} */
 
 /* .loans-jump-list {
 } */
@@ -106,6 +124,7 @@ let loans = historyStore.loans
     margin: 0 var(--table-horizontal-margin);
     
     border-collapse: collapse;
+    
 }
 
 th {

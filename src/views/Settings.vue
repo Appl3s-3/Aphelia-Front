@@ -1,18 +1,21 @@
 <script setup>
-let customReminder = false;
+import { useSettings } from '../store/useSettings'
+
+const settingsStore = useSettings()
+
 </script>
 
 <template>
     <div class="settings settings-container">
         <h2 class="apheleia">Settings</h2>
         <div class="settings-layout">
-            <div>
-                <ul>
-                    <li>
+            <div class="settings-list-container">
+                <ul class="settings-list">
+                    <li class="settings-list-item">
                         <label for="enable-notifications">Enable Notifications</label>
                         <input type="checkbox" name="enable-notifications" />
                     </li>
-                    <li>
+                    <li class="settings-list-item">
                         <label for="reminders">Remind me for overdue items</label>
                         <select name="reminders">
                             <option value="one">1 Day before</option>
@@ -27,7 +30,7 @@ let customReminder = false;
                             <p>Days before</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="settings-list-item">
                         <label for="notification-email">Send notifications to:</label>
                         <input
                             type="text"
@@ -36,16 +39,16 @@ let customReminder = false;
                             class="apheleia small-area text"
                         />
                     </li>
-                    <li>
+                    <li class="settings-list-item">
                         Mark email as important:
                         <input type="checkbox" name="enable-important-email" />
                     </li>
-                    <li>
+                    <li class="settings-list-item">
                         Theme
                         <input type="color" />
                         <!-- Probably a theme component otherwise this would be FAT -->
                     </li>
-                    <li id="submit-settings">
+                    <li class="settings-submit-container" id="submit-settings">
                         <button type="reset" class="apheleia reset">Reset to default</button>
                         <div>
                             <button type="button" class="apheleia cancel">Cancel</button>
@@ -61,43 +64,43 @@ let customReminder = false;
 </template>
 
 <style scoped>
-@import "../css/clean.css";
 
-h2 {
-    display: block;
-    border: 1px solid red;
-}
+/* .settings-list-container {
+} */
 
-div {
-    display: block;
-    border: 1px solid red;
-}
-
-ul {
-    padding: 0;
+.settings-list {
+    margin: 0 20%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-content: flex-start;
-    height: 100%;
-    border: 1px solid red;
 }
 
-li {
-    margin: 1px auto;
+.settings-list-item {
+    margin: auto auto 0.1em auto;
     padding: 20px;
-    width: 40%;
+    width: 100%;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-content: center;
-    border: 1px solid red;
+
+    background-color: var(--aph-dark2);
 }
 
-#submit-settings div {
-    margin: 0px;
-    padding: 0px;
+.settings-submit-container {
+    margin: 2em auto auto auto;
+    padding: 20px;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+
+    border: 1px solid red;
+    background-color: var(--aph-dark2);
 }
 
 input {
