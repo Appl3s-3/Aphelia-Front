@@ -1,31 +1,43 @@
 <script setup>
 import { useItems } from '../store/useItems'
-import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
+//import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 // import { useSettings } from '../store/useSettings'
 
 const itemStore = useItems()
 
-async function createPdf() {
-  const pdfDoc = await PDFDocument.create()
-  const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman)
+// async function createPdf() {
+//     // Create a new PDFDocument
+//     const pdfDoc = await PDFDocument.create()
 
-  const page = pdfDoc.addPage()
-  const { width, height } = page.getSize()
-  const fontSize = 30
-  page.drawText('Creating PDFs in JavaScript is awesome!', {
-    x: 50,
-    y: height - 4 * fontSize,
-    size: fontSize,
-    font: timesRomanFont,
-    color: rgb(0, 0.53, 0.71),
-  })
+//     // Embed the Times Roman font
+//     const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman)
 
-  const pdfBytes = await pdfDoc.save()
-}
+//     // Add a blank page to the document
+//     const page = pdfDoc.addPage()
 
-window.onload = function() {
-    // LATER: read The Stuff from cache (notifs, etc) make them red to show that they aren't updated
+//     // Get the width and height of the page
+//     const { width, height } = page.getSize()
+
+//     // Draw a string of text toward the top of the page
+//     const fontSize = 30
+//     page.drawText('Creating PDFs in JavaScript is awesome!', {
+//         x: 50,
+//         y: height - 4 * fontSize,
+//         size: fontSize,
+//         font: timesRomanFont,
+//         color: rgb(0, 0.53, 0.71),
+//     })
+
+//     // Serialize the PDFDocument to bytes (a Uint8Array)
+//     const pdfBytes = await pdfDoc.save()
     
+//     // Trigger the browser to download the PDF document
+//     download(pdfBytes, "pdf-lib_creation_example.pdf", "application/pdf");
+// }
+
+window.onload = function () {
+    // LATER: read The Stuff from cache (notifs, etc) make them red to show that they aren't updated
+
     // The Stuff (n): Refers to a large amount of data.
 
     // Request The Stuff
@@ -40,6 +52,7 @@ window.onload = function() {
         <!--  Appl3s: Any ideas for this layout? I keep thinking of canvas, but I kinda don't want to use the canvas layout-->
         <div class="dashboard-layout">
             <div class="dashboard-loans">
+                <input type="button" @click="createPdf()" value="Click me to create a PDF">
                 <h3>Current Loans</h3>
                 <div class="dashboard-loans-table-container">
                     <table class="dashboard-loans-table">
@@ -85,18 +98,19 @@ window.onload = function() {
                     </table>
                 </div>
             </div>
-            
+
             <div class="dashboard-notifications">
                 <h3>Notifications</h3>
                 <div class="dashboard-notifications-list-container">
                     <ul class="dashboard-notifications-list">
                         <li>(Archetype) (Item Name) is due soon! (Date Due)</li>
                         <li>Your request to extend the loan of (Item Name) was accepted.</li>
-                        <li>Did you know? The developers have misspelt Apheleia as 'Aphelia' about 99% of the time! (Including just now!)</li>
+                        <li>Did you know? The developers have misspelt Apheleia as 'Aphelia' about 99% of the time!
+                            (Including just now!)</li>
                     </ul>
                 </div>
             </div>
-        
+
             <div class="dashboard-history">
                 <h3>Loan History</h3>
                 <div>
@@ -160,7 +174,7 @@ window.onload = function() {
 }
 
 /* All divs in the layout grid */
-.dashboard-layout > div {
+.dashboard-layout>div {
     padding: var(--tile-inside-padding);
 }
 
@@ -187,7 +201,7 @@ window.onload = function() {
 /* .dashboard-notifications-list {
 } */
 
-.dashboard-notifications-list > li {
+.dashboard-notifications-list>li {
     padding: var(--notification-list-padding);
     margin: var(--notification-list-vertical-margin) auto;
 }

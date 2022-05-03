@@ -1,0 +1,69 @@
+/* Local Variables */
+.loans * {
+    --color-var: 0;
+}
+
+/* .loans-layout {
+} */
+
+
+/* Filters */
+
+.loans-filters-container {
+    background-color: var(--aph-dark2);
+}
+
+/* loans-filters-left and loans-filters-right (The children, which are divs, of the loans-fileters-container) */
+.loans-filters-container > div {
+    border: 1px solid blue;
+}
+
+/* .loans-filters-left {
+} */
+
+/* .loans-filters-right {
+} */
+
+.loans-filter {
+    border: 1px solid pink;
+}
+
+
+/* Jump List */
+.loans-jump-list-container {
+    background-color: var(--aph-dark2);
+}
+
+/* .loans-jump-list {
+} */
+
+/* .loans-jump-list-element-container {
+} */
+
+/* .loans-jump-list-element {
+} */
+
+/* ul {
+} */
+
+li {
+    margin: 20px 50px;
+    border: solid red 1px;
+}
+
+/* Table */
+
+.loans-table-container {
+    background-color: var(--aph-dark1a);
+}
+
+/* .loans-table {
+} */
+
+th {
+    background-color: var(--aph-dark2a);
+}
+
+td {
+    background-color: var(--aph-dark3a);
+}
