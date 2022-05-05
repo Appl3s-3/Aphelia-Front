@@ -15,6 +15,8 @@ import About from '../views/About.vue'
 
 import Scan from '../views/Scan.vue'
 
+import { handle_code } from '../scripts/auth'
+
 const routes = [
     { path: '/',              name: 'landing',       component: Landing       },
 
@@ -29,7 +31,9 @@ const routes = [
     { path: '/help',          name: 'help',          component: Help          },
     { path: '/about',         name: 'about',         component: About         },
 
-    { path: '/scan',          name: 'scan',          component: Scan          }
+    { path: '/scan',          name: 'scan',          component: Scan          },
+    // handles code then redirects back to landing page (bit of a hack)
+    { path: '/callback/:code?/:state?',          redirect: to => {handle_code(to); return {path: "/", query: {}}}},
 ]
 
 const router = createRouter({

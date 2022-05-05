@@ -14,7 +14,6 @@ window.onload = function() {
 
 <template>
     <div class="people people-container">
-        <h1>Users and Roles</h1>
         <div class="people-layout">
             <!--
             This whole page only displays if the client has permission to modify roles and user roles
@@ -66,14 +65,14 @@ window.onload = function() {
 
 /* Local Variables */
 .people * {
-    --outside-vertical-margin: 2.5%;
-    --outside-hotizontal-margin: 2.5%;
+    --outside-vertical-padding: 2.5%;
+    --outside-hotizontal-padding: 2.5%;
 
     --table-width: 100%;
 }
 
 .people-layout {
-    margin: var(--outside-vertical-margin) var(--outside-hotizontal-margin);
+    padding: var(--outside-vertical-padding) var(--outside-hotizontal-padding);
 }
 
 /* Users */
