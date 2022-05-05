@@ -30,13 +30,15 @@ export async function get_token(code) {
     let response = await fetch(authConfig.token_uri, {
         method: "POST",
         headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-        body: `?${Object.keys(clientConfig).map(x => `${x}=${clientConfig[x]}`).join("&")}&grant_type=authorization_code&code=${code}&state=${"token"}`}
+        body: `${Object.keys(clientConfig).map(x => `${x}=${clientConfig[x]}`).join("&")}&grant_type=authorization_code&code=${code}`}
         ).catch(e => console.log(e));
     // Construct address from auth_uri, this is almost the same as login
     // Gets keys from the clientConfig, maps them to a string: "key=value" then joins all the strings with "&"
     // Then appends the state & code
     //var uri = `${authConfig["token_uri"]}?${Object.keys(clientConfig).map(x => `${x}=${clientConfig[x]}`).join("&")}&grant_type=authorization_code&code=${code}&state=${"token"}`;
-    console.log(response.json())
+    let tokens = await response.json();
+    console.log("response:");
+    console.log(tokens);
 }
 
 export function login() {
