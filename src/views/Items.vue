@@ -1,5 +1,5 @@
 <script setup>
-import { useInventory } from '../store/useItems'
+import { useInventory } from '../store/useInventory'
 
 const inventoryStore = useInventory()
 

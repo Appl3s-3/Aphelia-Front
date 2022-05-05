@@ -1,9 +1,7 @@
 <script setup>
-import { useHistory } from '../store/useHistory'
+import { useSelf } from '../store/useSelf'
 
-const historyStore = useHistory()
-
-let notifications = historyStore.notifications
+const selfStore = useSelf()
 </script>
 
 <template>
@@ -13,7 +11,7 @@ let notifications = historyStore.notifications
             </div>
             <div class="notifications-list-container">
                 <ul>
-                    <li v-for="notification in notifications">{{ notification }}</li>
+                    <li v-for="notification in selfStore.history.notifications">{{ notification }}</li>
                 </ul>
             </div>
         </div>

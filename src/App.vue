@@ -2,19 +2,25 @@
 import { RouterLink, RouterView } from 'vue-router'
 
 import NavigationBar from './components/NavigationBar.vue'
+import TopNavigationBar from './components/TopNavigationBar.vue'
 
-let showNavigationBar = true
-// TODO: If the router is on the landing page, set the variable above to false
+// TODO: Hide nav bar on landing page
 console.log(RouterLink)
 if (RouterLink) {
 }
+
+let showNavigationBar = true
+let useTopNav = false
+let useLeftBar = showNavigationBar && !useTopNav
+let useTopBar = showNavigationBar && useTopNav
 </script>
 
 <template>
     <div class="app-wrapper">
         <div class="app">
-            <NavigationBar v-if="showNavigationBar" />
-            <main :class="{shift: showNavigationBar}">
+            <NavigationBar v-if="useLeftBar" />
+            <TopNavigationBar v-if="useTopBar" />
+            <main :class="{ shift: useLeftBar, topshift: useTopBar }">
                 <RouterView />
             </main>
         </div>
@@ -40,5 +46,9 @@ if (RouterLink) {
 
 .shift {
     padding-left: 66px;
+}
+
+.topshift {
+    margin-top: 50px;
 }
 </style>

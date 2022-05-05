@@ -1,7 +1,4 @@
 <script setup>
-// see pinia stuff in Items.vue
-// u might want to make a generalStore or something for the toggle
-
 import { reactive } from 'vue'
 
 const state = reactive({ expandNavBar: false })

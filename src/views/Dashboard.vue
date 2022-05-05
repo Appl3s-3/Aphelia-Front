@@ -1,5 +1,5 @@
 <script setup>
-import { useInventory } from '../store/useItems'
+import { useInventory } from '../store/useInventory'
 import { useSelf } from '../store/useSelf'
 //import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 // import { useSettings } from '../store/useSettings'
