@@ -1,7 +1,7 @@
 <script setup>
-import { useHistory } from '../store/useHistory'
+import { useSelf } from '../store/useSelf'
 
-const historyStore = useHistory()
+const selfStore = useSelf()
 
 </script>
 
@@ -19,7 +19,7 @@ const historyStore = useHistory()
                         <th>Return Date</th>
                         <th>Info</th>
                     </tr>
-                    <tr v-for="loan in historyStore.loans">
+                    <tr v-for="loan in selfStore.history.loans">
                         <td>{{ loan }}</td>
                         <td>{{ loan }}</td>
                         <td>{{ loan }}</td>

@@ -1,11 +1,11 @@
 <script setup>
-import { useItems } from '../store/useItems'
-import { useHistory } from '../store/useHistory'
+import { useInventory } from '../store/useItems'
+import { useSelf } from '../store/useSelf'
 //import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 // import { useSettings } from '../store/useSettings'
 
-const itemStore = useItems()
-const historyStore = useHistory()
+const inventoryStore = useInventory()
+const selfStore = useSelf()
 
 // async function createPdf() {
 //     // Create a new PDFDocument
@@ -105,7 +105,7 @@ window.onload = function () {
                 <h3>Notifications</h3>
                 <div class="dashboard-notifications-list-container">
                     <ul class="dashboard-notifications-list">
-                        <li v-for="notification in historyStore.notifications">{{ notification }}</li>
+                        <li v-for="notification in selfStore.history.notifications">{{ notification }}</li>
                     </ul>
                 </div>
             </div>
