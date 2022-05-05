@@ -1,7 +1,7 @@
 <script setup>
-import { useSettings } from '../store/useSettings'
+import { useSelf } from '../store/useSelf'
 
-const settingsStore = useSettings()
+const selfStore = useSelf()
 
 </script>
 

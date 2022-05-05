@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useItems = defineStore('itemStore', {
+export const useInventory = defineStore('inventoryStore', {
     state: () => {
         return {
             schemes: [

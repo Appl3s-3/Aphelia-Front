@@ -1,7 +1,7 @@
 <script setup>
-import { useItems } from '../store/useItems'
+import { useInventory } from '../store/useItems'
 
-const itemStore = useItems()
+const inventoryStore = useInventory()
 
 window.onload = function() {
     // Request all the archetypes from the faculty
@@ -82,12 +82,12 @@ let headingIndex = 0
             <div class="items-jump-list-container">
                 <h2>Jump to...</h2>
                 <ul class="items-jump-list">
-                    <li class="items-jump-list-element-container" v-for="scheme in itemStore.schemes">
+                    <li class="items-jump-list-element-container" v-for="scheme in inventoryStore.schemes">
                         <a class="items-jump-list-element" :href="'#' + scheme.id">{{ scheme.name }}</a>
                     </li>
                 </ul>
             </div>
-            <div class="items-table-container" v-for="scheme in itemStore.schemes">
+            <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
                 <h2 :id="scheme.id">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
                 <!-- Container for the list of items -->
                 <table class="items-table">
