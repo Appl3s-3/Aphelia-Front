@@ -25,7 +25,7 @@ export function handle_code(params) {
     }
 }
 
-export function get_token(code) {
+export async function get_token(code) {
     // With help from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
     let response = await fetch(authConfig.token_uri, {
         method: "POST",
