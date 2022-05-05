@@ -3,8 +3,6 @@ import { usePeople } from '../store/usePeople'
 
 const peopleStore = usePeople()
 
-let tempUsers = peopleStore.tempUsers
-
 window.onload = function() {
     // Request all the users from the faculty
     // Request all the roles from the faculty
@@ -36,19 +34,17 @@ window.onload = function() {
                     <h1>Users</h1>
                     <table class="people-user-table">
                         <tr>
-                            <th>ID</th>
+                            <th>Internal ID</th>
+                            <th>School ID</th>
                             <th>Name</th>
-                            <th>Class</th>
+                            <th>Info</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Me myself and I</td>
-                            <td>Class of 2022</td>
+                        <tr v-for="user in peopleStore.tempUsers" :key="user.internal_id">
+                            <td>{{ user.internal_id }}</td>
+                            <td>{{ user.school_id }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.info }}</td>
                         </tr>
-                        <li v-for="user in tempUsers" :key="user.user_id">
-                            {{ user.text }}
-                            <!-- <button @click="removeTodo(todo)">X</button> -->
-                        </li>
                     </table>
                 </div>
             </div>

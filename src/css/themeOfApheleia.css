@@ -1,11 +1,11 @@
 :root {
-    --aph-dark1: rgb(10, 10, 10);
-    --aph-dark2: rgb(14, 14, 14);
-    --aph-dark3: rgb(18, 18, 18);
+    --aph-dark1: rgb(12, 12, 12);
+    --aph-dark2: rgb(24, 24, 24);
+    --aph-dark3: rgb(32, 32, 32);
 
-    --aph-dark1a: rgba(10, 10, 10, 0.9);
-    --aph-dark2a: rgba(14, 14, 14, 0.85);
-    --aph-dark3a: rgba(18, 18, 18, 0.8);
+    --aph-dark1a: rgba(12, 12, 12, 0.8);
+    --aph-dark2a: rgba(24, 24, 24, 0.75);
+    --aph-dark3a: rgba(32, 32, 32, 0.6);
 
 
     --aph-light1: rgb(220, 220, 220);
