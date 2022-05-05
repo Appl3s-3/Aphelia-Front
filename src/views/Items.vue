@@ -28,57 +28,13 @@ let headingIndex = 0
 
 <template>
     <div class="items items-container">
-        <h2>Items</h2>
         <!-- Appl3s: I can't find a way to make checkboxes enabled by default -->
         <div class="items-layout">
             <!-- Archetypes go here -->
             <!-- <div class="items-archetypes-container">
                 
             </div>
-            -->
-            <div class="items-filters-container">
-                <!-- Sorting, searching and filtering -->
-                <div class="items-filters-left">
-                    <!-- Select whether to whitelist or blacklist the following list -->
-                    <select class="items-" name="items-whitelist">
-                        <option value="whitelist">Whitelist (Show only...)</option>
-                        <option value="blacklist">Blacklist (Hide only...)</option>
-                    </select>
-        
-                    <!-- List of items to filter according to the above select -->
-                    <ul class="items-filter items-type-filter-container">
-                        <!-- Generate list of archetypes here -->
-                        <li>
-                            <label class="items-type-filter" for="items-archetype-type">Archetype Type</label>
-                            <input class="items-type-filter" type="checkbox" name="items-archetype-type">
-                        </li>
-                        <li>
-                            <label class="items-type-filter" for="items-archetype-type">Archetype Type</label>
-                            <input class="items-type-filter" type="checkbox" name="items-archetype-type">
-                        </li>
-                        <li>
-                            <label class="items-type-filter" for="items-archetype-type">Archetype Type</label>
-                            <input class="items-type-filter" type="checkbox" name="items-archetype-type">
-                        </li>
-                    </ul>
-        
-                    <!-- I don't know -->
-                    <!-- <select class="items-filter" name="item-field-to-sort-by"> -->
-                        <!-- Generate Item fields here-->
-                        <!-- <option value="temp">field</option>
-                        <option value="temp">field</option>
-                    </select> -->
-                </div>
-                <div class="items-filters-right">
-                    <div>
-                        <label class="items-filter" for="items-show-internal-id">Show Internal ID</label>
-                        <input class="items-filter" type="checkbox" name="items-show-internal-id">
-                    </div>
-        
-                    <!-- Searching -->
-                    <input class="items-filter" type="text" name="items-search" placeholder="Search">
-                </div>
-            </div>
+        -->
             <div class="items-jump-list-container">
                 <h2>Jump to...</h2>
                 <ul class="items-jump-list">

@@ -8,7 +8,6 @@ let notifications = historyStore.notifications
 
 <template>
     <div class="notifications notifications-container">
-        <h2 class="apheleia">Notifications</h2>
         <div class="notifications-layout">
             <div class="notifications-filters-container">
             </div>

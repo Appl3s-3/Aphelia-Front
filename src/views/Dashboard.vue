@@ -50,7 +50,7 @@ window.onload = function () {
 
 <template>
     <div class="dashboard dashboard-container">
-        <h2>Dashboard</h2>
+        
         <!--  Appl3s: Any ideas for this layout? I keep thinking of canvas, but I kinda don't want to use the canvas layout-->
         <div class="dashboard-layout">
             <div class="dashboard-loans">
@@ -147,7 +147,7 @@ window.onload = function () {
 
 /* Local Variables */
 .dashboard * {
-    --tiles-outside-margin: 2.5%;
+    --tiles-outside-padding: 2.5%;
     --tiles-gap: 0.1em;
     --tiles-row-one-height: 50vh;
     --tiles-row-two-height: 39vh;
@@ -165,7 +165,7 @@ window.onload = function () {
 }
 
 .dashboard-layout {
-    margin: var(--tiles-outside-margin);
+    padding: var(--tiles-outside-padding);
 
     display: grid;
     grid-template: var(--tiles-row-one-height) var(--tiles-row-two-height) / var(--tiles-column-one-width) auto;

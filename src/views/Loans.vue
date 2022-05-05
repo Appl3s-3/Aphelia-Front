@@ -7,18 +7,7 @@ const historyStore = useHistory()
 
 <template>
     <div class="loans loans-container">
-        <h2 class="apheleia">Loans Archive</h2>
         <div class="loans-layout">
-            <div class="loans-information-container">
-                <p>You have loaned 8 items in the past.</p>
-                <p>You have loaned 3 items in the past year.</p>
-                <p>Total Overdue Returns:</p>
-                <p>0. Well done!</p>
-                <p>3. You should track your belongings more carefully.</p>
-                <p>10. This number is worrying.</p>
-                <p>25! What are you doing?! Manage your stuff properly!</p>
-                <p>50! Thank you for using our application, but you should know that its original purpose was to manage your items.</p>
-            </div>
             <div class="loans-table-container">
                 <table class="loans-table">
                     <tr>
