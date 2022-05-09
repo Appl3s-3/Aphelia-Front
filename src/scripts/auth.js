@@ -29,7 +29,7 @@ async function create_code_challenge() {
     let hash;
     await crypto.subtle.digest('SHA-256', data).then(res => hash=res).catch(e => console.log(e));
     let hashString = "";
-    for (const i of Uint8Array(hash)) {
+    for (const i of new Uint8Array(hash)) {
         hashString += String.fromCharCode(i);
     }
 
@@ -88,7 +88,7 @@ export async function get_token(code) {
 export async function login() {
     var [codeVerifier, codeChallenge] = await create_code_challenge();
     console.log("verifier: " + codeVerifier);
-    console.log("callenge: " + codeChallenge);
+    console.log("challenge: " + codeChallenge);
     window.sessionStorage.setItem("codeVerifier", codeVerifier);
     // Construct address from auth_uri
     // Gets keys from the clientConfig, maps them to a string: "key=value" then joins all the strings with "&"
