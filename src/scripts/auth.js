@@ -57,7 +57,6 @@ export function handle_code(params) {
 
 export async function get_token(code) {
     // With help from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
-    //const body = `grant_type=authorization_code&redirect_uri=${clientConfig.redirect_uri}&client_id=${clientConfig.client_id}&code=${code}`
     const body = stringify({
         code_verifier: window.sessionStorage.getItem("codeVerifier"),
         grant_type: "authorization_code",
@@ -86,8 +85,8 @@ export async function login() {
     // Then appends the state
     var state = gen_state();
     localStorage.setItem("authState", state);
-    //var uri = `${authConfig["auth_uri"]}?${Object.keys(clientConfig).map(x => `${x}=${clientConfig[x]}`).join("&")}&response_type=code&state=${state}`;
-    var uri = authConfig["auth_uri"] + stringify({
+    
+    var uri = authConfig["auth_uri"] + "?" + stringify({
         client_id: clientConfig.client_id,
         redirect_uri: clientConfig.redirect_uri,
         scope: clientConfig.scope,
