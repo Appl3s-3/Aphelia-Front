@@ -7,9 +7,11 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "client-oauth2": "^4.3.3",
     "pdf-lib": "^1.17.1",
     "pinia": "^2.0.13",
+    "querystring": "^0.2.1",
     "vite": "^2.9.5",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
