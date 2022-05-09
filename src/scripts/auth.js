@@ -78,6 +78,8 @@ export async function get_token(code) {
 
 export function login() {
     var [codeVerifier, codeChallenge] = create_code_challenge();
+    console.log("verifier: " + codeVerifier);
+    console.log("callenge: " + codeChallenge);
     window.sessionStorage.setItem("codeVerifier", codeVerifier);
     // Construct address from auth_uri
     // Gets keys from the clientConfig, maps them to a string: "key=value" then joins all the strings with "&"
