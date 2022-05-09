@@ -18,7 +18,7 @@ async function create_code_challenge() {
     var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890";
     var len = 10;
     for (var i = 0; i < len; i++) {
-        out += chars[Math.floor(Math.random() * 62)];
+        out += chars[Math.floor(Math.random() * chars.length)];
     }
 
     var digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(out));
@@ -31,7 +31,7 @@ function gen_state() {
     var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ";
     var len = 10;
     for (var i = 0; i < len; i++) {
-        out += chars[Math.floor(Math.random() * 52)];
+        out += chars[Math.floor(Math.random() * chars.length)];
     }
     return out;
 }
@@ -85,7 +85,7 @@ export async function login() {
     // Then appends the state
     var state = gen_state();
     localStorage.setItem("authState", state);
-    
+
     var uri = authConfig["auth_uri"] + "?" + stringify({
         client_id: clientConfig.client_id,
         redirect_uri: clientConfig.redirect_uri,
