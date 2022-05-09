@@ -13,7 +13,7 @@ const clientConfig = {
     scope: "all-ro"
 }
 
-function create_code_challenge() {
+async function create_code_challenge() {
     var out = "";
     var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890";
     var len = 10;
@@ -76,8 +76,8 @@ export async function get_token(code) {
     console.log(tokens);
 }
 
-export function login() {
-    var [codeVerifier, codeChallenge] = create_code_challenge();
+export async function login() {
+    var [codeVerifier, codeChallenge] = await create_code_challenge();
     console.log("verifier: " + codeVerifier);
     console.log("callenge: " + codeChallenge);
     window.sessionStorage.setItem("codeVerifier", codeVerifier);
