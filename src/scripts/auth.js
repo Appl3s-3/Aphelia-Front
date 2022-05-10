@@ -18,19 +18,21 @@ async function create_code_challenge() {
     var out = "";
     var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890-_.~";
     var len = 64;
+    // Generate random string
     for (var i = 0; i < len; i++) {
         out += chars[Math.floor(Math.random() * chars.length)];
     }
 
     // Challenge
     // some code borrowed from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
+    // Hash verifier
     async function sha256(plain) {
         const encoder = new TextEncoder()
         const data = encoder.encode(plain)
         
         return window.crypto.subtle.digest('SHA-256', data)
     }
-    
+    // Base 64 encode hashed verifier
     function base64urlencode(a) {
         return window.btoa(String.fromCharCode.apply(null, new Uint8Array(a))).replaceAll("=", "").replaceAll("+", "-").replaceAll("/", "_")
     }
@@ -60,17 +62,11 @@ export function handle_code(params) {
     } else { // good state
         let code = params.query.code;
         get_token(code);
-        /*
-        let accessToken = params.query.access_token;
-        let refreshToken = params.query.refresh_token;
-        // store tokens in localStorage
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("refreshToken", refreshToken);
-        */
     }
 }
 
 export async function refresh_token() {
+    // Sends a post request to the token endpoint
     var expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
     if (expiry <= new Date(Date.now())) { // Need new token
         var refreshToken = localStorage.getItem("refreshToken");
@@ -95,6 +91,7 @@ export async function refresh_token() {
 }
 
 export async function get_token(code) {
+    // Sends a post request to the token endpoint
     // With help from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
     console.log("after redirect verif: " + localStorage.getItem("codeVerifier"))
     const body = stringify({
