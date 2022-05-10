@@ -65,6 +65,7 @@ export async function handle_code(params) {
         get_token(code);
         // get user id and store it
         var id = await get_id();
+        console.log("ID: " + id);
         if (id !== null) {
             sessionStorage["userId"] = id;
         }
