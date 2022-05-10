@@ -43,8 +43,9 @@ let headingIndex = 0
                     </li>
                 </ul>
             </div>
+
             <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
-                <h2 :id="scheme.id">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
+                <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
                 <!-- Container for the list of items -->
                 <table class="items-table">
                     <tr>
@@ -68,6 +69,7 @@ let headingIndex = 0
     --filter-horizontal-margin: 15px;
 
     --table-horizontal-margin: 20px;
+    --table-vertical-padding: 20px;
 
     --table-heading-vertical-padding: 28px;
 
@@ -131,6 +133,12 @@ let headingIndex = 0
 
 .items-table-container {
     margin: 0 auto;
+    padding: var(--table-vertical-padding) 0;
+}
+
+.table-titles {
+    color: var(--aph-dark2);
+    margin: 0 var(--table-horizontal-margin);
 }
 
 .items-table {
