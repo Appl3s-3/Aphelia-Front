@@ -1,6 +1,7 @@
 import "https"
 import "querystring"
 import { stringify } from "querystring";
+import { get_id } from "./apiRequester";
 
 const authConfig = {
     auth_uri: "https://student.sbhs.net.au/api/authorize",
@@ -62,6 +63,11 @@ export function handle_code(params) {
     } else { // good state
         let code = params.query.code;
         get_token(code);
+        // get user id and store it
+        var id = get_id();
+        if (id !== null) {
+            sessionStorage["userId"] = id;
+        }
     }
 }
 
