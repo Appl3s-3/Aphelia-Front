@@ -55,7 +55,7 @@ function gen_state() {
 export function handle_code(params) {
     // check state
     let state = params.query.state;
-    if (state != window.localStorage.getItem("authState")) {
+    if (state != localStorage.getItem("authState")) {
         console.log("bad state")
     } else { // good state
         let code = params.query.code;
@@ -64,17 +64,41 @@ export function handle_code(params) {
         let accessToken = params.query.access_token;
         let refreshToken = params.query.refresh_token;
         // store tokens in localStorage
-        window.localStorage.setItem("accessToken", accessToken);
-        window.localStorage.setItem("refreshToken", refreshToken);
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
         */
+    }
+}
+
+export async function refresh_token() {
+    var expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
+    if (expiry <= new Date(Date.now())) { // Need new token
+        var refreshToken = localStorage.getItem("refreshToken");
+        const body = stringify({
+            grant_type: "refresh_token",
+            client_id: clientConfig.client_id,
+            refresh_token: refreshToken,
+        })
+        let response = await fetch(authConfig.token_uri, {
+            method: "POST",
+            headers: {"Content-type": "application/json; charset=UTF-8"},
+            body: body}
+            ).catch(e => console.log(e));
+            
+        let tokens = await response.json();
+        console.log("response:");
+        console.log(tokens);
+        localStorage.setItem("accessToken", tokens.access_token);
+        localStorage.setItem("accessTokenExpiry", new Date(Date.now() + (response.expires_in - 5)*1000)); // creates date now + 1h - 5 seconds
+        localStorage.setItem("refreshToken", tokens.refresh_token);
     }
 }
 
 export async function get_token(code) {
     // With help from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
-    console.log("after redirect verif: " + window.localStorage.getItem("codeVerifier"))
+    console.log("after redirect verif: " + localStorage.getItem("codeVerifier"))
     const body = stringify({
-        code_verifier: window.localStorage.getItem("codeVerifier"),
+        code_verifier: localStorage.getItem("codeVerifier"),
         grant_type: "authorization_code",
         redirect_uri: clientConfig.redirect_uri,
         client_id: clientConfig.client_id,
@@ -89,18 +113,21 @@ export async function get_token(code) {
     let tokens = await response.json();
     console.log("response:");
     console.log(tokens);
+    localStorage.setItem("accessToken", tokens.access_token);
+    localStorage.setItem("accessTokenExpiry", new Date(Date.now() + (response.expires_in - 5)*1000)); // creates date now + 1h - 5 seconds
+    localStorage.setItem("refreshToken", tokens.refresh_token);
 }
 
 export async function login() {
     var [codeVerifier, codeChallenge] = await create_code_challenge();
     console.log("verifier: " + codeVerifier);
     console.log("challenge: " + codeChallenge);
-    window.localStorage.setItem("codeVerifier", codeVerifier);
+    localStorage.setItem("codeVerifier", codeVerifier);
     // Construct address from auth_uri
     // Gets keys from the clientConfig, maps them to a string: "key=value" then joins all the strings with "&"
     // Then appends the state
     var state = gen_state();
-    window.localStorage.setItem("authState", state);
+    localStorage.setItem("authState", state);
 
     var uri = authConfig["auth_uri"] + "?" + stringify({
         client_id: clientConfig.client_id,
