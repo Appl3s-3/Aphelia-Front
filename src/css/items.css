@@ -43,18 +43,21 @@
 /* .items-jump-list-element {
 } */
 
+.items-jump-list-element:visited {
+    color: white;
+}
+
 /* ul {
 } */
 
 li {
     margin: 20px 50px;
-    border: solid red 1px;
 }
 
 /* Table */
 
 .items-table-container {
-    background-color: var(--aph-dark1a);
+    /* background-color: var(--aph-dark1a); */
 }
 
 /* .items-table {
