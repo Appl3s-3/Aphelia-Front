@@ -16,8 +16,8 @@ const clientConfig = {
 async function create_code_challenge() {
     // Verifier
     var out = "";
-    var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890";
-    var len = 10;
+    var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890-_.~";
+    var len = 64;
     for (var i = 0; i < len; i++) {
         out += chars[Math.floor(Math.random() * chars.length)];
     }
@@ -32,8 +32,7 @@ async function create_code_challenge() {
     }
     
     function base64urlencode(a) {
-        return window.btoa(String.fromCharCode.apply(null, new Uint8Array(a))
-        .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''))
+        return window.btoa(String.fromCharCode.apply(null, new Uint8Array(a))).replaceAll("=", "").replaceAll("+", "-").replaceAll("/", "_")
     }
     
     const hashed = await sha256(out)
