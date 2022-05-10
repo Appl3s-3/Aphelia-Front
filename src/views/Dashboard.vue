@@ -36,16 +36,6 @@ const selfStore = useSelf()
 //     // Trigger the browser to download the PDF document
 //     download(pdfBytes, "pdf-lib_creation_example.pdf", "application/pdf");
 // }
-
-window.onload = function () {
-    // LATER: read The Stuff from cache (notifs, etc) make them red to show that they aren't updated
-
-    // The Stuff (n): Refers to a large amount of data.
-
-    // Request The Stuff
-    // Parse The Stuff
-    // Display The Stuff
-}
 </script>
 
 <template>

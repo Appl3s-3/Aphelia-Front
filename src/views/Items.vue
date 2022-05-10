@@ -3,12 +3,31 @@ import { useInventory } from '../store/useInventory'
 
 const inventoryStore = useInventory()
 
-window.onload = function() {
-    // Request all the archetypes from the faculty
-    // Request all the items for each archetype from the faculty
-    // Parse the items
-    // Display the items
-}
+let fieldToSort = []
+
+// Loop through the schemes and append {field, direction} to fieldToSort[]
+inventoryStore.schemes.forEach(scheme => fieldToSortBy.push({
+    field: scheme.fieldNames[0],
+    direction: 0
+}))
+
+// const sort = (s) => {
+//     if (s === this.currentSort) {
+//         this.currentSortDir = this.currentSortDir === 'asc' ? 'desc' : 'asc';
+//     }
+//     this.currentSort = s;
+// }
+
+// const sortedCats = () => {
+//     return this.cats.sort((a, b) => {
+//         let modifier = 1;
+//         if (this.currentSortDir === 'desc') modifier = -1;
+//         if (a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
+//         if (a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
+//         return 0;
+//     });
+// }
+
 
 let headingIndex = 0
 //let tempItems = []
@@ -32,9 +51,8 @@ let headingIndex = 0
         <div class="items-layout">
             <!-- Archetypes go here -->
             <!-- <div class="items-archetypes-container">
-                
             </div>
-        -->
+            -->
             <div class="items-jump-list-container">
                 <h2>Jump to...</h2>
                 <ul class="items-jump-list">
@@ -47,12 +65,16 @@ let headingIndex = 0
                 <h2 :id="scheme.id">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
                 <!-- Container for the list of items -->
                 <table class="items-table">
-                    <tr>
-                        <th v-for="fieldName in scheme.fieldNames">{{ fieldName }}</th>
-                    </tr>
-                    <tr v-for="item in scheme.items">
-                        <td v-for="field in item">{{ field }}</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th v-for="fieldName in scheme.fieldNames">{{ fieldName }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in scheme.items">
+                            <td v-for="field in item">{{ field }}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -95,7 +117,7 @@ let headingIndex = 0
 }
 
 /* items-filters-left and items-filters-right (The children, which are divs, of the items-filters-container) */
-.items-filters-container > div {
+.items-filters-container>div {
     display: inline-flex;
     flex-flow: row nowrap;
 }
@@ -134,9 +156,10 @@ let headingIndex = 0
 }
 
 .items-table {
-    width: 70vw; /* TODO: Change the width based off the number of item fields */
+    width: 70vw;
+    /* TODO: Change the width based off the number of item fields */
     margin: 0 var(--table-horizontal-margin);
-    
+
     border-collapse: collapse;
 }
 
