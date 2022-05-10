@@ -50,7 +50,7 @@ function gen_state() {
 export function handle_code(params) {
     // check state
     let state = params.query.state;
-    if (state != localStorage.getItem("authState")) {
+    if (state != window.localStorage.getItem("authState")) {
         console.log("bad state")
     } else { // good state
         let code = params.query.code;
@@ -67,8 +67,9 @@ export function handle_code(params) {
 
 export async function get_token(code) {
     // With help from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
+    console.log("after redirect verif: " + window.localStorage.getItem("codeVerifier"))
     const body = stringify({
-        code_verifier: window.sessionStorage.getItem("codeVerifier"),
+        code_verifier: window.localStorage.getItem("codeVerifier"),
         grant_type: "authorization_code",
         redirect_uri: clientConfig.redirect_uri,
         client_id: clientConfig.client_id,
@@ -89,12 +90,12 @@ export async function login() {
     var [codeVerifier, codeChallenge] = await create_code_challenge();
     console.log("verifier: " + codeVerifier);
     console.log("challenge: " + codeChallenge);
-    window.sessionStorage.setItem("codeVerifier", codeVerifier);
+    window.localStorage.setItem("codeVerifier", codeVerifier);
     // Construct address from auth_uri
     // Gets keys from the clientConfig, maps them to a string: "key=value" then joins all the strings with "&"
     // Then appends the state
     var state = gen_state();
-    localStorage.setItem("authState", state);
+    window.localStorage.setItem("authState", state);
 
     var uri = authConfig["auth_uri"] + "?" + stringify({
         client_id: clientConfig.client_id,
