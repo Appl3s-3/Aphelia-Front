@@ -3,7 +3,7 @@ async function get_user_info() {
     var accessToken = localStorage["accessToken"];
     var accessTokenExpiry = localStorage["accessTokenExpiry"];
     console.log("Access Token: " + accessToken)
-    console.log("Access Token Expiry: " + new Date(Date.parse(accessTokenExpiry)).toString())
+    console.log("Access Token Expiry: " + accessTokenExpiry)
     if (accessToken !== null && accessTokenExpiry !== null) { // Token exists
         if (new Date(Date.parse(accessTokenExpiry)) > new Date(Date.now())) { // Token is still valid
             let response = await fetch(uri, {
