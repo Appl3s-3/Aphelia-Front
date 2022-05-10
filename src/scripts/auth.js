@@ -24,16 +24,22 @@ async function create_code_challenge() {
 
     // Challenge
     // some code borrowed from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
-    const encoder = new TextEncoder();
-    const data = encoder.encode(out);
-    let hash;
-    await crypto.subtle.digest('SHA-256', data).then(res => hash=res).catch(e => console.log(e));
-    let hashString = "";
-    for (const i of new Uint8Array(hash)) {
-        hashString += String.fromCharCode(i);
+    async function sha256(plain) {
+        const encoder = new TextEncoder()
+        const data = encoder.encode(plain)
+        
+        return window.crypto.subtle.digest('SHA-256', data)
     }
+    
+    function base64urlencode(a) {
+        return window.btoa(String.fromCharCode.apply(null, new Uint8Array(a))
+        .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''))
+    }
+    
+    const hashed = await sha256(out)
+    const codeChallenge = base64urlencode(hashed)
 
-    return [out, window.btoa(hashString).replaceAll("=", "").replaceAll("+", "-").replaceAll("/", "_")];
+    return [out, codeChallenge];
 }
 
 function gen_state() {
