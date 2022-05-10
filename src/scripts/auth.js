@@ -1,6 +1,7 @@
 import "https"
 import "querystring"
 import { stringify } from "querystring";
+import { get_id } from "./apiRequester";
 
 const authConfig = {
     auth_uri: "https://student.sbhs.net.au/api/authorize",
@@ -10,7 +11,7 @@ const authConfig = {
 const clientConfig = {
     client_id: "apheleia",
     redirect_uri: "https://apheleia.pages.dev/callback",
-    scope: "all-ro"
+    scope: "all-ro" // "all read-only" (only scope)
 }
 
 async function create_code_challenge() {
@@ -18,19 +19,21 @@ async function create_code_challenge() {
     var out = "";
     var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890-_.~";
     var len = 64;
+    // Generate random string
     for (var i = 0; i < len; i++) {
         out += chars[Math.floor(Math.random() * chars.length)];
     }
 
     // Challenge
     // some code borrowed from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
+    // Hash verifier
     async function sha256(plain) {
         const encoder = new TextEncoder()
         const data = encoder.encode(plain)
         
         return window.crypto.subtle.digest('SHA-256', data)
     }
-    
+    // Base 64 encode hashed verifier
     function base64urlencode(a) {
         return window.btoa(String.fromCharCode.apply(null, new Uint8Array(a))).replaceAll("=", "").replaceAll("+", "-").replaceAll("/", "_")
     }
@@ -52,7 +55,7 @@ function gen_state() {
 }
 
 
-export function handle_code(params) {
+export async function handle_code(params) {
     // check state
     let state = params.query.state;
     if (state != localStorage.getItem("authState")) {
@@ -60,17 +63,17 @@ export function handle_code(params) {
     } else { // good state
         let code = params.query.code;
         get_token(code);
-        /*
-        let accessToken = params.query.access_token;
-        let refreshToken = params.query.refresh_token;
-        // store tokens in localStorage
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("refreshToken", refreshToken);
-        */
+        // get user id and store it
+        var id = await get_id();
+        console.log("ID: " + id);
+        if (id !== null) {
+            sessionStorage["userId"] = id;
+        }
     }
 }
 
 export async function refresh_token() {
+    // Sends a post request to the token endpoint
     var expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
     if (expiry <= new Date(Date.now())) { // Need new token
         var refreshToken = localStorage.getItem("refreshToken");
@@ -89,12 +92,13 @@ export async function refresh_token() {
         console.log("response:");
         console.log(tokens);
         localStorage.setItem("accessToken", tokens.access_token);
-        localStorage.setItem("accessTokenExpiry", new Date(Date.now() + (response.expires_in - 5)*1000)); // creates date now + 1h - 5 seconds
+        localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (response.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
         localStorage.setItem("refreshToken", tokens.refresh_token);
     }
 }
 
 export async function get_token(code) {
+    // Sends a post request to the token endpoint
     // With help from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
     console.log("after redirect verif: " + localStorage.getItem("codeVerifier"))
     const body = stringify({
@@ -114,7 +118,9 @@ export async function get_token(code) {
     console.log("response:");
     console.log(tokens);
     localStorage.setItem("accessToken", tokens.access_token);
-    localStorage.setItem("accessTokenExpiry", new Date(Date.now() + (response.expires_in - 5)*1000)); // creates date now + 1h - 5 seconds
+    console.log("Expires in: " + response.expires_in)
+    console.log((new Date(Date.now() + (response.expires_in - 5)*1000)).toString());
+    localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (response.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
     localStorage.setItem("refreshToken", tokens.refresh_token);
 }
 
