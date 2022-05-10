@@ -55,7 +55,7 @@ function gen_state() {
 }
 
 
-export function handle_code(params) {
+export async function handle_code(params) {
     // check state
     let state = params.query.state;
     if (state != localStorage.getItem("authState")) {
@@ -64,7 +64,7 @@ export function handle_code(params) {
         let code = params.query.code;
         get_token(code);
         // get user id and store it
-        var id = get_id();
+        var id = await get_id();
         if (id !== null) {
             sessionStorage["userId"] = id;
         }
