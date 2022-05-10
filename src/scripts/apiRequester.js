@@ -2,7 +2,8 @@ async function get_user_info() {
     const uri = "https://student.sbhs.net.au/api/details/userinfo.json";
     var accessToken = localStorage["accessToken"];
     var accessTokenExpiry = localStorage["accessTokenExpiry"];
-
+    console.log("Access Token: " + accessToken)
+    console.log("Access Token Expiry: " + new Date(Date.parse(accessTokenExpiry)).toString())
     if (accessToken !== null && accessTokenExpiry !== null) { // Token exists
         if (new Date(Date.parse(accessTokenExpiry)) > new Date(Date.now())) { // Token is still valid
             let response = await fetch(uri, {

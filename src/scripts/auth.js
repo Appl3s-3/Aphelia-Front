@@ -11,7 +11,7 @@ const authConfig = {
 const clientConfig = {
     client_id: "apheleia",
     redirect_uri: "https://apheleia.pages.dev/callback",
-    scope: "all-ro"
+    scope: "all-ro" // "all read-only" (only scope)
 }
 
 async function create_code_challenge() {
