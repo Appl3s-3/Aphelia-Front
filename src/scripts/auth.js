@@ -68,6 +68,7 @@ export async function handle_code(params) {
         console.log("ID: " + id);
         if (id !== null) {
             sessionStorage["userId"] = id;
+            console.log("User ID " + id);
         }
     }
 }
