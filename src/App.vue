@@ -10,7 +10,7 @@ if (RouterLink) {
 }
 
 let showNavigationBar = true
-let useTopNav = false
+let useTopNav = true
 let useLeftBar = showNavigationBar && !useTopNav
 let useTopBar = showNavigationBar && useTopNav
 </script>

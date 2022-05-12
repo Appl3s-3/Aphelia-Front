@@ -6,10 +6,10 @@ const inventoryStore = useInventory()
 let fieldToSort = []
 
 // Loop through the schemes and append {field, direction} to fieldToSort[]
-inventoryStore.schemes.forEach(scheme => fieldToSortBy.push({
-    field: scheme.fieldNames[0],
-    direction: 0
-}))
+// inventoryStore.schemes.forEach(scheme => fieldToSortBy.push({
+//     field: scheme.fieldNames[0],
+//     direction: 0
+// }))
 
 // const sort = (s) => {
 //     if (s === this.currentSort) {
@@ -49,10 +49,6 @@ let headingIndex = 0
     <div class="items items-container">
         <!-- Appl3s: I can't find a way to make checkboxes enabled by default -->
         <div class="items-layout">
-            <!-- Archetypes go here -->
-            <!-- <div class="items-archetypes-container">
-            </div>
-            -->
             <div class="items-jump-list-container">
                 <h2>Jump to...</h2>
                 <ul class="items-jump-list">
@@ -60,6 +56,16 @@ let headingIndex = 0
                         <a class="items-jump-list-element" :href="'#' + scheme.id">{{ scheme.name }}</a>
                     </li>
                 </ul>
+            </div>
+            <div class="items-filters-container">
+                <div class="items-filters-left">
+                    ARCHETYPE
+                    
+                </div>
+                <div class="items-filters-right">
+                    FIELD TO SEARCH
+                    SEARCH
+                </div>
             </div>
             <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
                 <h2 :id="scheme.id">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
@@ -77,6 +83,11 @@ let headingIndex = 0
                     </tbody>
                 </table>
             </div>
+
+            <!-- Archetypes go here -->
+            <!-- <div class="items-archetypes-container">
+            </div>
+            -->
         </div>
     </div>
 </template>
