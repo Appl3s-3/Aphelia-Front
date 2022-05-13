@@ -60,6 +60,8 @@ let headingIndex = 0
             <div class="items-filters-container">
                 <div class="items-filters-left">
                     ARCHETYPE
+                    <label for="hello world">hi</label>
+                    <input v-for="enumField in " type="checkbox" name="hello world">
                     
                 </div>
                 <div class="items-filters-right">
@@ -67,10 +69,17 @@ let headingIndex = 0
                     SEARCH
                 </div>
             </div>
-            <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
-                <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
+            <div class="items-display-container">
+                <div class="items-tabs-container">
+                    <div class="items-tab" v-for="scheme in inventoryStore.schemes">
+                        <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
+                <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2> -->
                 <!-- Container for the list of items -->
-                <table class="items-table">
+                <!-- <table class="items-table">
                     <thead>
                         <tr>
                             <th v-for="fieldName in scheme.fieldNames">{{ fieldName }}</th>
@@ -82,7 +91,7 @@ let headingIndex = 0
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> -->
 
             <!-- Archetypes go here -->
             <!-- <div class="items-archetypes-container">
@@ -146,6 +155,16 @@ let headingIndex = 0
 .items-filter {
     margin: auto var(--filter-horizontal-margin);
 }
+
+.items-display-container {
+    background-color: var(--aph-light2);
+    height: 100px;
+    position: absolute;
+    top: 500px;
+}
+
+
+
 
 /* Jump List */
 .items-jump-list-container {
