@@ -5,11 +5,11 @@ async function get_user_info() {
     console.log("Expiry: " + accessTokenExpiry);
     if (accessToken !== null && accessTokenExpiry !== null) { // Token exists
         if (new Date(Date.parse(accessTokenExpiry)) > new Date(Date.now())) { // Token is still valid
-            let response = await fetch(uri, {
-                headers: {'Authorization': accessToken}}
-                ).catch(e => console.log(e));
-            console.log("Response: " + response);
-            console.log("Response JSON: " + response.json());
+            let response = false;
+            await fetch(uri, {headers: {'Authorization': accessToken,
+                                        'Content-Type': 'application/json',
+                                        'Accept': 'application/json'}}
+                ).then(r => response=r).catch(e => console.log(e));
             return response.json()
         }
     }
