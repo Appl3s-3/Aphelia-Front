@@ -57,7 +57,6 @@ let headingIndex = 0
                     </li>
                 </ul>
             </div>
-<<<<<<< HEAD
             <div class="items-filters-container">
                 <div class="items-filters-left">
                     ARCHETYPE
@@ -68,9 +67,6 @@ let headingIndex = 0
                     SEARCH
                 </div>
             </div>
-=======
-
->>>>>>> 455608998d18e3f655869c96fefdbff75c94596f
             <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
                 <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
                 <!-- Container for the list of items -->
