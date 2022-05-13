@@ -6,11 +6,13 @@ async function get_user_info() {
     if (accessToken !== null && accessTokenExpiry !== null) { // Token exists
         if (new Date(Date.parse(accessTokenExpiry)) > new Date(Date.now())) { // Token is still valid
             let response = false;
-            await fetch(uri, {headers: {'Authorization': accessToken,
-                                        'Content-Type': 'application/json',
-                                        'Accept': 'application/json'}}
+            await fetch(uri, {method: "GET",
+                headers: {'Authorization': accessToken,
+                          'Accept': 'application/json'}}
                 ).then(r => response=r).catch(e => console.log(e));
-            return response.json()
+            let data = response.text();
+            console.log(data);
+            return JSON.parse(data)
         }
     }
     return null;
