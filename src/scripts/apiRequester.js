@@ -8,8 +8,6 @@ async function get_user_info() {
             let response = await fetch(uri, {
                 headers: {'Authorization': accessToken}}
                 ).catch(e => console.log(e));
-            console.log("Response: " + response);
-            console.log("Response JSON: " + response.json());
             return response.json()
         }
     }
