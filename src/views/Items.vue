@@ -61,7 +61,7 @@ let headingIndex = 0
                 <div class="items-filters-left">
                     ARCHETYPE
                     <label for="hello world">hi</label>
-                    <input v-for="enumField in " type="checkbox" name="hello world">
+                    <!-- <input v-for="enumField in " type="checkbox" name="hello world"> -->
                     
                 </div>
                 <div class="items-filters-right">
@@ -75,23 +75,23 @@ let headingIndex = 0
                         <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
                     </div>
                 </div>
+                <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
+                    <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
+                    <!-- Container for the list of items -->
+                    <table class="items-table">
+                        <thead>
+                            <tr>
+                                <th v-for="fieldName in scheme.fieldNames">{{ fieldName }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in scheme.items">
+                                <td v-for="field in item">{{ field }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <!-- <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
-                <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2> -->
-                <!-- Container for the list of items -->
-                <!-- <table class="items-table">
-                    <thead>
-                        <tr>
-                            <th v-for="fieldName in scheme.fieldNames">{{ fieldName }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="item in scheme.items">
-                            <td v-for="field in item">{{ field }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> -->
 
             <!-- Archetypes go here -->
             <!-- <div class="items-archetypes-container">
