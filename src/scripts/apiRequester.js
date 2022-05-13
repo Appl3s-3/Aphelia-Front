@@ -6,7 +6,7 @@ async function get_user_info() {
     if (accessToken !== null && accessTokenExpiry !== null) { // Token exists
         if (new Date(Date.parse(accessTokenExpiry)) > new Date(Date.now())) { // Token is still valid
             let response = await fetch(uri, {
-                headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"}}
+                headers: {'Authorization': accessToken}}
                 ).catch(e => console.log(e));
             console.log("Response: " + response);
             console.log("Response JSON: " + response.json());
