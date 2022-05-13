@@ -107,7 +107,7 @@ const toggle_navbar = () => {
     background-color: var(--aph-dark2);
     text-decoration: none;
 
-    transition: 0.2s;
+    transition: 1.0s;
 }
 
 .nav-button:hover {

@@ -43,6 +43,12 @@ let headingIndex = 0
 //     tempItems.push(genItem)
 // }
 
+const state = reactive({ expandTabs: false })
+
+const toggle_tabs = () => {
+    state.expandTabs = !state.expandTabs
+}
+
 </script>
 
 <template>
@@ -70,9 +76,12 @@ let headingIndex = 0
                 </div>
             </div>
             <div class="items-display-container">
+                <button class="items-tabs-expand" @click="toggle_tabs">
+                    <span>{{state.expandTabs ? "OPEN" : "CLOSED"}}</span>
+                </button>
                 <div class="items-tabs-container">
                     <div class="items-tab" v-for="scheme in inventoryStore.schemes">
-                        <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
+                        <h2 :id="scheme.id" class="table-titles">{{ scheme.name }}</h2>
                     </div>
                 </div>
                 <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
@@ -158,11 +167,20 @@ let headingIndex = 0
 
 .items-display-container {
     background-color: var(--aph-light2);
-    height: 100px;
-    position: absolute;
-    top: 500px;
 }
 
+.items-tabs-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: baseline;
+    border: 1px solid red;
+}
+
+.items-tab {
+    width: 20%;
+    border: 1px solid blue;
+}
 
 
 

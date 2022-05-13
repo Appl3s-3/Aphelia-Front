@@ -294,6 +294,60 @@ export const useInventory = defineStore('inventoryStore', {
                             "value4"
                         ]
                     ]
+                },
+                {
+                    name: "Archetype Name 3"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
+                },
+                {
+                    name: "Archetype Name n"
                 }
             ],
 
