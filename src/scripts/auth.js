@@ -63,12 +63,11 @@ export async function handle_code(params) {
     } else { // good state
         let code = params.query.code;
         await get_token(code);
+        await refresh_token() // This is to test the function and this call will be removed
         // get user id and store it
         var id = await get_id();
-        console.log("ID: " + id);
         if (id !== null) {
             sessionStorage["userId"] = id;
-            console.log("User ID " + id);
         }
     }
 }
@@ -116,8 +115,6 @@ export async function get_token(code) {
         ).catch(e => console.log(e));
         
     let tokens = await response.json();
-    console.log("response:");
-    console.log(tokens);
     localStorage.setItem("accessToken", tokens.access_token);
     localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (tokens.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
     localStorage.setItem("refreshToken", tokens.refresh_token);

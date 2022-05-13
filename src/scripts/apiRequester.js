@@ -11,7 +11,6 @@ async function get_user_info() {
                           'Accept': 'application/json'}}
                 ).then(r => response=r).catch(e => console.log(e));
             let data = response.json();
-            console.log("Json Data:");
             console.log(data);
             return data;
         }
