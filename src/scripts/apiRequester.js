@@ -10,10 +10,10 @@ async function get_user_info() {
                 headers: {'Authorization': "Bearer " + accessToken,
                           'Accept': 'application/json'}}
                 ).then(r => response=r).catch(e => console.log(e));
-            let data = response.text();
-            console.log("Raw Data:");
+            let data = response.json();
+            console.log("Json Data:");
             console.log(data);
-            return JSON.parse(data)
+            return data;
         }
     }
     return null;
