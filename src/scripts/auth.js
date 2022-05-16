@@ -63,7 +63,6 @@ export async function handle_code(params) {
     } else { // good state
         let code = params.query.code;
         await get_token(code);
-        await refresh_token(); // This is to test the function and this call will be removed
         // get user id and store it
         let id = await get_id();
         if (id !== null) {
@@ -76,27 +75,26 @@ export async function refresh_token() {
     // Sends a post request to the token endpoint
     let expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
     console.log(expiry);
-    if (expiry <= new Date(Date.now()) || true) { // Need new token
-        let refreshToken = localStorage.getItem("refreshToken");
-        const body = stringify({
-            code_verifier: localStorage.getItem("codeVerifier"),
-            grant_type: "refresh_token",
-            client_id: clientConfig.client_id,
-            refresh_token: refreshToken,
-        })
-        let response = await fetch(authConfig.token_uri, {
-            method: "POST",
-            headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-            body: body}
-            ).catch(e => console.log(e));
-            
-        let tokens = await response.json();
-        console.log("refresh response:");
-        console.log(tokens);
-        localStorage.setItem("accessToken", tokens.access_token);
-        localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (tokens.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
-        localStorage.setItem("refreshToken", tokens.refresh_token);
-    }
+    let refreshToken = localStorage.getItem("refreshToken");
+    const body = stringify({
+        code_verifier: localStorage.getItem("codeVerifier"),
+        grant_type: "refresh_token",
+        client_id: clientConfig.client_id,
+        refresh_token: refreshToken,
+    })
+    let response = await fetch(authConfig.token_uri, {
+        method: "POST",
+        headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+        body: body}
+        ).catch(e => console.log(e));
+        
+    let tokens = await response.json();
+    console.log("refresh response:");
+    console.log(tokens);
+    localStorage.setItem("accessToken", tokens.access_token);
+    localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (tokens.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
+    localStorage.setItem("refreshTokenExpiry", (new Date(Date.now() + (24*60*60*90 - 5) * 1000)).toString()); // creates date now + 90 days - 5 seconds
+    localStorage.setItem("refreshToken", tokens.refresh_token);
 }
 
 export async function get_token(code) {
@@ -120,7 +118,9 @@ export async function get_token(code) {
     console.log(tokens);
     localStorage.setItem("accessToken", tokens.access_token);
     localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (tokens.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
+    localStorage.setItem("refreshTokenExpiry", (new Date(Date.now() + (24*60*60*90 - 5) * 1000)).toString()); // creates date now + 90 days - 5 seconds
     localStorage.setItem("refreshToken", tokens.refresh_token);
+    setTimeout(get_token, (tokens.expires_in - 5)*1000);
 }
 
 export async function login() {
@@ -145,4 +145,13 @@ export async function login() {
     });
     // Redirect to address
     location.href = uri;
+}
+
+function authSetup() {
+    // check for existing refresh token
+    if (localStorage["refreshToken"] !== undefined && localStorage["refreshTokenExpir"] !== undefined) {
+        get_token();
+    } else { // not logged in
+
+    }
 }
