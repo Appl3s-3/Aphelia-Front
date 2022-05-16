@@ -1,4 +1,5 @@
 <script setup>
+import { reactive } from 'vue'
 import { useInventory } from '../store/useInventory'
 
 const inventoryStore = useInventory()
@@ -55,30 +56,36 @@ const toggle_tabs = () => {
     <div class="items items-container">
         <!-- Appl3s: I can't find a way to make checkboxes enabled by default -->
         <div class="items-layout">
-            <div class="items-jump-list-container">
+            <!-- <div class="items-jump-list-container">
                 <h2>Jump to...</h2>
                 <ul class="items-jump-list">
                     <li class="items-jump-list-element-container" v-for="scheme in inventoryStore.schemes">
                         <a class="items-jump-list-element" :href="'#' + scheme.id">{{ scheme.name }}</a>
                     </li>
                 </ul>
-            </div>
-            <div class="items-filters-container">
-                <div class="items-filters-left">
-                    ARCHETYPE
-                    <label for="hello world">hi</label>
-                    <!-- <input v-for="enumField in " type="checkbox" name="hello world"> -->
-                    
+            </div> -->
+            <div class="items-header-container">
+                <div class="items-creation-container">
+                    <!-- <label for="create-item"></label> -->
+                    <input type="button" name="create-item" value="CREATE ITEM">
                 </div>
-                <div class="items-filters-right">
-                    FIELD TO SEARCH
-                    SEARCH
+                <div class="items-filters-container">
+                    <div class="items-filters-left">
+                        ARCHETYPE
+                        <label for="hello world"></label>
+                        <!-- <input v-for="enumField in " type="checkbox" name="hello world"> -->
+                        
+                    </div>
+                    <div class="items-filters-right">
+                        <label for="search-items">Search items</label>
+                        <input class="items-search-bar" type="text" name="search-items" placeholder="search">
+                    </div>
                 </div>
             </div>
             <div class="items-display-container">
-                <button class="items-tabs-expand" @click="toggle_tabs">
+                <!-- <button class="items-tabs-expand" @click="toggle_tabs">
                     <span>{{state.expandTabs ? "OPEN" : "CLOSED"}}</span>
-                </button>
+                </button> -->
                 <div class="items-tabs-container">
                     <div class="items-tab" v-for="scheme in inventoryStore.schemes">
                         <h2 :id="scheme.id" class="table-titles">{{ scheme.name }}</h2>
@@ -118,7 +125,7 @@ const toggle_tabs = () => {
     --left-filter-vertical-margin: 12px;
     --filter-horizontal-margin: 15px;
 
-    --table-horizontal-margin: 20px;
+    --table-horizontal-margin: 0;
     --table-vertical-padding: 20px;
 
     --table-heading-vertical-padding: 28px;
@@ -136,6 +143,15 @@ const toggle_tabs = () => {
     gap: var(--filter-table-gap-size);
 }
 
+/***** Items Header Container *****/
+
+/* .items-header-container {
+
+}
+
+.items-creation-container {
+
+} */
 
 /* Filters */
 
@@ -165,8 +181,22 @@ const toggle_tabs = () => {
     margin: auto var(--filter-horizontal-margin);
 }
 
+
+/***** Items Display Container *****/
+
 .items-display-container {
-    background-color: var(--aph-light2);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    background-color: var(--aph-light1);
+    padding: var(--table-vertical-padding) 1%;
+}
+
+.items-display-container > div {
+    width: 80%;
+    background-color: var(--aph-pink);
+
 }
 
 .items-tabs-container {
@@ -182,27 +212,11 @@ const toggle_tabs = () => {
     border: 1px solid blue;
 }
 
-
-
-/* Jump List */
-.items-jump-list-container {
-    position: fixed;
-}
-
-/* .items-jump-list {
-} */
-
-/* .items-jump-list-element-container {
-} */
-
-/* .items-jump-list-element {
-} */
-
 /* Table */
 
 .items-table-container {
     margin: 0 auto;
-    padding: var(--table-vertical-padding) 0;
+    /* padding: var(--table-vertical-padding) 1%; */
 }
 
 .table-titles {
@@ -225,4 +239,19 @@ th {
 td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
 }
+
+/* Jump List */
+/* .items-jump-list-container {
+    position: fixed;
+} */
+
+/* .items-jump-list {
+} */
+
+/* .items-jump-list-element-container {
+} */
+
+/* .items-jump-list-element {
+} */
+
 </style>

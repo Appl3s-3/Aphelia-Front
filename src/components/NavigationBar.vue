@@ -15,11 +15,9 @@ const toggle_navbar = () => {
         <nav id="navbar-nav">
             <div class="nav-container">
                 <router-link :to="{ name: 'home' }" class="nav-button nav-logo" id="nav-home-icon">
-                    <img src="../../assets/logo.svg" id="logo" />
+                    <img src="../../assets/logo_mono.svg" id="logo" />
                 </router-link>
-
-                <!-- Appl3s: Added this because it's not completely obvious that the logo is the dashboard-->
-                <!-- Appl3s: You can probably omit the <p> -->
+                
                 <router-link :to="{ name: 'home' }" class="nav-button" id="nav-home">
                     <span class="md-36 material-icons nav-icon">home</span>
                     <transition name="fade">
@@ -104,18 +102,18 @@ const toggle_navbar = () => {
 
     text-align: left;
     color: #efefef;
-    background-color: var(--aph-dark2);
+    background-color: var(--aph-purple);
     text-decoration: none;
 
     transition: 1.0s;
 }
 
 .nav-button:hover {
-    background-color: var(--aph-light3);
+    background-color: var(--aph-light2);
 }
 
 .nav-button:hover:active {
-    background-color: var(--aph-dark3);
+    background-color: var(--aph-light1);
 }
 
 .nav-logo {
@@ -151,7 +149,7 @@ const toggle_navbar = () => {
     border-radius: 0 30px 30px 0;
     background-color: inherit;
     cursor: pointer;
-    color: var(--aph-dark2);
+    color: var(--aph-light1);
 }
 
 .nav-expand span {
@@ -169,8 +167,9 @@ const toggle_navbar = () => {
 
 #navbar {
     height: 100vh;
-    background-color: var(--aph-dark2);
+    background-color: var(--aph-purple);
     position: fixed;
+    /* border-right: 0.2em solid white; */
     transition: width 0.5s;
     z-index: 1;
 }
@@ -188,7 +187,7 @@ const toggle_navbar = () => {
     width: 36px;
     height: 36px;
     margin: 10px;
-    filter: saturate(0%) brightness(460%);
+    /* filter: saturate(0%) brightness(460%); */
 }
 
 #nav-home-icon {

@@ -29,6 +29,7 @@ let useTopBar = showNavigationBar && useTopNav
 
 <style>
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,400&display=swap');
 @import "./css/base.css";
 @import "./css/clean.css";
 @import "./css/themeOfApheleia.css";
@@ -37,6 +38,7 @@ let useTopBar = showNavigationBar && useTopNav
     /* display: flex;
     flex-direction: row; */
     min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
