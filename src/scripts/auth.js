@@ -16,11 +16,11 @@ const clientConfig = {
 
 async function create_code_challenge() {
     // Verifier
-    var out = "";
-    var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890-_.~";
-    var len = 64;
+    let out = "";
+    let chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890-_.~";
+    let len = 64;
     // Generate random string
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
         out += chars[Math.floor(Math.random() * chars.length)];
     }
 
@@ -45,10 +45,10 @@ async function create_code_challenge() {
 }
 
 function gen_state() {
-    var out = "";
-    var chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ";
-    var len = 10;
-    for (var i = 0; i < len; i++) {
+    let out = "";
+    let chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ";
+    let len = 10;
+    for (let i = 0; i < len; i++) {
         out += chars[Math.floor(Math.random() * chars.length)];
     }
     return out;
@@ -65,7 +65,7 @@ export async function handle_code(params) {
         await get_token(code);
         await refresh_token(); // This is to test the function and this call will be removed
         // get user id and store it
-        var id = await get_id();
+        let id = await get_id();
         if (id !== null) {
             sessionStorage["userId"] = id;
         }
@@ -74,10 +74,10 @@ export async function handle_code(params) {
 
 export async function refresh_token() {
     // Sends a post request to the token endpoint
-    var expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
+    let expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
     console.log(expiry);
     if (expiry <= new Date(Date.now()) || true) { // Need new token
-        var refreshToken = localStorage.getItem("refreshToken");
+        let refreshToken = localStorage.getItem("refreshToken");
         const body = stringify({
             grant_type: "refresh_token",
             client_id: clientConfig.client_id,
@@ -123,17 +123,17 @@ export async function get_token(code) {
 }
 
 export async function login() {
-    var [codeVerifier, codeChallenge] = await create_code_challenge();
+    let [codeVerifier, codeChallenge] = await create_code_challenge();
     console.log("verifier: " + codeVerifier);
     console.log("challenge: " + codeChallenge);
     localStorage.setItem("codeVerifier", codeVerifier);
     // Construct address from auth_uri
     // Gets keys from the clientConfig, maps them to a string: "key=value" then joins all the strings with "&"
     // Then appends the state
-    var state = gen_state();
+    let state = gen_state();
     localStorage.setItem("authState", state);
 
-    var uri = authConfig["auth_uri"] + "?" + stringify({
+    let uri = authConfig["auth_uri"] + "?" + stringify({
         client_id: clientConfig.client_id,
         redirect_uri: clientConfig.redirect_uri,
         scope: clientConfig.scope,
