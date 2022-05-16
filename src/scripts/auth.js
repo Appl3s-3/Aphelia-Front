@@ -79,6 +79,7 @@ export async function refresh_token() {
     if (expiry <= new Date(Date.now()) || true) { // Need new token
         let refreshToken = localStorage.getItem("refreshToken");
         const body = stringify({
+            code_verifier: localStorage.getItem("codeVerifier"),
             grant_type: "refresh_token",
             client_id: clientConfig.client_id,
             refresh_token: refreshToken,
