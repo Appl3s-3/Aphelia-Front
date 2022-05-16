@@ -76,7 +76,7 @@ export async function refresh_token() {
     // Sends a post request to the token endpoint
     var expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
     console.log(expiry);
-    if (expiry <= new Date(Date.now())) { // Need new token
+    if (expiry <= new Date(Date.now()) || true) { // Need new token
         var refreshToken = localStorage.getItem("refreshToken");
         const body = stringify({
             grant_type: "refresh_token",
