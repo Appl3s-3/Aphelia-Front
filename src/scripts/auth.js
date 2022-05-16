@@ -116,6 +116,7 @@ export async function get_token(code) {
         ).catch(e => console.log(e));
         
     let tokens = await response.json();
+    console.log(tokens);
     localStorage.setItem("accessToken", tokens.access_token);
     localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (tokens.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
     localStorage.setItem("refreshToken", tokens.refresh_token);
