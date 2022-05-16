@@ -10,7 +10,7 @@ async function get_user_info() {
                           'Accept': 'application/json'}}
                 ).then(r => response=r).catch(e => console.log(e));
             let data = response.json();
-            console.log(data);
+            //console.log(data);
             return data;
         }
     }

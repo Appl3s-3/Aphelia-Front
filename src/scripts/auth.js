@@ -74,7 +74,7 @@ export async function handle_code(params) {
 export async function refresh_token() {
     // Sends a post request to the token endpoint
     let expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
-    console.log(expiry);
+    //console.log(expiry);
     let refreshToken = localStorage.getItem("refreshToken");
     const body = stringify({
         code_verifier: localStorage.getItem("codeVerifier"),
@@ -89,8 +89,8 @@ export async function refresh_token() {
         ).catch(e => console.log(e));
         
     let tokens = await response.json();
-    console.log("refresh response:");
-    console.log(tokens);
+    //console.log("refresh response:");
+    //console.log(tokens);
     localStorage.setItem("accessToken", tokens.access_token);
     localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (tokens.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
     localStorage.setItem("refreshTokenExpiry", (new Date(Date.now() + (24*60*60*90 - 5) * 1000)).toString()); // creates date now + 90 days - 5 seconds
@@ -100,7 +100,7 @@ export async function refresh_token() {
 export async function get_token(code) {
     // Sends a post request to the token endpoint
     // With help from https://github.com/mintcarrotkeys/generic-bells/blob/main/src/apiFetcher.js
-    console.log("after redirect verif: " + localStorage.getItem("codeVerifier"))
+    //console.log("after redirect verif: " + localStorage.getItem("codeVerifier"))
     const body = stringify({
         code_verifier: localStorage.getItem("codeVerifier"),
         grant_type: "authorization_code",
@@ -115,7 +115,7 @@ export async function get_token(code) {
         ).catch(e => console.log(e));
         
     let tokens = await response.json();
-    console.log(tokens);
+    //console.log(tokens);
     localStorage.setItem("accessToken", tokens.access_token);
     localStorage.setItem("accessTokenExpiry", (new Date(Date.now() + (tokens.expires_in - 5)*1000)).toString()); // creates date now + 1h - 5 seconds
     localStorage.setItem("refreshTokenExpiry", (new Date(Date.now() + (24*60*60*90 - 5) * 1000)).toString()); // creates date now + 90 days - 5 seconds
@@ -125,8 +125,8 @@ export async function get_token(code) {
 
 export async function login() {
     let [codeVerifier, codeChallenge] = await create_code_challenge();
-    console.log("verifier: " + codeVerifier);
-    console.log("challenge: " + codeChallenge);
+    //console.log("verifier: " + codeVerifier);
+    //console.log("challenge: " + codeChallenge);
     localStorage.setItem("codeVerifier", codeVerifier);
     // Construct address from auth_uri
     // Gets keys from the clientConfig, maps them to a string: "key=value" then joins all the strings with "&"
