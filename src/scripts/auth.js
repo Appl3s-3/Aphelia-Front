@@ -85,7 +85,7 @@ export async function refresh_token() {
         })
         let response = await fetch(authConfig.token_uri, {
             method: "POST",
-            headers: {"Content-type": "application/json; charset=UTF-8"},
+            headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
             body: body}
             ).catch(e => console.log(e));
             
