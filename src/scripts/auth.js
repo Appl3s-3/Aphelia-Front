@@ -63,7 +63,7 @@ export async function handle_code(params) {
     } else { // good state
         let code = params.query.code;
         await get_token(code);
-        await refresh_token() // This is to test the function and this call will be removed
+        await refresh_token(); // This is to test the function and this call will be removed
         // get user id and store it
         var id = await get_id();
         if (id !== null) {
@@ -75,6 +75,7 @@ export async function handle_code(params) {
 export async function refresh_token() {
     // Sends a post request to the token endpoint
     var expiry = new Date(Date.parse(localStorage.getItem("accessTokenExpiry")));
+    console.log(expiry);
     if (expiry <= new Date(Date.now())) { // Need new token
         var refreshToken = localStorage.getItem("refreshToken");
         const body = stringify({
