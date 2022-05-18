@@ -1,6 +1,55 @@
+@media (prefers-color-scheme: light) {
+    :root {
+        --aph-back1: rgb(12, 12, 12);
+        --aph-back2: rgb(24, 24, 24);
+
+        --aph-fore1: rgb(32, 32, 32);
+        --aph-fore2: rgb(50, 50, 50);
+    
+        --aph-back1a: rgba(12, 12, 12, 0.8);
+        --aph-back2a: rgba(24, 24, 24, 0.75);
+        
+        --aph-fore1a: rgba(32, 32, 32, 0.6);
+        --aph-fore2a: rgba(50, 50, 50, 0.6);
+    
+        --aph-text1: rgb(230, 230, 230);
+        --aph-text2: rgb(210, 210, 210);
+        --aph-text3: rgb(120, 120, 120);
+    
+        --aph-text-highlight: rgb(140, 207, 252);
+
+        --aph-border: rgb(208, 215, 222);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --aph-back1: rgb(220, 220, 220);
+        --aph-back2: rgb(200, 200, 200);
+
+        --aph-fore1: rgb(180, 180, 180);
+        --aph-fore2: rgb(160, 160, 160);
+    
+        --aph-back1a: rgba(220, 220, 220, 0.8);
+        --aph-back2a: rgba(200, 200, 200, 0.75);
+        
+        --aph-fore1a: rgba(180, 180, 180, 0.6);
+        --aph-fore2a: rgba(160, 160, 160, 0.6);
+    
+        --aph-text1: rgb(12, 12, 12);
+        --aph-text2: rgb(22, 22, 22);
+        --aph-text3: rgb(46, 46, 46);
+    
+        --aph-text-highlight: rgb(140, 207, 252);
+
+        --aph-border: rgb(208, 215, 222);
+    }
+}
+
 :root {
     --aph-purple: rgb(45, 28, 77);
     --aph-pink: rgb(221 73 152);
+    --aph-border: rgb(208, 215, 222);
 
     --aph-dark1: rgb(12, 12, 12);
     --aph-dark2: rgb(24, 24, 24);
@@ -10,7 +59,6 @@
     --aph-dark2a: rgba(24, 24, 24, 0.75);
     --aph-dark3a: rgba(32, 32, 32, 0.6);
 
-    --aph-border: rgb(208, 215, 222);
 
     --aph-light1: rgb(220, 220, 220);
     --aph-light2: rgb(200, 200, 200);

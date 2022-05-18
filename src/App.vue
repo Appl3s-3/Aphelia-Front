@@ -34,6 +34,14 @@ let useTopBar = showNavigationBar && useTopNav
 @import "./css/clean.css";
 @import "./css/themeOfApheleia.css";
 
+.text-warning {
+    color: var(--aph-text-warn);
+}
+
+.text-highlight {
+    color: var(--aph-text-highlight);
+}
+
 .app {
     /* display: flex;
     flex-direction: row; */

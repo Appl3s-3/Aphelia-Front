@@ -1,7 +1,7 @@
 import "https"
 import "querystring"
-import { stringify } from "querystring";
-import { get_user_info } from "./apiRequester";
+import { stringify } from "querystring"
+import { get_user_info } from "./apiRequester"
 
 const authConfig = {
     auth_uri: "https://student.sbhs.net.au/api/authorize",
@@ -16,12 +16,12 @@ const clientConfig = {
 
 async function create_code_challenge() {
     // Verifier
-    let out = "";
-    let chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890-_.~";
-    let len = 64;
+    let out = ""
+    let chars = "abcdefghijklmnopqrstuvwxzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890-_.~"
+    let len = 64
     // Generate random string
     for (let i = 0; i < len; i++) {
-        out += chars[Math.floor(Math.random() * chars.length)];
+        out += chars[Math.floor(Math.random() * chars.length)]
     }
 
     // Challenge
