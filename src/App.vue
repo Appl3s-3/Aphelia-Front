@@ -39,6 +39,7 @@ let useTopBar = showNavigationBar && useTopNav
     flex-direction: row; */
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
+    color: var(--aph-text3);
 }
 
 .container {

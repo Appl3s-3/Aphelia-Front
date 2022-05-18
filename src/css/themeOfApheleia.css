@@ -1,6 +1,7 @@
 :root {
     --aph-purple: rgb(45, 28, 77);
     --aph-pink: rgb(221 73 152);
+
     --aph-dark1: rgb(12, 12, 12);
     --aph-dark2: rgb(24, 24, 24);
     --aph-dark3: rgb(32, 32, 32);
@@ -14,8 +15,6 @@
     --aph-light1: rgb(220, 220, 220);
     --aph-light2: rgb(200, 200, 200);
     --aph-light3: rgb(180, 180, 180);
-
-
 
     --aph-text1: rgb(230, 230, 230);
     --aph-text2: rgb(210, 210, 210);

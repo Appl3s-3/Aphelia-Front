@@ -1,3 +1,11 @@
+@media (prefers-color-scheme: light) {
+    
+}
+
+@media (prefers-color-scheme: dark) {
+
+}
+
 /* Local Variables */
 .items * {
     --color-var: 0;
@@ -30,9 +38,9 @@
 
 
 /* Jump List */
-.items-jump-list-container {
+/* .items-jump-list-container {
     background-color: var(--aph-dark2);
-}
+} */
 
 /* .items-jump-list {
 } */
@@ -56,17 +64,17 @@ li {
 
 /* Table */
 
-.items-table-container {
-    /* background-color: var(--aph-dark1a); */
-}
+/* .items-table-container {
+    background-color: var(--aph-light1);
+} */
 
 /* .items-table {
 } */
 
 th {
-    background-color: var(--aph-dark2a);
+    background-color: var(--aph-light3);
 }
 
 td {
-    background-color: var(--aph-dark3a);
+    background-color: var(--aph-light2);
 }

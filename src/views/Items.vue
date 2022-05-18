@@ -6,7 +6,30 @@ const inventoryStore = useInventory()
 
 let fieldToSort = []
 
-let activeTab = 3;
+
+const state = reactive({
+    activeScheme: inventoryStore.schemes[0],
+    expandTabs: false
+})
+
+const findScheme = (schemeID) => {
+    // Loop through inventoryStore and find the index of the scheme with schemeID = scheme.id
+    let i = 0
+    for (; i < inventoryStore.schemes.length; ++i) {
+        if (inventoryStore.schemes[i].id == schemeID) {
+            break
+        }
+    }
+    return i
+}
+
+const setActiveScheme = (schemeID) => {
+    // Set state.activeScheme using findScheme
+    let index = findScheme(schemeID)
+    state.activeScheme = inventoryStore.schemes[index];
+}
+
+
 
 // Loop through the schemes and append {field, direction} to fieldToSort[]
 // inventoryStore.schemes.forEach(scheme => fieldToSortBy.push({
@@ -45,8 +68,6 @@ let headingIndex = 0
 
 //     tempItems.push(genItem)
 // }
-
-const state = reactive({ expandTabs: false })
 
 const toggle_tabs = () => {
     state.expandTabs = !state.expandTabs
@@ -90,20 +111,18 @@ const toggle_tabs = () => {
                 </button> -->
                 <div class="items-tabs-container">
                     <div class="items-tab" v-for="scheme in inventoryStore.schemes">
-                        <h2 :id="scheme.id" class="table-titles">{{ scheme.name }}</h2>
+                        <h2 :id="scheme.id" class="items-tab-text" @click="setActiveScheme(scheme.id)">{{ scheme.name }}</h2>
                     </div>
                 </div>
-                <div class="items-table-container" v-for="scheme in inventoryStore.schemes">
-                    <h2 :id="scheme.id" class="table-titles">ID: {{ scheme.id }} Name: {{ scheme.name }}</h2>
-                    <!-- Container for the list of items -->
+                <div class="items-table-container">
                     <table class="items-table">
                         <thead>
                             <tr>
-                                <th v-for="fieldName in scheme.fieldNames">{{ fieldName }}</th>
+                                <th v-for="fieldName in state.activeScheme.fieldNames">{{ fieldName }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in scheme.items">
+                            <tr v-for="item in state.activeScheme.items">
                                 <td v-for="field in item">{{ field }}</td>
                             </tr>
                         </tbody>
@@ -127,11 +146,18 @@ const toggle_tabs = () => {
     --left-filter-vertical-margin: 12px;
     --filter-horizontal-margin: 15px;
 
+
+    --display-heading-vertical-padding: 28px;
+    --display-horizontal-padding: 1%;
+
+    --display-content-width: 90%;
+
     --table-horizontal-margin: 0;
     --table-vertical-padding: 0;
     --table-horizontal-padding: 0;
 
-    --table-heading-vertical-padding: 28px;
+    --table-container-border-width: 0.5em;
+    --table-container-border-radius: 1em;
 
     --table-data-vertical-padding: 14px;
     --table-data-horizontal-padding: 12px;
@@ -184,23 +210,6 @@ const toggle_tabs = () => {
     margin: auto var(--filter-horizontal-margin);
 }
 
-
-/***** Items Display Container *****/
-
-.items-display-container {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-
-    background-color: var(--aph-light1);
-    padding: var(--table-vertical-padding) 1%;
-}
-
-.items-display-container > div {
-    width: 90%;
-
-}
-
 .items-tabs-container {
     display: flex;
     flex-flow: row wrap;
@@ -213,22 +222,41 @@ const toggle_tabs = () => {
     width: 20%;
 }
 
+.items-tab:hover {
+    background-color: var(--aph-light2);
+}
+
+/***** Items Display Container *****/
+
+.items-display-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    background-color: var(--aph-light3);
+    padding: var(--display-vertical-padding) var(--display-horizontal-padding);
+}
+
+.items-display-container > div {
+    width: var(--display-content-width);
+}
+
+
 /* Table */
 
 .items-table-container {
     margin: 0;
-    border: 10px solid var(--aph-border);
+    border: var(--table-container-border-width) solid var(--aph-border);
+    border-radius: var(--table-container-border-radius);
     padding: var(--table-vertical-padding) var(--table-horizontal-padding);
 }
 
 .table-titles {
-    color: var(--aph-dark2);
     margin: 0 var(--table-horizontal-margin);
 }
 
 .items-table {
     width: 100%;
-    /* TODO: Change the width based off the number of item fields */
     margin: 0 var(--table-horizontal-margin);
 
     border-collapse: collapse;
