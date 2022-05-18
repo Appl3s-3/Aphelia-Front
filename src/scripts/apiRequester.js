@@ -1,4 +1,4 @@
-async function get_user_info() {
+export async function get_user_info() {
     const uri = "https://student.sbhs.net.au/api/details/userinfo.json";
     var accessToken = localStorage["accessToken"];
     var accessTokenExpiry = localStorage["accessTokenExpiry"];
