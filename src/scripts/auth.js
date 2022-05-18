@@ -1,7 +1,7 @@
 import "https"
 import "querystring"
 import { stringify } from "querystring";
-import { get_id } from "./apiRequester";
+import { get_user_info } from "./apiRequester";
 
 const authConfig = {
     auth_uri: "https://student.sbhs.net.au/api/authorize",
