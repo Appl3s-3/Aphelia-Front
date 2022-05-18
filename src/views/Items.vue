@@ -6,6 +6,8 @@ const inventoryStore = useInventory()
 
 let fieldToSort = []
 
+let activeTab = 3;
+
 // Loop through the schemes and append {field, direction} to fieldToSort[]
 // inventoryStore.schemes.forEach(scheme => fieldToSortBy.push({
 //     field: scheme.fieldNames[0],
@@ -126,7 +128,8 @@ const toggle_tabs = () => {
     --filter-horizontal-margin: 15px;
 
     --table-horizontal-margin: 0;
-    --table-vertical-padding: 20px;
+    --table-vertical-padding: 0;
+    --table-horizontal-padding: 0;
 
     --table-heading-vertical-padding: 28px;
 
@@ -163,7 +166,7 @@ const toggle_tabs = () => {
 }
 
 /* items-filters-left and items-filters-right (The children, which are divs, of the items-filters-container) */
-.items-filters-container>div {
+.items-filters-container > div {
     display: inline-flex;
     flex-flow: row nowrap;
 }
@@ -194,8 +197,7 @@ const toggle_tabs = () => {
 }
 
 .items-display-container > div {
-    width: 80%;
-    background-color: var(--aph-pink);
+    width: 90%;
 
 }
 
@@ -204,19 +206,19 @@ const toggle_tabs = () => {
     flex-flow: row wrap;
     justify-content: stretch;
     align-items: baseline;
-    border: 1px solid red;
+    border: 3px solid green;
 }
 
 .items-tab {
     width: 20%;
-    border: 1px solid blue;
 }
 
 /* Table */
 
 .items-table-container {
-    margin: 0 auto;
-    /* padding: var(--table-vertical-padding) 1%; */
+    margin: 0;
+    border: 10px solid var(--aph-border);
+    padding: var(--table-vertical-padding) var(--table-horizontal-padding);
 }
 
 .table-titles {
@@ -225,7 +227,7 @@ const toggle_tabs = () => {
 }
 
 .items-table {
-    width: 70vw;
+    width: 100%;
     /* TODO: Change the width based off the number of item fields */
     margin: 0 var(--table-horizontal-margin);
 

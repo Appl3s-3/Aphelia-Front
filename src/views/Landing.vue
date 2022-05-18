@@ -51,9 +51,21 @@ const student_login_click = () => {
 <template>
     <div class="landing landing-container">
         <div class="landing-layout">
-            <div class="landing-component landing-left">
+            <div class="landing-logo">
+                
+            </div>
+            <div class="landing-text">
+
+            </div>
+            <div class="landing-banner">
+
+            </div>
+            <div class="landing-whitespace">
+
+            </div>
+            <!-- <div class="landing-component landing-left"> -->
                 <!-- Left side of landing page -->
-                <img src="../../assets/logo.svg" alt="Logo">
+                <!-- <img src="../../assets/logo.svg" alt="Logo">
                 <h1 class="apheleia">Aphelia</h1>
                 <h2 class="apheleia">Management Made Simple</h2>
             </div>
@@ -62,9 +74,9 @@ const student_login_click = () => {
                 <line x1="10" y1="25%" x2="10" y2="75%" />
             </svg>
         
-            <div class="landing-component landing-right">
+            <div class="landing-component landing-right"> -->
                 <!-- Right side of landing page (login) -->
-                <input @click="student_login_click" type="submit" value="Student Portal Login" class="apheleia small-area text" />
+                <!-- <input @click="student_login_click" type="submit" value="Student Portal Login" class="apheleia small-area text" /> -->
                 <!-- TODO: Decide whether or not to have a signup
                 <form>
                     <input type="text" name="username" placeholder="Username" class="apheleia small-area text" />
@@ -75,7 +87,7 @@ const student_login_click = () => {
                     <input @click="login_click" type="submit" value="Login" class="apheleia small-area text" />
                 </form>
                 -->
-            </div>
+            <!-- </div> -->
         </div>
         <!-- TODO: Button in the bottom right to toggle light/dark mode -->
         <button type="button" name="toggle-lightness"></button>
@@ -85,7 +97,7 @@ const student_login_click = () => {
 <style scoped>
 .landing-layout {
     display: grid;
-    grid-template: auto / 41% auto auto;
+    grid-template: auto / auto auto auto auto;
     justify-content: center;
     align-items: center;
 }
