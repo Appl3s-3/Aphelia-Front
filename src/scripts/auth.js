@@ -64,9 +64,16 @@ export async function handle_code(params) {
         let code = params.query.code;
         await get_token(code);
         // get user id and store it
-        let id = await get_id();
-        if (id !== null) {
+        let user_info = await get_user_info();
+        if (user_info !== null) {
+            let id = user_info["username"];
             sessionStorage["userId"] = id;
+            let givenName = user_info["givenName"];
+            sessionStorage["givenName"] = givenName;
+            let surname = user_info["surname"];
+            sessionStorage["surname"] = surname;
+            // redirect to home page
+            location.href = "home";
         }
     }
 }
