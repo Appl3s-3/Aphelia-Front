@@ -40,7 +40,8 @@ const selfStore = useSelf()
 
 <template>
     <div class="dashboard dashboard-container">
-        
+        <!-- I_Agreed: The below line was writ in order to access the obtainment of the details of the user, it is not intended to be permanent.-->
+        <h1>Logged in as: {{selfStore.fullName}}</h1>
         <!--  Appl3s: Any ideas for this layout? I keep thinking of canvas, but I kinda don't want to use the canvas layout-->
         <div class="dashboard-layout">
             <div class="dashboard-loans">
