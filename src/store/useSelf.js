@@ -4,8 +4,6 @@ export const useSelf = defineStore('selfStore', {
     state: () => {
         return {
             role: {
-                id: 0,
-                name: "Student",
                 permissions: {
                     loanable_archetypes: [
                         0, 2, 3
@@ -72,5 +70,19 @@ export const useSelf = defineStore('selfStore', {
                 ]
             }
         }
+    }, getters: { // these use variable naming because they arent accessed as functions
+        userId: () => {
+            return sessionStorage["userId"];
+        },
+        givenName: () => {
+            return sessionStorage["givenName"];
+        },
+        surname: () => {
+            return sessionStorage["surname"];
+        },
+        fullName: () => {
+            return sessionStorage["givenName"] + " " + sessionStorage["surname"];
+        },
     }
+    
 })
