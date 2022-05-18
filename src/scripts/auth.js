@@ -63,16 +63,22 @@ export async function handle_code(params) {
     } else { // good state
         let code = params.query.code;
         await get_token(code);
-        // get user id and store it
-        let user_info = await get_user_info();
-        if (user_info !== null) {
-            let id = user_info["username"];
-            sessionStorage["userId"] = id;
-            let givenName = user_info["givenName"];
-            sessionStorage["givenName"] = givenName;
-            let surname = user_info["surname"];
-            sessionStorage["surname"] = surname;
-            // redirect to home page
+        set_info();
+    }
+}
+
+function set_info(redirect=true) {
+    // get user id and store it
+    let user_info = await get_user_info();
+    if (user_info !== null) {
+        let id = user_info["username"];
+        sessionStorage["userId"] = id;
+        let givenName = user_info["givenName"];
+        sessionStorage["givenName"] = givenName;
+        let surname = user_info["surname"];
+        sessionStorage["surname"] = surname;
+        // redirect to home page
+        if (redirect) {
             location.href = "home";
         }
     }
@@ -158,7 +164,19 @@ function authSetup() {
     // check for existing refresh token
     if (localStorage["refreshToken"] !== undefined && localStorage["refreshTokenExpir"] !== undefined) {
         get_token();
+        set_info();
     } else { // not logged in
 
     }
+}
+
+export function logout() {
+    // Clear all user info and oauth tokens
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("givenName");
+    sessionStorage.removeItem("surname");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("accessTokenExpiry");
+    localStorage.removeItem("refreshTokenExpiry");
 }

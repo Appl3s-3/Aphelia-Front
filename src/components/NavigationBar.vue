@@ -79,7 +79,8 @@ const toggle_navbar = () => {
                         <p class="nav-label" v-if="state.expandNavBar">Settings</p>
                     </transition>
                 </router-link>
-                <router-link :to="{ name: 'landing' }" class="nav-button" id="nav-logout">
+                <!-- I_Agreed: Maybe make an "are you sure?" here? -->
+                <router-link :to="{ name: 'logout' }" class="nav-button" id="nav-logout">
                     <span class="md-36 material-icons nav-icon">logout</span>
                     <transition name="fade">
                         <p class="nav-label" v-if="state.expandNavBar">Logout</p>

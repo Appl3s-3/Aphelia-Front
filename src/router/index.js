@@ -33,7 +33,8 @@ const routes = [
 
     { path: '/scan',          name: 'scan',          component: Scan          },
     // handles code then redirects back to landing page (bit of a hack)
-    { path: '/callback/:code?/:state?',          redirect: to => {handle_code(to); return {path: "/", query: {}}}}
+    { path: '/callback/:code?/:state?', name: 'callback',   redirect: to => {handle_code(to); return {path: "/", query: {}}}},
+    { path: '/logout',        name: 'logout',               redirect: to => {logout(); return {path: "/", query: {}}}}
 ]
 
 const router = createRouter({
