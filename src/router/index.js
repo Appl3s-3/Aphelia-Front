@@ -15,7 +15,7 @@ import About from '../views/About.vue'
 
 import Scan from '../views/Scan.vue'
 
-import { handle_code } from '../scripts/auth'
+import { handle_code, logout } from '../scripts/auth'
 
 const routes = [
     { path: '/',              name: 'landing',       component: Landing       },
