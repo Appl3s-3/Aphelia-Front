@@ -67,7 +67,7 @@ export async function handle_code(params) {
     }
 }
 
-function set_info(redirect=true) {
+async function set_info(redirect=true) {
     // get user id and store it
     let user_info = await get_user_info();
     if (user_info !== null) {
@@ -160,11 +160,11 @@ export async function login() {
     location.href = uri;
 }
 
-function authSetup() {
+async function authSetup() {
     // check for existing refresh token
     if (localStorage["refreshToken"] !== undefined && localStorage["refreshTokenExpir"] !== undefined) {
         get_token();
-        set_info();
+        await set_info();
     } else { // not logged in
 
     }
