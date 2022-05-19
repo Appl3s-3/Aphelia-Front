@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import router from './router'
 import { createPinia } from 'pinia'
-import { authSetup } from './scripts/auth'
+import { auth_setup } from './scripts/auth'
 
 createApp(App)
     .use(router)
