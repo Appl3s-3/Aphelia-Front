@@ -72,7 +72,7 @@ const student_login_click = () => {
                     </div>
                 </div>
                 <div>
-                    <input type="button" name="landing-login" value="Login">
+                    <input type="button" @click="student_login_click" name="landing-login" value="Login">
                 </div>
             </div>
             <div class="landing-component landing-banner">
