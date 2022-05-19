@@ -160,7 +160,7 @@ export async function login() {
     location.href = uri;
 }
 
-async function authSetup() {
+export async function auth_setup() {
     // check for existing refresh token
     if (localStorage["refreshToken"] !== undefined && localStorage["refreshTokenExpir"] !== undefined) {
         get_token();
