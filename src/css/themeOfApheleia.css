@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     :root {
         --aph-back1: rgb(12, 12, 12);
         --aph-back2: rgb(24, 24, 24);
@@ -23,7 +23,7 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root {
         --aph-back1: rgb(220, 220, 220);
         --aph-back2: rgb(200, 200, 200);
@@ -56,6 +56,7 @@
     --aph-pink: rgb(221 73 152);
     --aph-blue: rgb(122, 167, 193);
     --aph-grey: var(--aph-border);
+    --aph-greya: rgba(208, 215, 222, 120);
 
     --aph-dark1: rgb(12, 12, 12);
     --aph-dark2: rgb(24, 24, 24);

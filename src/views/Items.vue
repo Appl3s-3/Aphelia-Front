@@ -9,7 +9,7 @@ const state = reactive({
     manageScheme: inventoryStore.schemes[0],
     expandFilters: false,
     expandTabs: false,
-    displayManageMenu: false
+    showManageMenu: false
 })
 
 /*
@@ -40,10 +40,7 @@ const set_active_scheme_from_ID = (schemeID) => {
                 <div class="items-filters-toggle-container">
                     <label for="expand-filters">{{ state.expandFilters == true ? "Hide Filters" : "Show Filters" }}</label>
                     <input type="checkbox" name="expand-filters" @click="state.expandFilters = !state.expandFilters">
-                    <div :class="{
-                        'items-filters-container': true,
-                        'items-filters-container-expand': state.expandFilters,
-                        'items-filters-container-retract': !state.expandFilters }">
+                    <div class="items-filters-container" v-if="state.expandFilters">
                         <div class="items-filters-left">
                             <span>
                                 Loaned in the past n days (insert slider here)
@@ -58,14 +55,16 @@ const set_active_scheme_from_ID = (schemeID) => {
                     </div>
                 </div>
                 <div id="items-manage-container">
-                    <input id="items-manage-menu-button" type="button" name="manage-item" value="Manage Items" @click="state.displayManageMenu = !state.displayManageMenu">
+                    <input id="items-manage-menu-button" type="button" name="manage-item" value="Manage Items" @click="state.showManageMenu = !state.showManageMenu">
                 </div>
             </div>
-            <div id="manage-menu" v-if="state.displayManageMenu">
+            <!-- <div id="items-page-disable" v-if="state.showManageMenu">
+            </div> -->
+            <div id="manage-menu" v-if="state.showManageMenu">
                 <div id="manage-menu-header">
                     <h2>Manage Items</h2>
                     <!-- TODO: -->
-                    <input type="button" name="close-manage" value="x" @click="">
+                    <input type="button" name="close-manage" value="x" @click="state.showManageMenu = false">
                 </div>
                 <div id="manage-menu-options">
                     <span id="manage-menu-options-left">
@@ -140,9 +139,6 @@ const set_active_scheme_from_ID = (schemeID) => {
                     <input class="manage-menu-deny-button" type="button" name="reset-manage" value="Reset" @click="">
                     <input class="manage-menu-confirm-button" type="button" name="save-manage" value="Save" @click="">
                 </div>
-
-
-
                 <!-- TODO: Open up confirm menus
                 The following are a bunch of popup menus-->
                 <div class="manage-confirm-menu manage-delete-item-menu">
@@ -280,21 +276,15 @@ const set_active_scheme_from_ID = (schemeID) => {
     grid: auto / 80% 20%;
 }
 
+/**** Items Filters ****/
+/* .items-filters-toggle-container {
+} */
+
 .items-filters-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: baseline;
-
-    transition: 5.0s;
-}
-
-.items-filters-container-expand {
-    height: auto;
-}
-
-.items-filters-container-retract {
-    height: 0;
 }
 
 .items-filters-left {
@@ -330,10 +320,23 @@ const set_active_scheme_from_ID = (schemeID) => {
     background-color: var(--aph-purple);
 }
 
-/***** Items Manage Menu *****/
+/***** Manage Menu *****/
+/* #items-page-disable {
+    z-index: 99;
+    background-color: var(--aph-greya);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+} */
+
 #manage-menu {
     display: block;
-    width: 90%;
+    background-color: var(--aph-back1);
+    width: 90vw;
+    height: 90vh;
+    z-index: 100;
 }
 
 /**** Manage Menu Header ****/
@@ -375,6 +378,7 @@ const set_active_scheme_from_ID = (schemeID) => {
 /*** Manage Archetypes ***/
 #manage-archetypes-list-container {
     border: 1px solid var(--aph-border);
+    overflow: auto;
 }
 
 /* .manage-archetypes-list {
@@ -408,21 +412,11 @@ const set_active_scheme_from_ID = (schemeID) => {
 /*** Items Manage Items ***/
 #manage-items-table-container {
     border: 1px solid var(--aph-border);
+    overflow: auto;
 }
 
 /* #manage-items-table {
 
-} */
-
-/* .manage-items-list {
-
-} */
-
-/* .manage-items-list-item {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    margin: 0;
 } */
 
 .manage-items-item-data {
