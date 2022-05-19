@@ -51,9 +51,37 @@ const student_login_click = () => {
 <template>
     <div class="landing landing-container">
         <div class="landing-layout">
-            <div class="landing-component landing-left">
-                <!-- Left side of landing page -->
+            <div class="landing-component landing-whitespace">
+            </div>
+            <div class="landing-component landing-logo">
                 <img src="../../assets/logo.svg" alt="Logo">
+            </div>
+            <div class="landing-component landing-text">
+                <div>
+                    <div>
+                        Apheleia
+                    </div>
+                    <div>
+                        Apheleia
+                    </div>
+                    <div>
+                        Aphelia
+                    </div>
+                    <div>
+                        Management made simplé
+                    </div>
+                </div>
+                <div>
+                    <input type="button" name="landing-login" value="Login">
+                </div>
+            </div>
+            <div class="landing-component landing-banner">
+            </div>
+            <div class="landing-component landing-whitespace">
+            </div>
+            <!-- <div class="landing-component landing-left"> -->
+                <!-- Left side of landing page -->
+                <!-- <img src="../../assets/logo.svg" alt="Logo">
                 <h1 class="apheleia">Aphelia</h1>
                 <h2 class="apheleia">Management Made Simple</h2>
             </div>
@@ -62,9 +90,9 @@ const student_login_click = () => {
                 <line x1="10" y1="25%" x2="10" y2="75%" />
             </svg>
         
-            <div class="landing-component landing-right">
+            <div class="landing-component landing-right"> -->
                 <!-- Right side of landing page (login) -->
-                <input @click="student_login_click" type="submit" value="Student Portal Login" class="apheleia small-area text" />
+                <!-- <input @click="student_login_click" type="submit" value="Student Portal Login" class="apheleia small-area text" /> -->
                 <!-- TODO: Decide whether or not to have a signup
                 <form>
                     <input type="text" name="username" placeholder="Username" class="apheleia small-area text" />
@@ -75,7 +103,7 @@ const student_login_click = () => {
                     <input @click="login_click" type="submit" value="Login" class="apheleia small-area text" />
                 </form>
                 -->
-            </div>
+            <!-- </div> -->
         </div>
         <!-- TODO: Button in the bottom right to toggle light/dark mode -->
         <button type="button" name="toggle-lightness"></button>
@@ -85,16 +113,40 @@ const student_login_click = () => {
 <style scoped>
 .landing-layout {
     display: grid;
-    grid-template: auto / 41% auto auto;
+    grid-template: 100vh / 10% 15% 40% 15% 20%;
     justify-content: center;
     align-items: center;
+    bottom: 0;
 }
 
 .landing-component {
-    margin: auto 5%;
+    padding: 1em;
+
 }
 
-line.landing-divider {
+.landing-text {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.landing-banner {
+    background-image: linear-gradient(to top, var(--aph-purple) 10%, var(--aph-pink) 120%);
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+
+    transition: 0.5s;
+}
+
+.landing-banner:hover {
+    width: 100%;
+    transition: 1.0s;
+
+}
+
+
+
+/* line.landing-divider {
     stroke: grey;
     stroke-width: 2px;
     stroke-linecap: round;
@@ -120,5 +172,5 @@ input[type="password"] {
 
 input[type="password"]:focus {
     border-bottom: 1.5px solid #a146ad;
-}
+} */
 </style>
