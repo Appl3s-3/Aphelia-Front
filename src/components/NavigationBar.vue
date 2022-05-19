@@ -14,10 +14,11 @@ const toggle_navbar = () => {
         </button>
         <nav id="navbar-nav">
             <div class="nav-container">
-                <router-link :to="{ name: 'home' }" class="nav-button nav-logo" id="nav-home-icon">
-                    <img src="../../assets/logo_mono.svg" id="logo" />
-                </router-link>
-                
+                <div class="nav-header">
+                    <router-link :to="{ name: 'home' }" class="nav-button nav-logo" id="nav-home-icon">
+                        <img src="../../assets/logo_mono.svg" id="logo" />
+                    </router-link>
+                </div>
                 <router-link :to="{ name: 'home' }" class="nav-button" id="nav-home">
                     <span class="md-36 material-icons nav-icon">home</span>
                     <transition name="fade">
@@ -60,7 +61,7 @@ const toggle_navbar = () => {
                 <!-- Appl3s: I doubt the common user would understand what an archetype is, so a 'Item Type/Preset' in 'Items' will probably work better -->
                 <!-- <router-link :to="{ name: 'archetypes' }" class="nav-button" id="nav-archetypes">Archetypes</router-link> -->
             </div>
-            <div class="nav-container">
+            <div class="nav-footer">
                 <router-link :to="{ name: 'about' }" class="nav-button" id="nav-about">
                     <span class="md-36 material-icons nav-icon">info</span>
                     <transition name="fade">
@@ -92,6 +93,10 @@ const toggle_navbar = () => {
 </template>
 
 <style scoped>
+.nav-header {
+    margin-bottom: 2em;
+}
+
 .nav-button {
     display: flex;
     align-items: center;

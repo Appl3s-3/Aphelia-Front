@@ -9,7 +9,7 @@ let fieldToSort = []
 
 const state = reactive({
     activeScheme: inventoryStore.schemes[0],
-    manageScheme: inventorySTore.schemes[0],
+    manageScheme: inventoryStore.schemes[0],
     expandTabs: false,
     displayManageMenu: true
 })
@@ -331,6 +331,7 @@ const toggle_tabs = () => {
 
 .items-tab {
     width: 20%;
+    border: 1px solid blue;
 }
 
 .items-tab:hover {
