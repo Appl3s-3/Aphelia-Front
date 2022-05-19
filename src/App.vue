@@ -35,7 +35,7 @@ let useTopBar = showNavigationBar && useTopNav
 @import "./css/themeOfApheleia.css";
 
 .text-warning {
-    color: var(--aph-text-warn);
+    color: var(--aph-text-warning);
 }
 
 .text-highlight {

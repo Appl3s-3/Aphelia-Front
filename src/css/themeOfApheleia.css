@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     :root {
         --aph-back1: rgb(12, 12, 12);
         --aph-back2: rgb(24, 24, 24);
@@ -17,12 +17,13 @@
         --aph-text3: rgb(120, 120, 120);
     
         --aph-text-highlight: rgb(140, 207, 252);
+        --aph-text-warning: rgb(185, 95, 113);
 
         --aph-border: rgb(208, 215, 222);
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root {
         --aph-back1: rgb(220, 220, 220);
         --aph-back2: rgb(200, 200, 200);
@@ -41,15 +42,21 @@
         --aph-text3: rgb(46, 46, 46);
     
         --aph-text-highlight: rgb(140, 207, 252);
+        --aph-text-warning: rgb(185, 95, 113);
 
         --aph-border: rgb(208, 215, 222);
     }
 }
 
 :root {
+    --aph-warning: rgb(185, 95, 113);
+    --aph-border: rgb(208, 215, 222);
+
     --aph-purple: rgb(45, 28, 77);
     --aph-pink: rgb(221 73 152);
-    --aph-border: rgb(208, 215, 222);
+    --aph-blue: rgb(122, 167, 193);
+    --aph-grey: var(--aph-border);
+    --aph-greya: rgba(208, 215, 222, 120);
 
     --aph-dark1: rgb(12, 12, 12);
     --aph-dark2: rgb(24, 24, 24);

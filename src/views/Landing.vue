@@ -51,59 +51,21 @@ const student_login_click = () => {
 <template>
     <div class="landing landing-container">
         <div class="landing-layout">
-            <div class="landing-component landing-whitespace">
-            </div>
-            <div class="landing-component landing-logo">
-                <img src="../../assets/logo.svg" alt="Logo">
-            </div>
-            <div class="landing-component landing-text">
-                <div>
-                    <div>
-                        Apheleia
-                    </div>
-                    <div>
-                        Apheleia
-                    </div>
-                    <div>
-                        Aphelia
-                    </div>
-                    <div>
-                        Management made simplé
-                    </div>
+            <div class="landing-division landing-whitespace"></div>
+            <div class="landing-division landing-text">
+                <div class="landing-img-container">
+                    <img id="landing-logo" src="../../assets/logo.svg" alt="">
+                    <!-- <div id="landing-title-container">
+                        <img class="landing-title" src="../../assets/landing-title-outline.svg" alt="">  
+                        <img class="landing-title" src="../../assets/landing-title-outline.svg" alt="">  
+                        <img class="landing-title" src="../../assets/landing-title-solid.svg" alt="Apheleia">  
+                    </div> -->
+                    <img id="landing-title" class="landing-img" src="../../assets/landing-logo.svg" alt="Apheleia">
                 </div>
-                <div>
-                    <input type="button" @click="student_login_click" name="landing-login" value="Login">
-                </div>
+                <input id="landing-login" type="button" name="landing-login" value="Login">
             </div>
-            <div class="landing-component landing-banner">
-            </div>
-            <div class="landing-component landing-whitespace">
-            </div>
-            <!-- <div class="landing-component landing-left"> -->
-                <!-- Left side of landing page -->
-                <!-- <img src="../../assets/logo.svg" alt="Logo">
-                <h1 class="apheleia">Aphelia</h1>
-                <h2 class="apheleia">Management Made Simple</h2>
-            </div>
-        
-            <svg class="landing-component landing-divider" width="20px" height="100vh">
-                <line x1="10" y1="25%" x2="10" y2="75%" />
-            </svg>
-        
-            <div class="landing-component landing-right"> -->
-                <!-- Right side of landing page (login) -->
-                <!-- <input @click="student_login_click" type="submit" value="Student Portal Login" class="apheleia small-area text" /> -->
-                <!-- TODO: Decide whether or not to have a signup
-                <form>
-                    <input type="text" name="username" placeholder="Username" class="apheleia small-area text" />
-                    <br />
-                    <input type="password" name="password" placeholder="Password" class="apheleia small-area text" />
-                    <br />
-                    <br />
-                    <input @click="login_click" type="submit" value="Login" class="apheleia small-area text" />
-                </form>
-                -->
-            <!-- </div> -->
+            <div class="landing-division landing-banner"></div>
+            <div class="landing-division landing-whitespace"></div>
         </div>
         <!-- TODO: Button in the bottom right to toggle light/dark mode -->
         <button type="button" name="toggle-lightness"></button>
@@ -113,20 +75,44 @@ const student_login_click = () => {
 <style scoped>
 .landing-layout {
     display: grid;
-    grid-template: 100vh / 10% 15% 40% 15% 20%;
+    grid-template: 100vh / 10% 50% 12% 18%;
     justify-content: center;
     align-items: center;
     bottom: 0;
 }
 
-.landing-component {
-    padding: 1em;
-
+.landing-division {
+    padding: 0 2em;
 }
 
 .landing-text {
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.landing-img-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.landing-img {
+    width: 80%;
+}
+
+#landing-logo {
+    width: 20%;
+}
+
+#landing-login {
+    width: 10em;
+    height: 4em;
+    border: 0.2em solid var(--aph-border);
+    border-radius: 1em;
 }
 
 .landing-banner {
