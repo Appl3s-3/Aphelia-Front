@@ -30,15 +30,12 @@ const selfStore = useSelf()
 }
 
 ul {
-    background-color: var(--aph-dark3);
     margin: 0 var(--list-horizontal-margin);
 }
 
 li {
     margin: auto auto var(--list-item-bottom-margin) auto;
     padding: var(--list-item-padding);
-    font: var(--list-font);
-    background-color: var(--aph-dark2);
 }
 
 </style>
