@@ -67,8 +67,6 @@ const student_login_click = () => {
             <div class="landing-division landing-banner"></div>
             <div class="landing-division landing-whitespace"></div>
         </div>
-        <!-- TODO: Button in the bottom right to toggle light/dark mode -->
-        <button type="button" name="toggle-lightness"></button>
     </div>
 </template>
 
