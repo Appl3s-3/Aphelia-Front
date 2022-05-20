@@ -62,7 +62,7 @@ const student_login_click = () => {
                     </div> -->
                     <img id="landing-title" class="landing-img" src="../../assets/landing-logo.svg" alt="Apheleia">
                 </div>
-                <input id="landing-login" type="button" name="landing-login" value="Login">
+                <input id="landing-login" @click="student_login_click" type="button" name="landing-login" value="Login">
             </div>
             <div class="landing-division landing-banner"></div>
             <div class="landing-division landing-whitespace"></div>
