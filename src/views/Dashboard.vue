@@ -10,11 +10,9 @@ const selfStore = useSelf()
 
 <template>
     <div class="dashboard dashboard-container">
-        <!-- I_Agreed: The below line was writ in order to access the obtainment of the details of the user, it is not intended to be permanent.-->
-        <h1>Logged in as: {{selfStore.fullName}}</h1>
-        <!--  Appl3s: Any ideas for this layout? I keep thinking of canvas, but I kinda don't want to use the canvas layout-->
         <div class="dashboard-layout">
-            <div class="dashboard-loans">
+            <h1 class="dashboard-panel" id="dashboard-title">Logged in as: {{selfStore.fullName}}</h1>
+            <div class="dashboard-panel" id="dashboard-loans">
                 <input type="button" @click="createPdf()" value="Click me to create a PDF">
                 <h3>Current Loans</h3>
                 <div class="dashboard-loans-table-container">
@@ -61,8 +59,7 @@ const selfStore = useSelf()
                     </table>
                 </div>
             </div>
-
-            <div class="dashboard-notifications">
+            <div class="dashboard-panel" id="dashboard-notifications">
                 <h3>Notifications</h3>
                 <div class="dashboard-notifications-list-container">
                     <ul class="dashboard-notifications-list">
@@ -70,8 +67,7 @@ const selfStore = useSelf()
                     </ul>
                 </div>
             </div>
-
-            <div class="dashboard-history">
+            <div class="dashboard-panel" id="dashboard-history">
                 <h3>Loan History</h3>
                 <div>
                     <table class="dashboard-history-table">
@@ -129,13 +125,21 @@ const selfStore = useSelf()
     padding: var(--tiles-outside-padding);
 
     display: grid;
-    grid-template: var(--tiles-row-one-height) var(--tiles-row-two-height) / var(--tiles-column-one-width) auto;
+    grid-template: 6vh 50vh 33vh / 60% auto;
     gap: var(--tiles-gap);
 }
 
-/* All divs in the layout grid */
-.dashboard-layout>div {
+.dashboard-panel {
     padding: var(--tile-inside-padding);
+    border: 1px solid green;
+}
+
+#dashboard-title {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+
+    padding: 0;
+
 }
 
 
@@ -150,9 +154,9 @@ const selfStore = useSelf()
 
 /* Notifications */
 
-.dashboard-notifications {
+#dashboard-notifications {
     grid-column: 2;
-    grid-row: 1 / 3;
+    grid-row: 2 / 4;
 }
 
 /* .dashboard-notifications-list-container {
