@@ -31,7 +31,7 @@
 }
 
 .about-layout > div {
-    background-color: var(--aph-dark1a);
+    background-color: var(--aph-back1);
     margin: 1em 0;
 }
 </style>

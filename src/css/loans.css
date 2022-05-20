@@ -10,7 +10,7 @@
 /* Filters */
 
 .loans-filters-container {
-    background-color: var(--aph-dark2);
+    background-color: var(--aph-back2);
 }
 
 /* loans-filters-left and loans-filters-right (The children, which are divs, of the loans-fileters-container) */
@@ -31,7 +31,7 @@
 
 /* Jump List */
 .loans-jump-list-container {
-    background-color: var(--aph-dark2);
+    background-color: var(--aph-back2);
 }
 
 /* .loans-jump-list {
@@ -54,16 +54,16 @@ li {
 /* Table */
 
 .loans-table-container {
-    background-color: var(--aph-dark1a);
+    background-color: var(--aph-back1);
 }
 
 /* .loans-table {
 } */
 
 th {
-    background-color: var(--aph-dark2a);
+    background-color: var(--aph-back2);
 }
 
 td {
-    background-color: var(--aph-dark3a);
+    background-color: var(--aph-fore1);
 }

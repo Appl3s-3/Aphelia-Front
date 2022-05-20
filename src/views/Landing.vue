@@ -55,20 +55,18 @@ const student_login_click = () => {
             <div class="landing-division landing-text">
                 <div class="landing-img-container">
                     <img id="landing-logo" src="../../assets/logo.svg" alt="">
-                    <!-- <div id="landing-title-container">
+                    <div id="landing-title-container">
                         <img class="landing-title" src="../../assets/landing-title-outline.svg" alt="">  
                         <img class="landing-title" src="../../assets/landing-title-outline.svg" alt="">  
                         <img class="landing-title" src="../../assets/landing-title-solid.svg" alt="Apheleia">  
-                    </div> -->
-                    <img id="landing-title" class="landing-img" src="../../assets/landing-logo.svg" alt="Apheleia">
+                    </div>
+                    <!-- <img id="landing-title" class="landing-img" src="../../assets/landing-logo.svg" alt="Apheleia"> -->
                 </div>
                 <input id="landing-login" @click="student_login_click" type="button" name="landing-login" value="Login">
             </div>
             <div class="landing-division landing-banner"></div>
             <div class="landing-division landing-whitespace"></div>
         </div>
-        <!-- TODO: Button in the bottom right to toggle light/dark mode -->
-        <button type="button" name="toggle-lightness"></button>
     </div>
 </template>
 
@@ -94,15 +92,28 @@ const student_login_click = () => {
 
 .landing-img-container {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: baseline;
     justify-content: space-between;
 }
 
-.landing-img {
+.landing-title-container {
+    display: flex;
+    flex-flow: column nowrap;
     width: 80%;
+    border: 10px solid green;
+    height: 100%;
 }
+
+.landing-title {
+    width: 100%;
+}
+
+/* .landing-title {
+    width: 80%;
+} */
 
 #landing-logo {
     width: 20%;

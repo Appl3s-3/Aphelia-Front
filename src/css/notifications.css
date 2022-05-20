@@ -1,13 +1,13 @@
 /* Local Variables */
 .notifications * {
-    --list-font: 24px Spectral;
+    --list-font-size: 24px;
 }
 
 ul {
-    background-color: var(--aph-dark3);
+    background-color: var(--aph-fore1);
 }
 
 li {
-    font: var(--list-font);
-    background-color: var(--aph-dark2);
+    font-size: var(--list-font-size);
+    background-color: var(--aph-back2);
 }

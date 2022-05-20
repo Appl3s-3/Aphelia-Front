@@ -8,7 +8,7 @@
 
 /* All divs in the layout grid */
 .dashboard-layout > div {
-    background-color: var(--aph-dark1a);
+    background-color: var(--aph-back1);
 }
 
 
@@ -50,13 +50,13 @@
 } */
 
 th {
-    background-color: var(--aph-dark2a);
+    background-color: var(--aph-back2);
 }
 
 td {
-    background-color: var(--aph-dark3a);
+    background-color: var(--aph-fore1);
 }
 
 div {
-    font: 18px Spectral;
+    font-size: 18px;
 }

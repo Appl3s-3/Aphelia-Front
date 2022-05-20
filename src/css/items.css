@@ -10,7 +10,7 @@
 /* Filters */
 
 .items-filters-container {
-    background-color: var(--aph-dark2);
+    background-color: var(--aph-back2);
 }
 
 /* items-filters-left and items-filters-right (The children, which are divs, of the items-fileters-container) */
@@ -64,9 +64,9 @@ li {
 } */
 
 th {
-    background-color: var(--aph-light3);
+    background-color: var(--aph-fore2);
 }
 
 td {
-    background-color: var(--aph-light2);
+    background-color: var(--aph-fore1);
 }

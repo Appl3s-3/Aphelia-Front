@@ -112,7 +112,7 @@ const cancel_settings = () => {
     justify-content: space-between;
     align-content: center;
 
-    background-color: var(--aph-dark2);
+    background-color: var(--aph-back2);
 }
 
 .settings-submit-container {
@@ -126,7 +126,7 @@ const cancel_settings = () => {
     align-content: center;
 
     border: 1px solid red;
-    background-color: var(--aph-dark2);
+    background-color: var(--aph-back2);
 }
 
 input {
