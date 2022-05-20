@@ -10,11 +10,11 @@
 /* Users */
 
 .people-filters-container {
-    background-color: var(--aph-dark2);
+    background-color: var(--aph-back2);
 }
 
 .people-user-table-container {
-    background-color: var(--aph-dark1a);
+    background-color: var(--aph-back1);
 }
 
 /* .people-user-table {
@@ -23,5 +23,5 @@
 /* Roles */
 
 .people-role-list-container {
-    background-color: var(--aph-dark1a);
+    background-color: var(--aph-back1);
 }

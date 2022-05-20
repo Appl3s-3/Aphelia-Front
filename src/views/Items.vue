@@ -250,7 +250,6 @@ const set_active_scheme_from_ID = (schemeID) => {
     --left-filter-vertical-margin: 12px;
     --filter-horizontal-margin: 15px;
 
-
     --display-heading-vertical-padding: 28px;
     --display-horizontal-padding: 1%;
 
