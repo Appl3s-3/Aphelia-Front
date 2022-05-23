@@ -32,7 +32,7 @@ const cancel_settings = () => {
 
 <template>
     <div class="settings settings-container">
-        <h2 class="apheleia">Settings {{state.notificationEnabled}}</h2>
+        <h2 class="apheleia">Settings {{settingsStore.darkTheme}}</h2>
         <div class="settings-layout">
             <div class="settings-list-container">
                 <ul class="settings-list">

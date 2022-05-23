@@ -3,11 +3,14 @@ import { RouterLink, RouterView } from 'vue-router'
 
 import NavigationBar from './components/NavigationBar.vue'
 import TopNavigationBar from './components/TopNavigationBar.vue'
+import { useSettings } from './store/useSettings'
 
 // TODO: Hide nav bar on landing page
 console.log(RouterLink)
 if (RouterLink) {
 }
+
+const settingsStore = useSettings()
 
 let showNavigationBar = true
 let useTopNav = false
@@ -16,7 +19,7 @@ let useTopBar = showNavigationBar && useTopNav
 </script>
 
 <template>
-    <div class="app-wrapper">
+    <div class="app-wrapper" :class="[settingsStore.darkTheme ? 'wrapper-dark' : 'wrapper-light', '']">
         <div class="app">
             <NavigationBar v-if="useLeftBar" />
             <TopNavigationBar v-if="useTopBar" />
