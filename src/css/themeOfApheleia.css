@@ -49,6 +49,7 @@ div.wrapper-light {
     --aph-border: rgb(208, 215, 222);
 
     --aph-purple: rgb(45, 28, 77);
+    --aph-purple-light: rgb(96, 66, 141);
     --aph-pink: rgb(221 73 152);
     --aph-blue: rgb(122, 167, 193);
     --aph-grey: var(--aph-border);

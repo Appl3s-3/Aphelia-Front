@@ -73,14 +73,14 @@ const student_login_click = () => {
 <style scoped>
 .landing-layout {
     display: grid;
-    grid-template: 100vh / 10% 50% 12% 18%;
+    grid-template: 100vh / 10% 50% 10% 40%;
     justify-content: center;
     align-items: center;
     bottom: 0;
 }
 
 .landing-division {
-    padding: 0 2em;
+    padding: 0 4em;
 }
 
 .landing-text {
@@ -91,18 +91,24 @@ const student_login_click = () => {
 }
 
 .landing-img-container {
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-end;
     justify-content: space-between;
+
+    padding-top: 20%;
+}
+
+#landing-logo {
+    
 }
 
 #landing-title-container {
     display: flex;
     flex-flow: column nowrap;
-    width: 80%;
+    width: 77%;
     height: 100%;
 }
 
@@ -110,23 +116,22 @@ const student_login_click = () => {
     width: 100%;
 }
 
-/* .landing-title {
-    width: 80%;
-} */
-
 #landing-logo {
-    width: 20%;
+    width: 18%;
 }
 
 #landing-login {
-    width: 10em;
+    width: 13em;
     height: 4em;
-    border: 0.2em solid var(--aph-border);
-    border-radius: 1em;
+    border: 0.25em solid var(--aph-purple);
+    border-radius: 0.4em;
+    background-color: transparent;
+
+    margin-top: 1em;
 }
 
 .landing-banner {
-    background-image: linear-gradient(to top, var(--aph-purple) 10%, var(--aph-pink) 120%);
+    background-image: linear-gradient(to top, var(--aph-purple-light) 10%, var(--aph-pink) 120%);
     height: 100%;
     width: 90%;
     margin: 0 auto;
