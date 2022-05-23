@@ -77,51 +77,7 @@ export const useInventory = defineStore('inventoryStore', {
                         ["RED-H74", "True"]
                     ]
                 },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                },
-                {
-                    name: "Archetype Name n"
-                }
+                {name: "Archetype Name n"}
             ],
 
             tempScheme: [
@@ -130,6 +86,26 @@ export const useInventory = defineStore('inventoryStore', {
                 "tag",
                 "status"
             ]
+        }
+    },
+    getters: {
+    },
+    actions: {
+        create_item(archetypeId, fields) {
+            this.schemes.forEach(scheme => {
+                if (archetypeId == scheme.id) {
+                    scheme.items.push(fields)
+                }
+            })
+        },
+        modify_item() {
+
+        },
+        create_archetype() {
+
+        },
+        modify_archetype() {
+
         }
     }
 })
