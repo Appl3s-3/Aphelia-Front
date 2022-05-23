@@ -11,23 +11,31 @@ const state = reactive({
     notificationTime: "",
     notificationEmail: "",
     notificationImportant: false,
-    darkTheme: false,
+    theme: "default",
  })
 
 // save settings then redirect to dashboard
 const save_settings = () => {
-    settingsStore.notificationEnabled = state.notificationEnabled
-    settingsStore.notificationTime = state.notificationTime
-    settingsStore.notificationEmail = state.notificationEmail
-    settingsStore.notificationImportant = state.notificationImportant
-    settingsStore.darkTheme = state.darkTheme
+    settingsStore.notificationEnabled = state.notificationEnabled;
+    settingsStore.notificationTime = state.notificationTime;
+    settingsStore.notificationEmail = state.notificationEmail;
+    settingsStore.notificationImportant = state.notificationImportant;
+    settingsStore.theme = state.theme;
+}
+
+const load_settings = () => {
+    document.getElementById("enable-notifications").checked = settingsStore.notificationEnabled;
+    document.getElementById("reminders").value = settingsStore.notificationTime;
+    document.getElementById("notification-email").value = settingsStore.notificationEmail;
+    document.getElementById("enable-important-email").checked = settingsStore.notificationImportant;
+    document.getElementById("select-theme").value = settingsStore.theme;
 }
 
 // redirect back to dashboard
 const cancel_settings = () => {
-    settingsStore.notificationEnabled = state.notificationEnabled
 }
 
+setTimeout(load_settings, 10); // let page load first
 </script>
 
 <template>
@@ -38,11 +46,11 @@ const cancel_settings = () => {
                 <ul class="settings-list">
                     <li class="settings-list-item">
                         <label for="enable-notifications">Enable Notifications</label>
-                        <input type="checkbox" name="enable-notifications" @input="event => state.notificationEnabled = event.target.checked"/>
+                        <input type="checkbox" id="enable-notifications" @input="event => state.notificationEnabled = event.target.checked"/>
                     </li>
                     <li class="settings-list-item">
                         <label for="reminders">Remind me for overdue items</label>
-                        <select name="reminders" @input="event => state.notificationTime = event.target.value">
+                        <select id="reminders" @input="event => state.notificationTime = event.target.value">
                             <option value="one">1 Day before</option>
                             <option value="three">3 Days before</option>
                             <option value="seven">1 Week before</option>
@@ -59,7 +67,7 @@ const cancel_settings = () => {
                         <label for="notification-email">Send notifications to:</label>
                         <input
                             type="text"
-                            name="notification-email"
+                            id="notification-email"
                             placeholder="Email (if blank, notifications will not be sent)"
                             class="apheleia small-area text"
                             @input="event => state.notificationEmail = event.target.value"
@@ -67,11 +75,15 @@ const cancel_settings = () => {
                     </li>
                     <li class="settings-list-item">
                         Mark email as important:
-                        <input type="checkbox" name="enable-important-email" @input="event => state.notificationTime = event.target.checked"/>
+                        <input type="checkbox" id="enable-important-email" @input="event => state.notificationTime = event.target.checked"/>
                     </li>
                     <li class="settings-list-item">
-                        Enable dark theme
-                        <input type="checkbox" @input="event => state.darkTheme = event.target.checked"/>
+                        Colour Theme:
+                        <select id="select-theme" @input="event => state.theme = event.target.value">
+                            <option value="default">Browser Default</option>
+                            <option value="dark">dark</option>
+                            <option value="light">light</option>
+                        </select>
                         <!-- Probably a theme component otherwise this would be FAT -->
                     </li>
                     <li class="settings-submit-container" id="submit-settings">

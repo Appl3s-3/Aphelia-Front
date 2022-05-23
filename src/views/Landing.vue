@@ -95,15 +95,14 @@ const student_login_click = () => {
     height: 100%;
     display: flex;
     flex-flow: row nowrap;
-    align-items: baseline;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
-.landing-title-container {
+#landing-title-container {
     display: flex;
     flex-flow: column nowrap;
     width: 80%;
-    border: 10px solid green;
     height: 100%;
 }
 
