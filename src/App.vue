@@ -19,7 +19,7 @@ let useTopBar = showNavigationBar && useTopNav
 </script>
 
 <template>
-    <div class="app-wrapper" :class="[settingsStore.darkTheme ? 'wrapper-dark' : 'wrapper-light', '']">
+    <div class="app-wrapper" :class="[settingsStore.isDarkTheme ? 'wrapper-dark' : 'wrapper-light', '']">
         <div class="app">
             <NavigationBar v-if="useLeftBar" />
             <TopNavigationBar v-if="useTopBar" />
