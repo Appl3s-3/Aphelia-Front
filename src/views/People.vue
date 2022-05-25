@@ -3,13 +3,6 @@ import { usePeople } from '../store/usePeople'
 
 const peopleStore = usePeople()
 
-window.onload = function() {
-    // Request all the users from the faculty
-    // Request all the roles from the faculty
-    // Display the users
-    // Display the roles
-}
-
 </script>
 
 <template>

@@ -255,6 +255,12 @@ const set_active_scheme_from_ID = (schemeID) => {
 <style scoped>
 @import "../css/items.css";
 
+/***** Items Header Container *****/
+@import "../css/itemsHeader.css";
+
+/***** Manage Menu *****/
+@import "../css/itemsManage.css";
+
 /* Local Variables */
 .items * {
     --left-filter-vertical-margin: 12px;
@@ -307,11 +313,6 @@ const set_active_scheme_from_ID = (schemeID) => {
     gap: var(--filter-table-gap-size);
 }
 
-/***** Items Header Container *****/
-@import "../css/itemsHeader.css";
-
-/***** Manage Menu *****/
-@import "../css/itemsManage.css";
 
 /***** Items Display Container *****/
 #items-display-container {
