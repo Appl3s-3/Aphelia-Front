@@ -56,8 +56,8 @@ const student_login_click = () => {
                 <div class="landing-img-container">
                     <img id="landing-logo" src="../../assets/logo.svg" alt="">
                     <div id="landing-title-container">
-                        <img class="landing-title" src="../../assets/landing-title-outline.svg" alt="">  
-                        <img class="landing-title" src="../../assets/landing-title-outline.svg" alt="">  
+                        <img class="landing-title-outline" src="../../assets/landing-title-outline.svg" alt="">  
+                        <img class="landing-title-outline" src="../../assets/landing-title-outline.svg" alt="">  
                         <img class="landing-title" src="../../assets/landing-title-solid.svg" alt="Apheleia">  
                     </div>
                     <!-- <img id="landing-title" class="landing-img" src="../../assets/landing-logo.svg" alt="Apheleia"> -->
@@ -73,14 +73,14 @@ const student_login_click = () => {
 <style scoped>
 .landing-layout {
     display: grid;
-    grid-template: 100vh / 10% 50% 12% 18%;
+    grid-template: 100vh / 10% 50% 10% 40%;
     justify-content: center;
     align-items: center;
     bottom: 0;
 }
 
 .landing-division {
-    padding: 0 2em;
+    padding: 0 4em;
 }
 
 .landing-text {
@@ -91,42 +91,67 @@ const student_login_click = () => {
 }
 
 .landing-img-container {
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-end;
     justify-content: space-between;
+
+    padding-top: 20%;
+}
+
+#landing-logo {
+    
 }
 
 #landing-title-container {
     display: flex;
     flex-flow: column nowrap;
-    width: 80%;
+    width: 77%;
     height: 100%;
 }
 
-.landing-title {
+.landing-title .landing-title-outline {
     width: 100%;
 }
 
-/* .landing-title {
-    width: 80%;
-} */
+.landing-title-outline {
+    padding-bottom: 0px;
+    transition: 0.2s;
+}
+
+.landing-title-outline:hover {
+    padding-bottom: 10px;
+    transition: 0.2s;
+}
 
 #landing-logo {
-    width: 20%;
+    width: 18%;
 }
 
 #landing-login {
-    width: 10em;
+    width: 20%;
     height: 4em;
-    border: 0.2em solid var(--aph-border);
-    border-radius: 1em;
+    border: 0.25em solid var(--aph-purple);
+    border-radius: 0.4em;
+    background-color: transparent;
+    font-family: "Montserrat";
+    font-size: 0.7vw;
+
+    margin-top: 1em;
+    transition: 0.1s
+}
+
+#landing-login:hover {
+    background-color: var(--aph-purple);
+    border-radius: 1.2em;
+    color: white;
+    transition: 0.2s;
 }
 
 .landing-banner {
-    background-image: linear-gradient(to top, var(--aph-purple) 10%, var(--aph-pink) 120%);
+    background-image: linear-gradient(to top, var(--aph-purple-light) 10%, var(--aph-pink) 120%);
     height: 100%;
     width: 90%;
     margin: 0 auto;
@@ -141,32 +166,27 @@ const student_login_click = () => {
 }
 
 
+@media screen and (max-width: 1200px) {
+    .landing-layout {
+        grid-template: 100vh / 10% 70% 10% 20%;
+    }
 
-/* line.landing-divider {
-    stroke: grey;
-    stroke-width: 2px;
-    stroke-linecap: round;
+    #landing-login {
+        font-size: 1.2vw;
+    }
 }
+@media screen and (max-width: 800px) {
+    .landing-layout {
+        grid-template: 100vh / 0% 80% 20% 0%;
+    }
 
-input[type="text"] {
-    border: none;
-    outline: none;
-    border-bottom: 1.5px solid #f1cbee;
-    font: 32px Arial, serif;
+    .landing-img-container {
+        width: 100%;
+    }
+  
+    #landing-login {
+        font-size: 1.5vw;
+        width: 30%;
+    }
 }
-
-input[type="text"]:focus {
-    border-bottom: 1.5px solid #a146ad;
-}
-
-input[type="password"] {
-    border: none;
-    outline: none;
-    border-bottom: 1.5px solid #f1cbee;
-    font: 32px Arial, serif;
-}
-
-input[type="password"]:focus {
-    border-bottom: 1.5px solid #a146ad;
-} */
 </style>

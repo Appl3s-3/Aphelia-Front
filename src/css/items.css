@@ -10,7 +10,7 @@
 /* Filters */
 
 .items-filters-container {
-    background-color: var(--aph-back2);
+    background-color: var(--aph-back1);
 }
 
 /* items-filters-left and items-filters-right (The children, which are divs, of the items-fileters-container) */
@@ -29,29 +29,36 @@
 }
 
 
-/* Jump List */
-/* .items-jump-list-container {
-    background-color: var(--aph-dark2);
-} */
-
-/* .items-jump-list {
-} */
-
-/* .items-jump-list-element-container {
-} */
-
-/* .items-jump-list-element {
-} */
-
-.items-jump-list-element:visited {
-    color: white;
+.items-tab:hover {
+    background-color: var(--aph-light2);
 }
 
-/* ul {
-} */
+#items-manage-menu-button {
+    background-color: var(--aph-purple);
+}
 
-li {
-    margin: 20px 50px;
+#manage-menu-container {
+    background-color: var(--aph-greya);
+}
+
+#manage-menu {
+    background-color: var(--aph-back1);
+}
+
+.manage-menu-button-confirm {
+    background-color: var(--aph-blue);
+}
+
+.manage-menu-button-deny {
+    background-color: var(--aph-warning);
+}
+
+.manage-menu-button-grey {
+    background-color: var(--aph-grey);
+}
+
+.items-display-container {
+    background-color: var(--aph-light3);
 }
 
 /* Table */
@@ -64,9 +71,9 @@ li {
 } */
 
 th {
-    background-color: var(--aph-fore2);
+    background-color: var(--aph-back2);
 }
 
 td {
-    background-color: var(--aph-fore1);
+    background-color: var(--aph-back1);
 }
