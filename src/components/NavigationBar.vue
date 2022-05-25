@@ -157,7 +157,11 @@ const toggle_navbar = () => {
     /* filter: saturate(0%) brightness(460%); */
 }
 
-#nav-body {
+#nav-top {
+    width: 100%;
+}
+
+#nav-bottom {
     width: 100%;
 }
 
@@ -172,6 +176,7 @@ const toggle_navbar = () => {
     display: flex;
     align-items: center;
     width: calc(100% - 10px);
+    
     height: 56px;
     margin: 5px;
     padding: 10px;
@@ -182,7 +187,7 @@ const toggle_navbar = () => {
     background-color: var(--aph-purple);
     text-decoration: none;
 
-    transition: 1.0s;
+    transition: width 1.0s;
 }
 
 .nav-button:hover {
