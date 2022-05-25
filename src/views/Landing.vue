@@ -121,12 +121,13 @@ const student_login_click = () => {
 }
 
 #landing-login {
-    width: 13em;
+    width: 20%;
     height: 4em;
     border: 0.25em solid var(--aph-purple);
     border-radius: 0.4em;
     background-color: transparent;
     font-family: "Montserrat";
+    font-size: 0.7vw;
 
     margin-top: 1em;
     transition: 0.1s
@@ -155,32 +156,27 @@ const student_login_click = () => {
 }
 
 
+@media screen and (max-width: 1200px) {
+    .landing-layout {
+        grid-template: 100vh / 10% 70% 10% 20%;
+    }
 
-/* line.landing-divider {
-    stroke: grey;
-    stroke-width: 2px;
-    stroke-linecap: round;
+    #landing-login {
+        font-size: 1.2vw;
+    }
 }
+@media screen and (max-width: 800px) {
+    .landing-layout {
+        grid-template: 100vh / 0% 80% 20% 0%;
+    }
 
-input[type="text"] {
-    border: none;
-    outline: none;
-    border-bottom: 1.5px solid #f1cbee;
-    font: 32px Arial, serif;
+    .landing-img-container {
+        width: 100%;
+    }
+  
+    #landing-login {
+        font-size: 1.5vw;
+        width: 30%;
+    }
 }
-
-input[type="text"]:focus {
-    border-bottom: 1.5px solid #a146ad;
-}
-
-input[type="password"] {
-    border: none;
-    outline: none;
-    border-bottom: 1.5px solid #f1cbee;
-    font: 32px Arial, serif;
-}
-
-input[type="password"]:focus {
-    border-bottom: 1.5px solid #a146ad;
-} */
 </style>
