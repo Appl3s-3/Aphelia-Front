@@ -1,50 +1,8 @@
 <script setup>
-import {login} from "../scripts/auth.js";
-window.onload = function() {
-    // Check if the client is already logged in
-    // If they are, redirect to /home
-}
-
-const CLIENT_ID = "apheleia"; // what's this? I don't know, ask Kai Bo
-
-const login_click = () => {
-    let username = document.getElementsByName("username")[0].value
-    let password = document.getElementsByName("password")[0].value
-
-    let loginSuccess = false
-    // loginSuccess = API(username, password)
-
-    if (loginSuccess == true) {
-        
-        return true
-    }
-    // Otherwise display an error and return false
-    return false
-}
+import {login} from "../scripts/auth.js"
 
 const student_login_click = () => {
-    // do some request magic
-        // sent the client to login
-        // get their student id
-        // cache their student id
-    // go to dashboard
-
-    login();
-
-    /*
-    var dailyTimetableElement
-
-    async function onUserData() {
-        var resource = await GetResourceFromCache("dailytimetable")
-
-        if (!dailyTimetableElement) {
-            dailyTimetableElement = document.createElement("daily-timetable")
-            document.getElementsByTagName("main")[0].appendChild(dailyTimetableElement)
-        }
-
-        dailyTimetableElement.setAttribute("data", resource);
-    }
-*/
+    login()
 }
 </script>
 
@@ -102,7 +60,6 @@ const student_login_click = () => {
 }
 
 #landing-logo {
-    
 }
 
 #landing-title-container {
@@ -165,7 +122,6 @@ const student_login_click = () => {
 
 }
 
-
 @media screen and (max-width: 1200px) {
     .landing-layout {
         grid-template: 100vh / 10% 70% 10% 20%;
@@ -175,6 +131,7 @@ const student_login_click = () => {
         font-size: 1.2vw;
     }
 }
+
 @media screen and (max-width: 800px) {
     .landing-layout {
         grid-template: 100vh / 0% 80% 20% 0%;
