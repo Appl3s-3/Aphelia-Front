@@ -56,8 +56,8 @@ const student_login_click = () => {
                 <div class="landing-img-container">
                     <img id="landing-logo" src="../../assets/logo.svg" alt="">
                     <div id="landing-title-container">
-                        <img class="landing-title" src="../../assets/landing-title-outline.svg" alt="">  
-                        <img class="landing-title" src="../../assets/landing-title-outline.svg" alt="">  
+                        <img class="landing-title-outline" src="../../assets/landing-title-outline.svg" alt="">  
+                        <img class="landing-title-outline" src="../../assets/landing-title-outline.svg" alt="">  
                         <img class="landing-title" src="../../assets/landing-title-solid.svg" alt="Apheleia">  
                     </div>
                     <!-- <img id="landing-title" class="landing-img" src="../../assets/landing-logo.svg" alt="Apheleia"> -->
@@ -112,8 +112,18 @@ const student_login_click = () => {
     height: 100%;
 }
 
-.landing-title {
+.landing-title .landing-title-outline {
     width: 100%;
+}
+
+.landing-title-outline {
+    padding-bottom: 0px;
+    transition: 0.2s;
+}
+
+.landing-title-outline:hover {
+    padding-bottom: 10px;
+    transition: 0.2s;
 }
 
 #landing-logo {
