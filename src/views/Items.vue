@@ -228,8 +228,8 @@ const set_active_scheme_from_ID = (schemeID) => {
                         <h2 :id="scheme.id" class="items-tab-text">{{ scheme.name }}</h2>
                     </li>
                 </ul>
-                <div class="items-table-container">
-                    <table class="items-table">
+                <div id="items-table-container">
+                    <table id="items-table">
                         <thead>
                             <tr>
                                 <th v-for="fieldName in state.tabbedScheme.fieldNames">{{ fieldName }}</th>
@@ -339,14 +339,9 @@ const set_active_scheme_from_ID = (schemeID) => {
 /* .items-tab:hover {
 } */
 
-.items-display-container > div {
+/**** Items Table Container ****/
+#items-table-container {
     width: var(--display-content-width);
-}
-
-
-/* Table */
-
-.items-table-container {
     margin: 0;
     border: var(--table-container-border-width) solid var(--aph-border);
     border-radius: var(--table-container-border-radius);
@@ -357,7 +352,7 @@ const set_active_scheme_from_ID = (schemeID) => {
     margin: 0 var(--table-horizontal-margin);
 }
 
-.items-table {
+#items-table {
     width: 100%;
     margin: 0 var(--table-horizontal-margin);
 
