@@ -14,7 +14,7 @@ export const useSettings = defineStore('settingsStore', {
         // returns if the page should display in dark mode
         isDarkTheme: (state) => {
             if (state.theme == "default") {
-                return window.matchMedia("(prefers-color-scheme: dark)").false;
+                return window.matchMedia("(prefers-color-scheme: dark)").matches;
             } else {
                 return (state.theme == "dark");
             }
