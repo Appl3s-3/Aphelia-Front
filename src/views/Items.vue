@@ -16,7 +16,17 @@ const state = reactive({
     showDeleteArchetypeSecondMenu: false,
     showResetMenu: false,
     showSaveMenu: false,
-    showExitMenu: false
+    showExitMenu: false,
+    batch: {
+        items: {
+            create: [],
+            modify: [],
+        },
+        archetypes: {
+            create: [],
+            modify: []
+        }
+    }
 })
 
 /*
@@ -289,7 +299,6 @@ const set_active_scheme_from_ID = (schemeID) => {
     --archetypes-list-border-radius: 1em;
 }
 
-/* TODO: make the table take up the remaining space */
 .items-layout {
     --filter-table-gap-size: 0;
 
@@ -344,14 +353,12 @@ const set_active_scheme_from_ID = (schemeID) => {
     flex-flow: row nowrap;
 }
 
-#items-manage-menu-button {
-    background-color: var(--aph-purple);
-}
+/* #items-manage-menu-button {
+} */
 
 /***** Manage Menu *****/
 #manage-menu-container {
     z-index: 99;
-    background-color: var(--aph-greya);
     position: fixed;
     left: 0;
     top: 0;
@@ -362,7 +369,6 @@ const set_active_scheme_from_ID = (schemeID) => {
 #manage-menu {
     display: grid;
     grid: var(--header-height) var(--options-height) var(--body-height) var(--footer-height) / auto;
-    background-color: var(--aph-back1);
     z-index: 100;
     position: fixed;
     width: var(--menu-width);
@@ -486,17 +492,14 @@ const set_active_scheme_from_ID = (schemeID) => {
     width: 30%;
 }
 
-.manage-menu-button-confirm {
-    background-color: var(--aph-blue);
+/* .manage-menu-button-confirm {
 }
 
 .manage-menu-button-deny {
-    background-color: var(--aph-warning);
 }
 
 .manage-menu-button-grey {
-    background-color: var(--aph-grey);
-}
+} */
 
 /***** Manage Sub Menus *****/
 .manage-confirm-menu-container {
@@ -560,9 +563,8 @@ const set_active_scheme_from_ID = (schemeID) => {
     margin: 0;
 }
 
-.items-tab:hover {
-    background-color: var(--aph-light2);
-}
+/* .items-tab:hover {
+} */
 
 /***** Items Display Container *****/
 
@@ -571,7 +573,6 @@ const set_active_scheme_from_ID = (schemeID) => {
     flex-flow: column nowrap;
     align-items: center;
 
-    background-color: var(--aph-light3);
     padding: var(--display-vertical-padding) var(--display-horizontal-padding);
 }
 
