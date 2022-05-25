@@ -219,11 +219,11 @@ const set_active_scheme_from_ID = (schemeID) => {
                     </div>
                 </div>
             </div>
-            <div class="items-display-container">
+            <div id="items-display-container">
                 <!-- <button class="items-tabs-expand" @click="state.expandTabs = !state.expandTabs">
                     <span>{{state.expandTabs ? "OPEN" : "CLOSED"}}</span>
                 </button> -->
-                <ul class="items-tabs-container">
+                <ul id="items-tabs-container">
                     <li class="items-tab" v-for="scheme in inventoryStore.schemes" @click="state.tabbedScheme = scheme">
                         <h2 :id="scheme.id" class="items-tab-text">{{ scheme.name }}</h2>
                     </li>
@@ -308,273 +308,36 @@ const set_active_scheme_from_ID = (schemeID) => {
 }
 
 /***** Items Header Container *****/
-#items-header-container {
-    display: grid;
-    grid: auto / 80% 20%;
-}
-
-/**** Items Filters ****/
-/* .items-filters-toggle-container {
-} */
-
-.items-filters-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: baseline;
-}
-
-.items-filters-left {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: var(--left-filter-vertical-margin) 0;
-}
-
-.items-filters-right {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.items-filter {
-    margin: auto var(--filter-horizontal-margin);
-}
-
-.items-search-bar {
-    text-align: right;
-}
-
-/**** Items Manage Menu Container *****/
-#items-manage-container {
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-/* #items-manage-menu-button {
-} */
+@import "../css/itemsHeader.css";
 
 /***** Manage Menu *****/
-#manage-menu-container {
-    z-index: 99;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-}
-
-#manage-menu {
-    display: grid;
-    grid: var(--header-height) var(--options-height) var(--body-height) var(--footer-height) / auto;
-    z-index: 100;
-    position: fixed;
-    width: var(--menu-width);
-    height: var(--menu-height);
-    left: var(--menu-left);
-    top: var(--menu-top);
-    border: 1px solid blue;
-}
-
-.manage-menu-division {
-    border: 1px solid aqua;
-}
-
-/**** Manage Menu Header ****/
-#manage-menu-header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-/**** Manage Menu Options ****/
-#manage-menu-options {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-#manage-menu-options-left {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-#manage-menu-options-right {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-/**** Manage Menu Body ****/
-#manage-menu-body {
-    display: grid;
-    grid: auto / var(--body-archetype-width) var(--body-items-width);
-    margin: var(--body-vertical-margin) var(--body-horizontal-margin);
-}
-
-/*** Manage Archetypes ***/
-#manage-archetypes-list-container {
-    border: var(--archetypes-list-border-width) solid var(--aph-border);
-    border-radius: var(--archetypes-list-border-radius);
-    overflow: auto;
-}
-
-/* .manage-archetypes-list {
-} */
-
-.manage-archetypes-list-item {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: 0;
-    border: 1px solid var(--aph-border);
-}
-
-/* .manage-archetypes-archetype-name {
-} */
-
-.manage-archetypes-modify-archetype-button {
-    display: inline;
-}
-
-#manage-archetypes-create-archetype-button-container {
-    margin: 0;
-    width: 100%;
-}
-
-#manage-archetypes-create-archetype-button {
-    width: 100%;
-}
-
-/*** Items Manage Items ***/
-#manage-items-table-container {
-    border: 1px solid var(--aph-border);
-    overflow: auto;
-}
-
-/* #manage-items-table {
-
-} */
-
-.manage-items-item-data {
-    margin: 0;
-    padding: 0;
-}
-
-/* .manage-items-item-history {
-
-}
-
-.manage-items-delete-item-button {
-
-} */
-
-/**** Manage Menu Footer ****/
-#manage-menu-footer {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    border: 1px solid red;
-}
-
-/***** Manage Menu Buttons */
-.manage-menu-button {
-    height: 100%;
-    width: 30%;
-}
-
-/* .manage-menu-button-confirm {
-}
-
-.manage-menu-button-deny {
-}
-
-.manage-menu-button-grey {
-} */
-
-/***** Manage Sub Menus *****/
-.manage-confirm-menu-container {
-    z-index: 101;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
-}
-
-.manage-confirm-menu {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-    z-index: 102;
-    position: fixed;
-    width: 50vw;
-    height: 40vh;
-    left: 25vw;
-    top: 30vh;
-}
-
-/* Options at the bottom of the confirm menus */
-.manage-confirm-menu-options {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 100%;
-}
-
-/* Options at the bottom right of the confirm menus (eg Save / Save and Exit) */
-/* .manage-confirm-menu-options-exit {
-} */
-
-/* Back / Reset / Save */
-.manage-confirm-ternary-menu-options {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 100%;
-}
-
-/***** Tabs *****/
-
-.items-tabs-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: stretch;
-    align-items: baseline;
-    border: 3px solid green;
-}
-
-.items-tab {
-    width: 20%;
-    border: 1px solid blue;
-    margin: 0;
-}
-
-/* .items-tab:hover {
-} */
+@import "../css/itemsManage.css";
 
 /***** Items Display Container *****/
-
-.items-display-container {
+#items-display-container {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 
     padding: var(--display-vertical-padding) var(--display-horizontal-padding);
 }
+
+/**** Items Tabs Container ****/
+#items-tabs-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: baseline;
+    width: 100%;
+}
+
+.items-tab {
+    width: 20%;
+    margin: 0;
+}
+
+/* .items-tab:hover {
+} */
 
 .items-display-container > div {
     width: var(--display-content-width);
@@ -608,19 +371,4 @@ th {
 td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
 }
-
-/* Jump List */
-/* .items-jump-list-container {
-    position: fixed;
-} */
-
-/* .items-jump-list {
-} */
-
-/* .items-jump-list-element-container {
-} */
-
-/* .items-jump-list-element {
-} */
-
 </style>

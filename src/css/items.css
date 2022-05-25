@@ -13,11 +13,6 @@
     background-color: var(--aph-back1);
 }
 
-/* items-filters-left and items-filters-right (The children, which are divs, of the items-fileters-container) */
-.items-filters-container > div {
-    border: 1px solid blue;
-}
-
 /* .items-filters-left {
 } */
 
@@ -28,9 +23,13 @@
     border: 1px solid pink;
 }
 
+#items-manage-menu-button {
+    color: var(--aph-text-light);
+    border: 3px solid var(--aph-border);
+}
 
 .items-tab:hover {
-    background-color: var(--aph-light2);
+    background-color: var(--aph-back2);
 }
 
 #items-manage-menu-button {
