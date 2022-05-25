@@ -126,8 +126,17 @@ const student_login_click = () => {
     border: 0.25em solid var(--aph-purple);
     border-radius: 0.4em;
     background-color: transparent;
+    font-family: "Montserrat";
 
     margin-top: 1em;
+    transition: 0.1s
+}
+
+#landing-login:hover {
+    background-color: var(--aph-purple);
+    border-radius: 1.2em;
+    color: white;
+    transition: 0.2s;
 }
 
 .landing-banner {
