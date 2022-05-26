@@ -60,8 +60,8 @@ div.wrapper-light {
     --aph-fore1a: rgba(180, 180, 180, 0.6);
     --aph-fore2a: rgba(160, 160, 160, 0.6);
 
-    --aph-text: rgb(250, 250, 250);
-    --aph-text-inverted: rgb(5, 5, 5);
+    --aph-text: rgb(5, 5, 5);
+    --aph-text-inverted: rgb(250, 250, 250);
 
     /* --aph-border: rgb(208, 215, 222); */
 }
