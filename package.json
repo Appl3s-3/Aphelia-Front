@@ -11,6 +11,7 @@
     "client-oauth2": "^4.3.3",
     "pdf-lib": "^1.17.1",
     "pinia": "^2.0.13",
+    "qrcode": "^1.5.0",
     "querystring": "^0.2.1",
     "vite": "^2.9.9",
     "vue": "^3.2.31",
