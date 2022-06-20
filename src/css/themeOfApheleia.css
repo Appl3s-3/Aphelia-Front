@@ -48,13 +48,13 @@ div.wrapper-dark {
 }
 
 div.wrapper-light {
-    --aph-back1: rgb(220, 220, 220);
+    --aph-back1: rgb(255, 255, 255);
     --aph-back2: rgb(200, 200, 200);
 
     --aph-fore1: rgb(180, 180, 180);
     --aph-fore2: rgb(160, 160, 160);
 
-    --aph-back1a: rgba(220, 220, 220, 0.8);
+    --aph-back1a: rgba(255, 255, 255, 0.8);
     --aph-back2a: rgba(200, 200, 200, 0.75);
     
     --aph-fore1a: rgba(180, 180, 180, 0.6);

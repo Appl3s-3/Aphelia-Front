@@ -1,41 +1,47 @@
-/* Local Variables */
-.items * {
-    --color-var: 0;
-}
-
-/* .items-layout {
+/***** Local Variables *****/
+/* .items * {
 } */
 
+/* #manage-menu * {
+} */
 
-/* Filters */
+.items-layout {
+}
+
+/***** Items Header *****/
+#items-header-container {
+}
+
+/**** Items Filters ****/
+/* .items-filters-toggle-container {
+} */
 
 .items-filters-container {
-    background-color: var(--aph-back1);
 }
 
-/* .items-filters-left {
-} */
+.items-filters-left {
+}
 
-/* .items-filters-right {
-} */
+.items-filters-right {
+}
 
 .items-filter {
-    border: 1px solid pink;
 }
 
-#items-manage-menu-button {
-    color: var(--aph-text-light);
-    border: 3px solid var(--aph-border);
+.items-search-bar {
 }
 
-.items-tab:hover {
-    background-color: var(--aph-back2);
+/**** Items Manage Menu Container *****/
+#items-manage-container {
 }
 
 #items-manage-menu-button {
     background-color: var(--aph-purple);
+    color: var(--aph-text-light);
+    border: 3px solid var(--aph-border);
 }
 
+/***** Manage Menu *****/
 #manage-menu-container {
     background-color: var(--aph-greya);
 }
@@ -43,6 +49,7 @@
 #manage-menu {
     background-color: var(--aph-back1);
 }
+
 
 .manage-menu-button-confirm {
     background-color: var(--aph-blue);
@@ -56,21 +63,39 @@
     background-color: var(--aph-grey);
 }
 
-.items-display-container {
-    background-color: var(--aph-light3);
+/***** Items Display Container *****/
+#items-display-container {
+    background-color: var(--aph-back1);
 }
 
-/* Table */
+/**** Items Tabs Container ****/
+#items-tabs-container {
+}
 
-/* .items-table-container {
-    background-color: var(--aph-light1);
-} */
+.items-filter {
+    border: 1px solid pink;
+}
 
-/* .items-table {
-} */
+.items-tab {
+}
+
+.items-tab:hover {
+    background-color: var(--aph-back2);
+}
+
+/**** Items Table Container ****/
+#items-table-container {
+    background-color: var(--aph-back1);
+}
+
+.table-titles {
+}
+
+#items-table {
+}
 
 th {
-    background-color: var(--aph-back2);
+    background-color: var(--aph-back1);
 }
 
 td {
