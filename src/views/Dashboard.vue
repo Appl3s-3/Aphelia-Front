@@ -1,6 +1,10 @@
 <script setup>
 import { useInventory } from '../store/useInventory'
 import { useSelf } from '../store/useSelf'
+
+import DashboardLoans from '../components/DashboardLoans.vue'
+import DashboardNotifications from '../components/DashboardNotifications.vue'
+import DashboardHistory from '../components/DashboardHistory.vue'
 //import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 // import { useSettings } from '../store/useSettings'
 
@@ -12,89 +16,9 @@ const selfStore = useSelf()
     <div class="dashboard dashboard-container">
         <div class="dashboard-layout">
             <h1 class="dashboard-panel" id="dashboard-title">Logged in as: {{selfStore.fullName}}</h1>
-            <div class="dashboard-panel" id="dashboard-loans">
-                <input type="button" @click="createPdf()" value="Click me to create a PDF">
-                <h3>Current Loans</h3>
-                <div class="dashboard-loans-table-container">
-                    <table class="dashboard-loans-table">
-                        <tr>
-                            <th></th>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Info</th>
-                            <th>Due</th>
-                        </tr>
-                        <!--
-                        TODO: If the due date is within the next 3 days, make the table row yellow
-                        TODO: If the due date has passed, make the table row red
-                        -->
-                        <tr>
-                            <td>Icon</td>
-                            <td>1</td>
-                            <td>Item Name</td>
-                            <td>How does this fit?</td>
-                            <td>8/4/22</td>
-                        </tr>
-                        <tr>
-                            <td>Icon</td>
-                            <td>1</td>
-                            <td>Item Name</td>
-                            <td>How does this fit?</td>
-                            <td>8/4/22</td>
-                        </tr>
-                        <tr>
-                            <td>Icon</td>
-                            <td>1</td>
-                            <td>Item Name</td>
-                            <td>How does this fit?</td>
-                            <td>8/4/22</td>
-                        </tr>
-                        <tr>
-                            <td>Icon</td>
-                            <td>1</td>
-                            <td>Item Name</td>
-                            <td>How does this fit?</td>
-                            <td>8/4/22</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="dashboard-panel" id="dashboard-notifications">
-                <h3>Notifications</h3>
-                <div class="dashboard-notifications-list-container">
-                    <ul class="dashboard-notifications-list">
-                        <li v-for="notification in selfStore.history.notifications">{{ notification }}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="dashboard-panel" id="dashboard-history">
-                <h3>Loan History</h3>
-                <div>
-                    <table class="dashboard-history-table">
-                        <tr>
-                            <th></th>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Info</th>
-                            <th>Returned</th>
-                        </tr>
-                        <tr>
-                            <td>Icon</td>
-                            <td>1</td>
-                            <td>Item Name</td>
-                            <td>How does this fit?</td>
-                            <td>8/4/22</td>
-                        </tr>
-                        <tr>
-                            <td>Icon</td>
-                            <td>2</td>
-                            <td>Item Name</td>
-                            <td>How does this fit?</td>
-                            <td>8/4/22</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+            <DashboardLoans/>
+            <DashboardNotifications/>
+            <DashboardHistory/>
         </div>
     </div>
 </template>

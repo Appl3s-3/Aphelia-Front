@@ -1,13 +1,19 @@
 <script setup>
+import { reactive } from 'vue'
+import { useInventory } from '../store/useInventory'
+import { itemsLocal } from '../store/itemsLocal'
+
+const itemsSt = itemsLocal()
+
 </script>
 
 <template>
-    <div id="manage-menu-container" v-if="state.showManageMenu">
-        <div id="manage-menu" v-if="state.showManageMenu">
+    <div id="manage-menu-container" v-if="itemsSt.manage_state()">
+        <div id="manage-menu" v-if="itemsSt.manage_state()">
             <div class="manage-menu-division" id="manage-menu-header">
                 <h2>Manage Items</h2>
                 <!-- TODO: -->
-                <input type="button" name="close-manage" value="x" @click="state.showManageMenu = false">
+                <input type="button" name="close-manage" value="x" @click="itemsSt.hide_manage()">
             </div>
             <div class="manage-menu-division" id="manage-menu-options">
                 <span id="manage-menu-options-left">
@@ -88,6 +94,29 @@
 
 <style scoped>
 @import "../css/itemsManage.css";
+
+#manage-menu {
+    --menu-width: 90vw;
+    --menu-height: 90vh;
+    --menu-left: 5vw;
+    --menu-top: 5vh;
+
+    --header-height: 5%;
+    --options-height: 6%;
+    --body-height: 84%;
+    --footer-height: 5%;
+}
+
+#manage-menu * {
+    --body-vertical-margin: 1em;
+    --body-horizontal-margin: 0;
+
+    --body-archetype-width: 40%;
+    --body-items-width: 60%;
+    
+    --archetypes-list-border-width: 0.1em;
+    --archetypes-list-border-radius: 1em;
+}
 
 #manage-menu-container {
     z-index: 99;
