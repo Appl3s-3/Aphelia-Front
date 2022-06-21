@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useInventory = defineStore('itemsLocal', {
+export const itemsLocal = defineStore('itemsLocal', {
     state: () => {
         return {
             showFilters: false,

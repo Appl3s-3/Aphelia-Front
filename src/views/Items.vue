@@ -5,7 +5,7 @@ import { itemsLocal } from '../store/itemsLocal'
 
 import ItemsHeader from '../components/ItemsHeader.vue'
 import ItemsDisplay from '../components/ItemsDisplay.vue'
-import ManageMenu from '../components/ManageItems.vue'
+import ManageMenu from '../components/ItemsManage.vue'
 
 const inventoryStore = useInventory()
 
@@ -56,22 +56,16 @@ const set_active_scheme_from_ID = (schemeID) => {
 </script>
 
 <template>
-    <div class="items items-container">
-        <div class="items-layout">
-            <ItemsHeader/>
-            <ItemsDisplay/>
-        </div>
-        <ManageMenu v-if="itemsSt.manage_state()"/>
+<div class="items items-container">
+    <div class="items-layout">
+        <ItemsHeader/>
+        <ItemsDisplay/>
     </div>
+    <ManageMenu v-if="itemsSt.manage_state"/>
+</div>
 </template>
 
 <style scoped>
-@import "../css/items.css";
-
-/***** Manage Menu *****/
-@import "../css/itemsManage.css";
-
-/* Local Variables */
 .items * {
     --left-filter-vertical-margin: 12px;
     --filter-horizontal-margin: 15px;

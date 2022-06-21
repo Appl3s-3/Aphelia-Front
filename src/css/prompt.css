@@ -1,0 +1,16 @@
+.prompt-button {
+    height: 100%;
+    width: 30%;
+}
+
+.prompt-confirm {
+    background-color: var(--aph-blue);
+}
+
+.prompt-deny {
+    background-color: var(--aph-warning);
+}
+
+.prompt-grey {
+    background-color: var(--aph-grey);
+}

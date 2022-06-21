@@ -1,9 +1,3 @@
-<script setup>
-</script>
-
 <template>
-    <input class="manage-menu-button manage-menu-button-grey" type="button" name="" value="Back" @click="">
+<input class="prompt-button prompt-confirm" type="button" value="Back">
 </template>
-
-<style scoped>
-</style>

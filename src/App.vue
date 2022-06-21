@@ -19,22 +19,23 @@ let useTopBar = showNavigationBar && useTopNav
 </script>
 
 <template>
-    <div class="app-wrapper" :class="[settingsStore.isDarkTheme ? 'wrapper-dark' : 'wrapper-light', '']">
-        <div class="app">
-            <NavigationBar v-if="useLeftBar" />
-            <TopNavigationBar v-if="useTopBar" />
-            <main :class="{ shift: useLeftBar, topshift: useTopBar }">
-                <RouterView />
-            </main>
-        </div>
+<div class="app-wrapper" :class="[settingsStore.isDarkTheme ? 'wrapper-dark' : 'wrapper-light', '']">
+    <div class="app">
+        <NavigationBar v-if="useLeftBar" />
+        <TopNavigationBar v-if="useTopBar" />
+        <main :class="{ shift: useLeftBar, topshift: useTopBar }">
+            <RouterView />
+        </main>
     </div>
+</div>
 </template>
 
 <style>
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,400&display=swap');
-@import "./css/base.css";
+/* @import "./css/base.css"; */
 @import "./css/clean.css";
+@import "./css/prompt.css";
 @import "./css/themeOfApheleia.css";
 
 .app {

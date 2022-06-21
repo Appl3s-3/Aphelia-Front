@@ -1,0 +1,74 @@
+<script setup>
+import { reactive } from 'vue'
+import { useInventory } from '../store/useInventory'
+
+const inventoryStore = useInventory()
+
+const state = reactive({
+    tabbedScheme: inventoryStore.schemes[0],
+    manageScheme: inventoryStore.schemes[0],
+    expandTabs: false,
+    showConfirmMenu: false,
+    showDeleteItemMenu: false,
+    showDeleteArchetypeMenu: false,
+    showDeleteArchetypeSecondMenu: false,
+    showResetMenu: false,
+    showSaveMenu: false,
+    showExitMenu: false,
+    batch: {
+        items: {
+            create: [],
+            modify: [],
+        },
+        archetypes: {
+            create: [],
+            modify: []
+        }
+    }
+})
+</script>
+
+<template>
+<div id="items-table-container">
+    <table id="items-table">
+        <thead>
+            <tr>
+                <th v-for="fieldName in state.tabbedScheme.fieldNames">{{ fieldName }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item in state.tabbedScheme.items">
+                <td v-for="field in item">{{ field }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</template>
+
+<style scoped>
+#items-table-container {
+    width: var(--display-content-width);
+    margin: 0;
+    border: var(--table-container-border-width) solid var(--aph-border);
+    border-radius: var(--table-container-border-radius);
+    padding: var(--table-vertical-padding) var(--table-horizontal-padding);
+    background-color: var(--aph-back1);
+}
+
+#items-table {
+    width: 100%;
+    margin: 0 var(--table-horizontal-margin);
+
+    border-collapse: collapse;
+}
+
+#items-table th {
+    padding: var(--table-heading-vertical-padding) 0;
+    background-color: var(--aph-back1);
+}
+
+#items-table td {
+    padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
+    background-color: var(--aph-back1);
+}
+</style>

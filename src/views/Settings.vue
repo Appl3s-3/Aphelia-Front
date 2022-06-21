@@ -3,6 +3,10 @@ import { useSelf } from '../store/useSelf'
 import { useSettings } from '../store/useSettings'
 import { reactive } from 'vue'
 
+import Notifications from '../components/Settings/Notifications.vue'
+import Colour from '../components/Settings/Colour.vue'
+import Submit from '../components/Settings/Submit.vue'
+
 const selfStore = useSelf()
 const settingsStore = useSettings()
 
@@ -12,7 +16,7 @@ const state = reactive({
     notificationEmail: "",
     notificationImportant: false,
     theme: "default",
- })
+})
 
 // save settings then redirect to dashboard
 const save_settings = () => {
@@ -39,74 +43,22 @@ setTimeout(load_settings, 10); // let page load first
 </script>
 
 <template>
-    <div class="settings settings-container">
-        <h2 class="apheleia">Settings {{settingsStore.darkTheme}}</h2>
-        <div class="settings-layout">
-            <div class="settings-list-container">
-                <ul class="settings-list">
-                    <li class="settings-list-item">
-                        <label for="enable-notifications">Enable Notifications</label>
-                        <input type="checkbox" id="enable-notifications" @input="event => state.notificationEnabled = event.target.checked"/>
-                    </li>
-                    <li class="settings-list-item">
-                        <label for="reminders">Remind me for overdue items</label>
-                        <select id="reminders" @input="event => state.notificationTime = event.target.value">
-                            <option value="one">1 Day before</option>
-                            <option value="three">3 Days before</option>
-                            <option value="seven">1 Week before</option>
-                            <!-- If we have time we'll parse a string (e.g 1, 3, 4,5,6,19) into a list of days before and send a notification on each day
-                            <option value="">All of the above</option>-->
-                            <option value="custom">Custom</option>
-                        </select>
-                        <div v-if="customReminder">
-                            <input type="number" min="0" max="28" step="1" value="2" @input="event => state.notificationTime = event.target.value"/>
-                            <p>Days before</p>
-                        </div>
-                    </li>
-                    <li class="settings-list-item">
-                        <label for="notification-email">Send notifications to:</label>
-                        <input
-                            type="text"
-                            id="notification-email"
-                            placeholder="Email (if blank, notifications will not be sent)"
-                            class="apheleia small-area text"
-                            @input="event => state.notificationEmail = event.target.value"
-                        />
-                    </li>
-                    <li class="settings-list-item">
-                        Mark email as important:
-                        <input type="checkbox" id="enable-important-email" @input="event => state.notificationTime = event.target.checked"/>
-                    </li>
-                    <li class="settings-list-item">
-                        Colour Theme:
-                        <select id="select-theme" @input="event => state.theme = event.target.value">
-                            <option value="default">Browser Default</option>
-                            <option value="dark">dark</option>
-                            <option value="light">light</option>
-                        </select>
-                        <!-- Probably a theme component otherwise this would be FAT -->
-                    </li>
-                    <li class="settings-submit-container" id="submit-settings">
-                        <button type="reset" class="apheleia reset">Reset to default</button>
-                        <div>
-                            <button type="button" class="apheleia cancel" @click="cancel_settings">Cancel</button>
-                            <button type="button" class="apheleia save" @click="save_settings">Save</button>
-                        </div>
-                    </li>
-                </ul>
-                <!-- <router-link :to="{ name: 'help' }" class="button" id="help">Help</router-link>
-                <router-link :to="{ name: 'about' }" class="button" id="about">About</router-link>-->
-            </div>
-        </div>
+<div class="settings settings-container">
+    <h2 class="apheleia">Settings {{settingsStore.darkTheme}}</h2>
+    <div class="settings-layout">
+        <ul id="settings-list">
+            <Notifications/>
+            <Colour/>
+            <Submit/>
+        </ul>
+        <!-- <router-link :to="{ name: 'help' }" class="button" id="help">Help</router-link>
+        <router-link :to="{ name: 'about' }" class="button" id="about">About</router-link>-->
     </div>
+</div>
 </template>
 
 <style scoped>
-
-/* .settings-list-container {
-} */
-
-.settings-list {
+#settings-list {
     margin: 0 20%;
     display: flex;
     flex-flow: column nowrap;
@@ -114,7 +66,7 @@ setTimeout(load_settings, 10); // let page load first
     align-content: flex-start;
 }
 
-.settings-list-item {
+#settings-list > li {
     margin: auto auto 0.1em auto;
     padding: 20px;
     width: 100%;
@@ -124,20 +76,6 @@ setTimeout(load_settings, 10); // let page load first
     justify-content: space-between;
     align-content: center;
 
-    background-color: var(--aph-back2);
-}
-
-.settings-submit-container {
-    margin: 2em auto auto auto;
-    padding: 20px;
-    width: 100%;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-content: center;
-
-    border: 1px solid red;
     background-color: var(--aph-back2);
 }
 

@@ -2,33 +2,20 @@
 import { reactive } from 'vue'
 import { itemsLocal } from '../store/itemsLocal'
 
+import ItemsFilters from './ItemsFilters.vue'
+
 const itemsSt = itemsLocal()
 
 </script>
 
 <template>
-    <div id="items-header-container">
-        <div class="items-filters-toggle-container">
-            <label for="expand-filters">{{ itemsSt.filter_state() == true ? "Hide Filters" : "Show Filters" }}</label>
-            <input type="checkbox" name="expand-filters" @click="itemsSt.toggle_filters()">
-            <div class="items-filters-container" v-if="itemsSt.filter_state()">
-                <div class="items-filters-left">
-                    <span>
-                        Loaned in the past n days (insert slider here)
-                    </span>
-                    <span>
-                        (insert other filters here)
-                    </span>
-                </div>
-                <div class="items-filters-right">
-                    <input class="items-filter items-search-bar" type="text" name="search-items" placeholder="Search Name">
-                </div>
-            </div>
-        </div>
-        <div id="items-manage-container">
-            <input id="items-manage-menu-button" type="button" name="manage-item" value="Manage Items" @click="itemsSt.show_manage()">
-        </div>
+<div id="items-header">
+    <div id="toggle-buttons-container">
+        <input id="filters-toggle-button" type="button" name="toggle-filters" @click="itemsSt.toggle_filters()">
+        <input id="manage-menu-open-button" type="button" name="manage-item" value="Manage Items" @click="itemsSt.show_manage()">
     </div>
+    <ItemsFilters v-if="itemsSt.filter_state"/>
+</div>
 </template>
 
 <style scoped>
@@ -37,51 +24,20 @@ const itemsSt = itemsLocal()
     --filter-horizontal-margin: 15px;
 }
 
-#items-header-container {
+#items-header {
     display: grid;
     grid: auto / 80% 20%;
 }
 
-/**** Items Filters ****/
-/* .items-filters-toggle-container {
-} */
-
-.items-filters-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: baseline;
+#toggle-buttons-container {
 }
 
-.items-filters-left {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: var(--left-filter-vertical-margin) 0;
+#filters-toggle-button {
 }
 
-.items-filters-right {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
+#manage-menu-open-button {
+    background-color: var(--aph-purple);
+    color: var(--aph-text-light);
+    border: 3px solid var(--aph-border);
 }
-
-.items-filter {
-    margin: auto var(--filter-horizontal-margin);
-}
-
-.items-search-bar {
-    text-align: right;
-}
-
-/**** Items Manage Menu Container *****/
-#items-manage-container {
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-/* #items-manage-menu-button {
-} */
 </style>

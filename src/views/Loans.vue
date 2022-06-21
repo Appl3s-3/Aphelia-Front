@@ -6,38 +6,35 @@ const selfStore = useSelf()
 </script>
 
 <template>
-    <div class="loans loans-container">
-        <div class="loans-layout">
-            <div class="loans-table-container">
-                <table class="loans-table">
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Borrow Date</th>
-                        <th>Due Date</th>
-                        <th>Return Date</th>
-                        <th>Info</th>
-                    </tr>
-                    <tr v-for="loan in selfStore.history.loans">
-                        <td>{{ loan }}</td>
-                        <td>{{ loan }}</td>
-                        <td>{{ loan }}</td>
-                        <td>{{ loan }}</td>
-                        <td>{{ loan }}</td>
-                        <td>{{ loan }}</td>
-                        <td>INfo</td>
-                    </tr>
-                </table>
-            </div>
+<div class="loans loans-container">
+    <div class="loans-layout">
+        <div class="loans-table-container">
+            <table class="loans-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Borrow Date</th>
+                    <th>Due Date</th>
+                    <th>Return Date</th>
+                    <th>Info</th>
+                </tr>
+                <tr v-for="loan in selfStore.history.loans">
+                    <td>{{ loan }}</td>
+                    <td>{{ loan }}</td>
+                    <td>{{ loan }}</td>
+                    <td>{{ loan }}</td>
+                    <td>{{ loan }}</td>
+                    <td>{{ loan }}</td>
+                    <td>INfo</td>
+                </tr>
+            </table>
         </div>
     </div>
+</div>
 </template>
 
 <style scoped>
-@import "../css/loans.css";
-
-/* Local Variables */
 .loans * {
     --left-filter-vertical-margin: 12px;
     --filter-horizontal-margin: 15px;
@@ -67,6 +64,7 @@ const selfStore = useSelf()
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
+    background-color: var(--aph-back2);
 } */
 
 /* loans-filters-left and loans-filters-right (The children, which are divs, of the loans-filters-container) */
@@ -91,6 +89,7 @@ const selfStore = useSelf()
 /* Jump List */
 /* .loans-jump-list-container {
     position: fixed;
+    background-color: var(--aph-back2);
 } */
 
 /* .loans-jump-list {
@@ -106,6 +105,7 @@ const selfStore = useSelf()
 
 .loans-table-container {
     margin: 0 auto;
+    background-color: var(--aph-back1);
 }
 
 .loans-table {
@@ -118,9 +118,16 @@ const selfStore = useSelf()
 
 th {
     padding: var(--table-heading-vertical-padding) 0;
+    background-color: var(--aph-back2);
 }
 
 td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
+    background-color: var(--aph-fore1);
+}
+
+li {
+    margin: 20px 50px;
+    border: solid red 1px;
 }
 </style>
