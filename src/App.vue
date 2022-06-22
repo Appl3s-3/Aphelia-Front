@@ -38,6 +38,21 @@ let useTopBar = showNavigationBar && useTopNav
 @import "./css/prompt.css";
 @import "./css/themeOfApheleia.css";
 
+body {
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.app-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
 .app {
     /* display: flex;
     flex-direction: row; */

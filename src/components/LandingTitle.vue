@@ -17,7 +17,7 @@ const student_login_click = () => {
         </div>
         <!-- <img id="landing-title" class="landing-img" src="../../assets/landing-logo.svg" alt="Apheleia"> -->
     </div>
-    <input id="login-button" type="button" name="landing-login" value="Login" @click="student_login_click">
+    <input id="login-button" type="button" name="login-button" value="Login" @click="student_login_click">
 </div>
 </template>
 
@@ -40,8 +40,9 @@ const student_login_click = () => {
     padding-top: 20%;
 }
 
-/* #logo {
-} */
+#logo {
+    width: 30%;
+}
 
 #landing-title-container {
     display: flex;
@@ -84,4 +85,22 @@ const student_login_click = () => {
     color: white;
     transition: 0.2s;
 }
+
+@media screen and (max-width: 1200px) {
+    #login-button {
+        font-size: 1.2vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #img-container {
+        width: 100%;
+    }
+  
+    #login-button {
+        font-size: 1.5vw;
+        width: 30%;
+    }
+}
+
 </style>

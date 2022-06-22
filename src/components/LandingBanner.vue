@@ -1,13 +1,19 @@
 <template>
-<div id="banner"></div>
+<div id="landing-banner">
+    <div id="banner"></div>
+</div>
 </template>
 
 <style scoped>
+#landing-banner {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    border: 1px solid pink;
+    width: 90%;
+}
 #banner {
     background-image: linear-gradient(to top, var(--aph-purple-light) 10%, var(--aph-pink) 120%);
-    height: 100%;
-    width: 90%;
-    margin: 0 auto;
 
     transition: 0.5s;
 }
