@@ -20,7 +20,6 @@ const state = reactive({
 
 // save settings then redirect to dashboard
 const save_settings = () => {
-    console.log(state.theme);
     settingsStore.notificationEnabled = state.notificationEnabled;
     settingsStore.notificationTime = state.notificationTime;
     settingsStore.notificationEmail = state.notificationEmail;
@@ -48,7 +47,11 @@ setTimeout(load_settings, 10); // let page load first
     <h2 class="apheleia">Settings {{settingsStore.darkTheme}}</h2>
     <div class="settings-layout">
         <ul id="settings-list">
-            <Notifications/>
+            <Notifications @enabledChange="(x) => state.notificationEnabled = x"
+                           @remindersChange="(x) => state.notificationTime = x"
+                           @emailChange="(x) => state.notificationEmail = x"
+                           @importantChange="(x) => state.notificationImportant = x"
+            />
             <Colour @colourChange="(c) => state.theme = c"/>
             <Submit @saveSettings="save_settings()" @cancelSettings="cancel_settings()"/>
         </ul>

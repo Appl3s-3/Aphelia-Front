@@ -12,10 +12,10 @@ if (RouterLink) {
 
 const settingsStore = useSettings()
 
-let showNavigationBar = true
-let useTopNav = false
-let useLeftBar = showNavigationBar && !useTopNav
-let useTopBar = showNavigationBar && useTopNav
+let showNavigationBar = true;
+let useTopNav = false;
+let useLeftBar = showNavigationBar && !useTopNav;
+let useTopBar = showNavigationBar && useTopNav;
 </script>
 
 <template>
