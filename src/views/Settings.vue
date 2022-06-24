@@ -20,6 +20,7 @@ const state = reactive({
 
 // save settings then redirect to dashboard
 const save_settings = () => {
+    console.log(state.theme);
     settingsStore.notificationEnabled = state.notificationEnabled;
     settingsStore.notificationTime = state.notificationTime;
     settingsStore.notificationEmail = state.notificationEmail;
@@ -48,8 +49,8 @@ setTimeout(load_settings, 10); // let page load first
     <div class="settings-layout">
         <ul id="settings-list">
             <Notifications/>
-            <Colour/>
-            <Submit/>
+            <Colour @colourChange="(c) => state.theme = c"/>
+            <Submit @saveSettings="save_settings()" @cancelSettings="cancel_settings()"/>
         </ul>
         <!-- <router-link :to="{ name: 'help' }" class="button" id="help">Help</router-link>
         <router-link :to="{ name: 'about' }" class="button" id="about">About</router-link>-->
