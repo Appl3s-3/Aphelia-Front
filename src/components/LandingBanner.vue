@@ -9,10 +9,12 @@
     display: flex;
     justify-content: space-around;
     height: 100%;
-    border: 1px solid pink;
     width: 90%;
 }
+
 #banner {
+    height: 100%;
+    width: 100%;
     background-image: linear-gradient(to top, var(--aph-purple-light) 10%, var(--aph-pink) 120%);
 
     transition: 0.5s;

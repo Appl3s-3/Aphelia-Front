@@ -1,22 +1,23 @@
 <script setup>
+import { useSelf } from '../store/useSelf'
+
+import NotificationsDisplay from '../components/NotificationsDisplay.vue'
+import NotificationsHeader from '../components/NotificationsHeader.vue'
+
+const selfStore = useSelf()
+
 </script>
 
 <template>
-<div>
-    <h3>Notifications</h3>
-    <ul class="dash-notifications-list">
-        <li v-for="notification in selfStore.history.notifications">{{ notification }}</li>
-    </ul>
+<div id="notifications-layout">
+    <NotificationsHeader/>
+    <NotificationsDisplay/>
 </div>
 </template>
 
 <style scoped>
-/* .dash-notifications-list {
-} */
-
-.dash-notifications-list > li {
-    padding: var(--notification-list-padding);
-    margin: var(--notification-list-vertical-margin) auto;
-    background-color: var(--aph-dark3a);
+#notifications-layout {
+    display: grid;
+    grid: auto auto / auto;
 }
 </style>
