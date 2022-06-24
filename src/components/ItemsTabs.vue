@@ -5,7 +5,7 @@ const inventoryStore = useInventory()
 </script>
 
 <template>
-<ul id="tabs-list">
+<ul id="items-tabs">
     <li v-for="scheme in inventoryStore.schemes" @click="state.tabbedScheme = scheme">
         <h2 class="tab-text" :id="scheme.id">{{ scheme.name }}</h2>
     </li>
@@ -13,7 +13,7 @@ const inventoryStore = useInventory()
 </template>
 
 <style scoped>
-#tabs-list {
+#items-tabs {
     display: flex;
     flex-flow: row wrap;
     justify-content: stretch;
@@ -21,12 +21,12 @@ const inventoryStore = useInventory()
     width: 100%;
 }
 
-#tabs-list > li {
+#items-tabs > li {
     width: 20%;
     margin: 0;
 }
 
-#tabs-list > li :hover {
+#items-tabs > li :hover {
     background-color: var(--aph-back2);
 }
 </style>
