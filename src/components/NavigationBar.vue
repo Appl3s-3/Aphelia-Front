@@ -179,7 +179,7 @@ const toggle_navbar = () => {
     
     height: 56px;
     margin: 5px;
-    padding: 10px;
+    padding: 0px;
     border-radius: 5px;
 
     text-align: left;
@@ -200,6 +200,7 @@ const toggle_navbar = () => {
 
 .nav-icon {
     display: inline-block;
+    margin-left: 10px;
 }
 
 .nav-label {
