@@ -90,6 +90,8 @@ const toggle_navbar = () => {
     height: 100vh;
     background-color: var(--aph-purple);
     position: fixed;
+    top: 0px;
+    left: 0px;
     /* border-right: 0.2em solid white; */
     transition: width 0.5s;
     z-index: 1;
@@ -179,7 +181,7 @@ const toggle_navbar = () => {
     
     height: 56px;
     margin: 5px;
-    padding: 10px;
+    padding: 0px;
     border-radius: 5px;
 
     text-align: left;
@@ -200,6 +202,7 @@ const toggle_navbar = () => {
 
 .nav-icon {
     display: inline-block;
+    margin-left: 10px;
 }
 
 .nav-label {
