@@ -14,4 +14,5 @@
 </template>
 
 <style scoped>
+@import "../../css/settings.css";
 </style>
