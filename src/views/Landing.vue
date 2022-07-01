@@ -5,7 +5,7 @@ import LandingBanner from '../components/LandingBanner.vue'
 
 <template>
 <div class="landing" id="landing-container">
-    <div class="landing-layout">
+    <div id="landing-layout">
         <div class="division whitespace"></div>
         <LandingTitle class="division"/>
         <LandingBanner class="division"/>
@@ -15,7 +15,7 @@ import LandingBanner from '../components/LandingBanner.vue'
 </template>
 
 <style scoped>
-.landing-layout {
+#landing-layout {
     display: grid;
     grid-template: 100vh / 10% 50% 10% 40%;
     justify-content: center;
@@ -28,7 +28,7 @@ import LandingBanner from '../components/LandingBanner.vue'
 }
 
 @media screen and (max-width: 1200px) {
-    .landing-layout {
+    #landing-layout {
         grid-template: 100vh / 10% 70% 10% 20%;
     }
 
@@ -38,14 +38,10 @@ import LandingBanner from '../components/LandingBanner.vue'
 }
 
 @media screen and (max-width: 800px) {
-    .landing-layout {
+    #landing-layout {
         grid-template: 100vh / 0% 80% 20% 0%;
     }
 
-    .landing-img-container {
-        width: 100%;
-    }
-  
     #landing-login {
         font-size: 1.5vw;
         width: 30%;

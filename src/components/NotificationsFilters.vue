@@ -3,17 +3,34 @@
 
 <template>
 <ul id="notifications-filters">
-    <li>
-        <input type="button" name="notifications-announcements">Announcements
+    <li @click="notifSt.toggle_announcements()">
+        Announcements<!-- <input type="button" name="notifications-announcements" value=""> -->
     </li>
-    <li>Reminders</li>
-    <li>Changes</li>
+    <li @click="notifSt.toggle_reminders()">
+        Reminders
+        <!-- <input type="button" name="notifications-announcements" value=""> -->
+    </li>
+    <li @click="notifSt.toggle_changes()">
+        Changes
+        <!-- <input type="button" name="notifications-announcements" value=""> -->
+    </li>
 </ul>
 </template>
 
 <style scoped>
 #notifications-filters {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: baseline;
+    margin: 0;
+}
+
+#notifications-filters > li {
     display: inline;
+    border: 1px solid pink;
+    padding: 10px;
+    background-color: blueviolet;
+
 }
 
 </style>
