@@ -78,13 +78,6 @@ export const useInventory = defineStore('inventoryStore', {
                     ]
                 },
                 {name: "Archetype Name n"}
-            ],
-
-            tempScheme: [
-                "internalID",
-                "ID",
-                "tag",
-                "status"
             ]
         }
     },
