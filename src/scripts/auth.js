@@ -163,7 +163,7 @@ export async function login() {
 export async function auth_setup() {
     // check for existing refresh token
     if (localStorage["refreshToken"] !== undefined && localStorage["refreshTokenExpiry"] !== undefined) {
-        get_token();
+        await get_token();
         await set_info();
     } else { // not logged in
 
