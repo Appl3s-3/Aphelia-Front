@@ -90,6 +90,8 @@ const toggle_navbar = () => {
     height: 100vh;
     background-color: var(--aph-purple);
     position: fixed;
+    top: 0px;
+    left: 0px;
     /* border-right: 0.2em solid white; */
     transition: width 0.5s;
     z-index: 1;
