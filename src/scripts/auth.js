@@ -162,11 +162,14 @@ export async function login() {
 
 export async function auth_setup() {
     // check for existing refresh token
-    if (localStorage["refreshToken"] !== undefined && localStorage["refreshTokenExpiry"] !== undefined) {
-        await refresh_token();
-        await set_info();
-    } else { // not logged in
-
+    var accessTokenExpiry = localStorage["accessTokenExpiry"]
+    if (accessTokenExpiry !== undefined && new Date(Date.parse(accessTokenExpiry)) > new Date(Date.now())) {
+        if (localStorage["refreshToken"] !== undefined && localStorage["refreshTokenExpiry"] !== undefined) {
+            await refresh_token();
+            await set_info();
+        } else { // not logged in
+    
+        }
     }
 }
 
