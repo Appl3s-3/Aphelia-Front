@@ -56,8 +56,8 @@ const set_active_scheme_from_ID = (schemeID) => {
 </script>
 
 <template>
-<div class="items items-container">
-    <div class="items-layout">
+<div class="items" id="items-container">
+    <div id="items-layout">
         <ItemsHeader/>
         <ItemsDisplay/>
     </div>
@@ -86,7 +86,12 @@ const set_active_scheme_from_ID = (schemeID) => {
     --table-data-horizontal-padding: 12px;
 }
 
-.items-layout {
+#items-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#items-layout {
     display: grid;
     grid-template: auto auto / auto;
     gap: 0;
