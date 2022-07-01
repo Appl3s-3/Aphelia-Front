@@ -47,9 +47,13 @@ setTimeout(load_settings, 10); // let page load first
     <h2 class="apheleia">Settings {{settingsStore.darkTheme}}</h2>
     <div class="settings-layout">
         <ul id="settings-list">
-            <Notifications/>
-            <Colour/>
-            <Submit/>
+            <Notifications @enabledChange="(x) => state.notificationEnabled = x"
+                           @remindersChange="(x) => state.notificationTime = x"
+                           @emailChange="(x) => state.notificationEmail = x"
+                           @importantChange="(x) => state.notificationImportant = x"
+            />
+            <Colour @colourChange="(c) => state.theme = c"/>
+            <Submit @saveSettings="save_settings()" @cancelSettings="cancel_settings()"/>
         </ul>
         <!-- <router-link :to="{ name: 'help' }" class="button" id="help">Help</router-link>
         <router-link :to="{ name: 'about' }" class="button" id="about">About</router-link>-->
