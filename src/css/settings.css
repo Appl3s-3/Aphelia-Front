@@ -1,0 +1,12 @@
+li {
+    margin: auto auto 0.1em auto;
+    padding: 20px;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+
+    background-color: var(--aph-back2);
+}

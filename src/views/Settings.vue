@@ -62,6 +62,7 @@ setTimeout(load_settings, 10); // let page load first
 </template>
 
 <style scoped>
+@import "../css/settings.css";
 #settings-list {
     margin: 0 20%;
     display: flex;
