@@ -87,10 +87,11 @@ const set_active_scheme_from_ID = (schemeID) => {
 }
 
 .items-layout {
-    --filter-table-gap-size: 0;
-
     display: grid;
     grid-template: auto auto / auto;
-    gap: var(--filter-table-gap-size);
+    gap: 0;
+
+    width: 70%;
+    margin: 5vh 0;
 }
 </style>

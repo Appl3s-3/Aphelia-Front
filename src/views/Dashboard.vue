@@ -26,14 +26,6 @@ const selfStore = useSelf()
 
 <style scoped>
 .dashboard * {
-    --tiles-outside-padding: 2.5%;
-    --tiles-gap: 0.1em;
-    --tiles-row-one-height: 50vh;
-    --tiles-row-two-height: 39vh;
-    --tiles-column-one-width: 60%;
-
-    --tile-inside-padding: 1%;
-
     --notification-list-padding: 10px;
     --notification-list-vertical-margin: 6px;
 
@@ -44,15 +36,15 @@ const selfStore = useSelf()
 }
 
 .dashboard-layout {
-    padding: var(--tiles-outside-padding);
+    padding: 2.5%;
 
     display: grid;
     grid-template: 6vh 50vh 33vh / 60% auto;
-    gap: var(--tiles-gap);
+    gap: 0.1em;
 }
 
 .dashboard-panel {
-    padding: var(--tile-inside-padding);
+    padding: 1%;
     border: 1px solid green;
     background-color: var(--aph-back1);
 }

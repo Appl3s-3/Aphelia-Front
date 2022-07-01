@@ -10,5 +10,8 @@ import NotificationsFilters from './NotificationsFilters.vue'
 </template>
 
 <style scoped>
+#notifications-header {
+    margin: 5vh 0 0 0;
+}
 
 </style>

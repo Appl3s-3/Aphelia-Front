@@ -33,6 +33,6 @@ const selfStore = useSelf()
 }
 
 #notifications-layout * {
-    width: 80%;
+    width: 70%;
 }
 </style>
