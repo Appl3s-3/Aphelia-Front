@@ -1,8 +1,10 @@
 <script setup>
 import { reactive } from 'vue'
 import { useInventory } from '../store/useInventory'
+import { itemsLocal } from '../store/itemsLocal'
 
 const inventoryStore = useInventory()
+const itemsSt = itemsLocal()
 
 const state = reactive({
     tabbedScheme: inventoryStore.schemes[0],
@@ -26,6 +28,10 @@ const state = reactive({
         }
     }
 })
+
+function check_item(item, filter) { // check if item passes search filter
+    return item[0].toLowerCase().includes(filter.toLowerCase());
+}
 </script>
 
 <template>
@@ -37,9 +43,11 @@ const state = reactive({
             </tr>
         </thead>
         <tbody>
-            <tr v-for="item in state.tabbedScheme.items">
-                <td v-for="field in item">{{ field }}</td>
-            </tr>
+            <template v-for="item in state.tabbedScheme.items">
+                <tr v-if="check_item(item, itemsSt.search_params)">
+                    <td v-for="field in item">{{ field }}</td>
+                </tr>
+            </template>
         </tbody>
     </table>
 </div>

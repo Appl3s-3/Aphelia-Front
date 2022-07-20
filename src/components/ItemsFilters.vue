@@ -12,7 +12,7 @@
         </span>
     </div>
     <div id="filters-right">
-        <input class="filter" id="search-bar" type="text" name="search-items" placeholder="Search Name">
+        <input class="filter" id="search-bar" type="text" name="search-items" placeholder="Search Name" @input="event => $emit('search', event.target.value)">
     </div>
 </div>
 </template>

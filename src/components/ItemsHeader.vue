@@ -14,7 +14,7 @@ const itemsSt = itemsLocal()
         <input id="filters-toggle-button" type="button" name="toggle-filters" @click="itemsSt.toggle_filters()">
         <input id="manage-menu-open-button" type="button" name="manage-item" value="Manage Items" @click="itemsSt.show_manage()">
     </div>
-    <ItemsFilters v-if="itemsSt.filter_state"/>
+    <ItemsFilters v-if="itemsSt.filter_state" @search="(x) => itemsSt.searchParams = x"/>
 </div>
 </template>
 
