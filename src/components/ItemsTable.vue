@@ -6,8 +6,9 @@ import { itemsLocal } from '../store/itemsLocal'
 const inventoryStore = useInventory()
 const itemsSt = itemsLocal()
 
+itemsSt.tabbedScheme = inventoryStore.schemes[0]
+
 const state = reactive({
-    tabbedScheme: inventoryStore.schemes[0],
     manageScheme: inventoryStore.schemes[0],
     expandTabs: false,
     showConfirmMenu: false,
@@ -39,11 +40,11 @@ function check_item(item, filter) { // check if item passes search filter
     <table id="items-table">
         <thead>
             <tr>
-                <th v-for="fieldName in state.tabbedScheme.fieldNames">{{ fieldName }}</th>
+                <th v-for="fieldName in itemsSt.tabbedScheme.fieldNames">{{ fieldName }}</th>
             </tr>
         </thead>
         <tbody>
-            <template v-for="item in state.tabbedScheme.items">
+            <template v-for="item in itemsSt.tabbedScheme.items">
                 <tr v-if="check_item(item, itemsSt.search_params)">
                     <td v-for="field in item">{{ field }}</td>
                 </tr>

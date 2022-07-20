@@ -6,19 +6,20 @@ export const itemsLocal = defineStore('itemsLocal', {
             showFilters: false,
             showManageMenu: false,
             searchParams: "",
+            tabbedScheme: "",
         }
     },
     getters: {
         filter_state() {return this.showFilters},
         manage_state() {return this.showManageMenu},
-        search_params() {return this.searchParams}
+        search_params() {return this.searchParams},
+        tabbed_scheme() {return this.tabbedScheme}
     },
     actions: {
         toggle_manage() {this.showManageMenu = !this.showManageMenu},
         // show_manage() {this.showManageMenu = true},
         hide_manage() {this.showManageMenu = false},
         toggle_filters() {this.showFilters = !this.showFilters},
-        set_search(params) {this.searchParams = params},
         // show_filters() {this.showFilters = true},
         // hide_filters() {this.showFilters = false}
     }
