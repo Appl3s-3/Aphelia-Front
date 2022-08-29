@@ -4,12 +4,13 @@
 <template>
     <div>
         <h3>Current Loans</h3>
-        <table class="dash-loans-table">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Info</th>
-                <th>Due</th>
+        <div id="dash-loans-table-wrapper">
+            <table class="dash-loans-table">
+            <tr id="dash-loans-table-header">
+                <th><a href="#">ID</a></th>
+                <th><a href="#">name</a></th>
+                <th><a href="#">info</a></th>
+                <th><a href="#">due</a></th>
             </tr>
             <!--
             TODO: If the due date is within the next 3 days, make the table row yellow
@@ -39,28 +40,46 @@
                 <td>Snap!</td>
                 <td>14/8/22</td>
             </tr>
-        </table>
+            </table>
+        </div>
     </div>
 </template>
 
 <style scoped>
-.dash-loans-table {
-    width: 100%;
-    /*border-collapse: collapse;*/
-    background-color: var(--aph-back1);
+#dash-loans-table-wrapper {
+    height: 85%;
     border: 4px solid var(--aph-grey);
     border-radius: 10px;
+}
 
+.dash-loans-table {
+    width: 100%;
 }
 
 .dash-loans-table th {
     padding: var(--table-heading-vertical-padding) 0;
     border-collapse: separate;
+    border: 1px var(--aph-grey)
+}
+
+#dash-loans-table-header {
+    height:15px;
 }
 
 .dash-loans-table td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
-    color: (--aph-grey);
     text-align: center;
+    border: 1px var(--aph-grey)
+}
+
+.dash-loans-table tr th a {
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+    color: var(--aph-text-dark);
+    transition: 0.2s;
+}
+
+.dash-loans-table tr th a:hover {
+    text-decoration-color: rgba(45, 28, 77, 1);
+    color: var(--aph-purple)
 }
 </style>

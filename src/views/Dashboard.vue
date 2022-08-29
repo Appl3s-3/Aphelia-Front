@@ -16,7 +16,7 @@ const selfStore = useSelf()
 <div class="dashboard dashboard-container">
     <!--<input type="button" @click="createPdf()" value="Click me to create a PDF">-->
     <div class="dashboard-layout">
-        <h1 class="dashboard-panel" id="dashboard-title">Logged in as: {{selfStore.fullName}}</h1>
+        <h1 class="dashboard-panel" id="dashboard-title">dashboard.</h1>
         <DashLoans         class="dashboard-panel"/>
         <DashNotifications class="dashboard-panel" id="dashboard-notifications"/>
         <DashHistory       class="dashboard-panel"/>
@@ -39,21 +39,25 @@ const selfStore = useSelf()
     padding: 2.5%;
 
     display: grid;
-    grid-template: 6vh 50vh 33vh / 60% auto;
+    grid-template: 6vh 40vh 40vh / 60% auto;
     gap: 0.1em;
 }
 
 .dashboard-panel {
     padding: 1%;
-    /*border: 1px solid green;*/
     background-color: var(--aph-back1);
 }
 
 #dashboard-title {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-
+    font-size: 30pt;
+    font-family: "montserrat";
+    font-weight: bolder;
+    color: var(--aph-purple);
+    
     padding: 0;
+    margin-left: 10px;
 }
 
 #dashboard-notifications {

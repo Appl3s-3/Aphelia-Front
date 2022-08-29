@@ -4,12 +4,13 @@
 <template>
 <div>
     <h3>Loan History</h3>
-    <table class="dash-history-table">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Info</th>
-            <th>Returned</th>
+    <div id="dash-history-table-wrapper">
+        <table class="dash-history-table">
+        <tr id="dash-history-table-header">
+            <th><a href="#">ID</a></th>
+            <th><a href="#">name</a></th>
+            <th><a href="#">info</a></th>
+            <th><a href="#">returned</a></th>
         </tr>
         <tr>
             <td>1</td>
@@ -24,17 +25,21 @@
             <td>16/5/22</td>
         </tr>
     </table>
+    </div>
 </div>
 </template>
 
 <style scoped>
-.dash-history-table {
-    width: 100%;
-    height: 75%;
-    /*border-collapse: collapse;*/
-    background-color: var(--aph-back1);
+#dash-history-table-wrapper {
+    height: 100%;
     border: 4px solid var(--aph-grey);
     border-radius: 10px;
+}
+
+.dash-history-table {
+    width: 100%;
+    /*border-collapse: collapse;*/
+    background-color: var(--aph-back1);
 }
 
 .dash-history-table th {
@@ -45,5 +50,20 @@
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
     color: (--aph-grey);
     text-align: center;
+}
+
+#dash-history-table-header {
+    height:20px;
+}
+
+.dash-history-table tr th a {
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+    color: var(--aph-text-dark);
+    transition: 0.2s;
+}
+
+.dash-history-table tr th a:hover {
+    text-decoration-color: rgba(45, 28, 77, 1);
+    color: var(--aph-purple)
 }
 </style>
