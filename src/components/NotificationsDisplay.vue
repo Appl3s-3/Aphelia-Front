@@ -14,12 +14,14 @@ const selfStore = useSelf()
 <style scoped>
 #notifications-display {
     margin: 0;
+    border: 4px solid var(--aph-grey);
+    border-radius: 10px;
 }
 
 #notifications-display > li {
     margin: auto auto 0.1em auto;
     padding: 1em;
     font-size: 24px;
-    background-color: var(--aph-fore1);
+    border-bottom: 1px solid var(--aph-grey);
 }
 </style>

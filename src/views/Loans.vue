@@ -9,6 +9,8 @@ const selfStore = useSelf()
 <div class="loans loans-container">
     <div class="loans-layout">
         <div class="loans-table-container">
+            <h3 id="loans-title">loans.</h3>
+            <input id="loans-search" type="text" placeholder="Search..">
             <table class="loans-table">
                 <tr>
                     <th>ID</th>
@@ -20,13 +22,13 @@ const selfStore = useSelf()
                     <th>Info</th>
                 </tr>
                 <tr v-for="loan in selfStore.history.loans">
+                    <td>1234</td>
                     <td>{{ loan }}</td>
-                    <td>{{ loan }}</td>
-                    <td>{{ loan }}</td>
-                    <td>{{ loan }}</td>
-                    <td>{{ loan }}</td>
-                    <td>{{ loan }}</td>
-                    <td>INfo</td>
+                    <td>Type 1</td>
+                    <td>22/02/22</td>
+                    <td>22/12/22</td>
+                    <td>02/12/22</td>
+                    <td>Info about the loan.</td>
                 </tr>
             </table>
         </div>
@@ -54,6 +56,22 @@ const selfStore = useSelf()
     display: grid;
     grid-template: auto auto / auto;
     gap: var(--filter-table-gap-size);
+}
+
+#loans-title {
+    font-family: "Montserrat";
+    font-size: 28pt;
+    font-weight: bold;
+    color: var(--aph-purple);
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+#loans-search {
+    padding-right: 30px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    font-size: 16px;
 }
 
 
@@ -111,19 +129,19 @@ const selfStore = useSelf()
 .loans-table {
     width: 70vw; /* TODO: Change the width based off the number of item fields */
     margin: 0 var(--table-horizontal-margin);
-    
-    border-collapse: collapse;
-    
+
+    border: solid var(--aph-grey) 3px;
+    border-radius: 5px;
 }
 
 th {
     padding: var(--table-heading-vertical-padding) 0;
-    background-color: var(--aph-back2);
+    
 }
 
 td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
-    background-color: var(--aph-fore1);
+
 }
 
 li {
