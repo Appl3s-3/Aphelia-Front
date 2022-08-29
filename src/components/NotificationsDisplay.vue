@@ -21,7 +21,10 @@ const selfStore = useSelf()
 #notifications-display > li {
     margin: auto auto 0.1em auto;
     padding: 1em;
-    font-size: 24px;
+    font-size: 12pt;
+}
+
+#notifications-display li:not(:last-child) {
     border-bottom: 1px solid var(--aph-grey);
 }
 </style>

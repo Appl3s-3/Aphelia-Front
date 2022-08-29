@@ -33,6 +33,8 @@
     background-color: var(--aph-purple-light);
     color: white;
     border-radius: 5px;
+
+    margin-right: 5px; 
 }
 
 </style>
