@@ -34,6 +34,7 @@
     height: 100%;
     border: 4px solid var(--aph-grey);
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .dash-history-table {

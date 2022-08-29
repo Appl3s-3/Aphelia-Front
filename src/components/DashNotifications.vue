@@ -36,6 +36,7 @@ const selfStore = useSelf()
     border: 4px solid var(--aph-grey);
     border-radius: 10px;
     height: 100%;
+    overflow: hidden;
 }
 
 .dash-notifications-table {
@@ -49,10 +50,6 @@ const selfStore = useSelf()
 .dash-notifications-table tr {
     height: 20px;
     border-bottom: 0.1em solid var(--aph-grey);
-}
-
-.dash-notifications-table th {
-    padding: var(--table-heading-vertical-padding) 0;
 }
 
 .dash-notifications-table td {

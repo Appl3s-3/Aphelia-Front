@@ -6,25 +6,49 @@ const selfStore = useSelf()
 </script>
 
 <template>
-<ul id="notifications-display">
-    <li v-for="notification in selfStore.history.notifications">{{ notification }}</li>
-</ul>
+<div id="notifications-wrapper">
+    <table id="notifications-display">
+    <tr v-for="notification in selfStore.history.notifications">
+        <td>{{ notification }}</td>
+        <td class="notifications-date">02/02/2022</td>
+    </tr>
+</table>
+</div>
 </template>
 
 <style scoped>
-#notifications-display {
-    margin: 0;
-    border: 4px solid var(--aph-grey);
+#notifications-wrapper {
+    border: 2px solid var(--aph-grey);
     border-radius: 10px;
+    height: 100%;
+    overflow: hidden;
 }
 
-#notifications-display > li {
-    margin: auto auto 0.1em auto;
-    padding: 1em;
-    font-size: 12pt;
+#notifications-display {
+    width: 100%;
+    background-color: var(--aph-back1);
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 0px;
+}
+
+#notifications-display tr {
+    height: 50px;
+    border-bottom: 0.1em solid var(--aph-grey);
+}
+
+#notifications-display td {
+    padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
+    padding-left: 30px;
 }
 
 #notifications-display li:not(:last-child) {
     border-bottom: 1px solid var(--aph-grey);
+}
+
+.notifications-date {
+    width: 6%;
+    font-size: 8pt;
+    color: var(--aph-text-grey);
 }
 </style>
