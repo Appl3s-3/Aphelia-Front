@@ -10,7 +10,7 @@ createApp(App)
     .use(createPinia())
     .mount('#app')
 
-window.addEventListener("load", auth_setup)
+window.addEventListener("load", () => {console.log("Loaded"); auth_setup()})
 
 
 
