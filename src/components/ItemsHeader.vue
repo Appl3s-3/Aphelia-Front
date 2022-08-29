@@ -10,9 +10,14 @@ const itemsSt = itemsLocal()
 
 <template>
 <div id="items-header">
-    <div id="toggle-buttons-container">
-        <input id="filters-toggle-button" type="button" name="toggle-filters" @click="itemsSt.toggle_filters()">
-        <input id="manage-menu-open-button" type="button" name="manage-item" value="Manage Items" @click="itemsSt.show_manage()">
+    <div id="items-top-row">
+        <h1 style="color: var(--aph-purple-light); font-size: 40px;">
+            items.
+        </h1>
+        <div id="toggle-buttons-container">
+            <input id="filters-toggle-button" type="button" name="toggle-filters" @click="itemsSt.toggle_filters()" value="Display Filters">
+            <input id="manage-menu-open-button" type="button" name="manage-item" value="Manage Items" @click="itemsSt.show_manage()">
+        </div>
     </div>
     <ItemsFilters v-if="itemsSt.filter_state" @search="(x) => itemsSt.searchParams = x"/>
 </div>
@@ -24,12 +29,21 @@ const itemsSt = itemsLocal()
     --filter-horizontal-margin: 15px;
 }
 
+#items-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 #items-header {
-    display: grid;
+    display: flex;
     grid: auto / 80% 20%;
+    flex-direction: column;
 }
 
 #toggle-buttons-container {
+    display: flex;
+    align-items: centre;
 }
 
 #filters-toggle-button {

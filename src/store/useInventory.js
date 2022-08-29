@@ -77,7 +77,7 @@ export const useInventory = defineStore('inventoryStore', {
                         ["RED-H74", "True"]
                     ]
                 },
-                {name: "Archetype Name n"}
+                //{name: "Archetype Name n"}
             ]
         }
     },
