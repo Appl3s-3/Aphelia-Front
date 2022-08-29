@@ -18,7 +18,7 @@ const selfStore = useSelf()
 
 <style scoped>
 #notifications-wrapper {
-    border: 2px solid var(--aph-grey);
+    border: 3px solid var(--aph-grey);
     border-radius: 10px;
     height: 100%;
     overflow: hidden;
@@ -34,6 +34,9 @@ const selfStore = useSelf()
 
 #notifications-display tr {
     height: 50px;
+}
+
+#notifications-display tr:not(:last-child) {
     border-bottom: 0.1em solid var(--aph-grey);
 }
 
