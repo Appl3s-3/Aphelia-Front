@@ -11,7 +11,8 @@ const selfStore = useSelf()
         <div class="loans-table-container">
             <h3 id="loans-title">loans.</h3>
             <input id="loans-search" type="text" placeholder="Search..">
-            <table class="loans-table">
+            <div id="loans-table-border-container">
+                <table class="loans-table">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -31,6 +32,7 @@ const selfStore = useSelf()
                     <td>Info about the loan.</td>
                 </tr>
             </table>
+            </div>
         </div>
     </div>
 </div>
@@ -63,15 +65,20 @@ const selfStore = useSelf()
     font-size: 28pt;
     font-weight: bold;
     color: var(--aph-purple);
-    padding-left: 25px;
     margin-bottom: 10px;
 }
 
 #loans-search {
-    padding-right: 30px;
-    margin-left: 25px;
+    padding-right: 200px;
     margin-bottom: 15px;
     font-size: 16px;
+    font-family: Montserrat;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    border: 2px solid var(--aph-grey);
+    background-color: rgba(200, 200, 200, 0.2);
 }
 
 
@@ -126,26 +133,31 @@ const selfStore = useSelf()
     background-color: var(--aph-back1);
 }
 
+#loans-table-border-container {
+    border: 4px solid var(--aph-grey);
+    border-radius: 10px;
+}
+
 .loans-table {
-    width: 70vw; /* TODO: Change the width based off the number of item fields */
-    margin: 0 var(--table-horizontal-margin);
-
-    border: solid var(--aph-grey) 3px;
-    border-radius: 5px;
+    width: 70vw;
+    border-collapse: collapse;
 }
 
-th {
+.loans-table th {
     padding: var(--table-heading-vertical-padding) 0;
-    
+    border-bottom: 0.15em solid var(--aph-grey);
 }
 
-td {
+.loans-table th:not(:last-child) {
+    border-right: 0.15em solid var(--aph-grey);
+}
+
+.loans-table td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
-
+    border-bottom: 0.1em solid var(--aph-grey);
 }
 
-li {
-    margin: 20px 50px;
-    border: solid red 1px;
+.loans-table td:not(:last-child) {
+    border-right: 0.15em solid var(--aph-grey);
 }
 </style>
