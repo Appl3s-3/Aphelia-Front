@@ -6,7 +6,7 @@
         <h3>Current Loans</h3>
         <div id="dash-loans-table-wrapper">
             <table class="dash-loans-table">
-            <tr id="dash-loans-table-header">
+            <tr>
                 <th><a href="#">ID</a></th>
                 <th><a href="#">name</a></th>
                 <th><a href="#">info</a></th>
@@ -54,22 +54,26 @@
 
 .dash-loans-table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .dash-loans-table th {
     padding: var(--table-heading-vertical-padding) 0;
-    border-collapse: separate;
-    border: 1px var(--aph-grey)
+    border-bottom: 0.15em solid var(--aph-grey);
 }
 
-#dash-loans-table-header {
-    height:15px;
+.dash-loans-table th:not(:last-child) {
+    border-right: 0.15em solid var(--aph-grey);
 }
 
 .dash-loans-table td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
     text-align: center;
-    border: 1px var(--aph-grey)
+    border-bottom: 0.1em solid var(--aph-grey);
+}
+
+.dash-loans-table td:not(:last-child) {
+    border-right: 0.15em solid var(--aph-grey);
 }
 
 .dash-loans-table tr th a {

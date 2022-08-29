@@ -43,15 +43,16 @@ const selfStore = useSelf()
     /*border-collapse: collapse;*/
     background-color: var(--aph-back1);
     table-layout: fixed;
+    border-collapse: collapse;
 }
 
 .dash-notifications-table tr {
     height: 20px;
+    border-bottom: 0.1em solid var(--aph-grey);
 }
 
 .dash-notifications-table th {
     padding: var(--table-heading-vertical-padding) 0;
-    border-collapse: separate;
 }
 
 .dash-notifications-table td {

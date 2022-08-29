@@ -38,18 +38,26 @@
 
 .dash-history-table {
     width: 100%;
-    /*border-collapse: collapse;*/
-    background-color: var(--aph-back1);
+    border-collapse: collapse;
 }
 
 .dash-history-table th {
     padding: var(--table-heading-vertical-padding) 0;
+    border-bottom: 0.15em solid var(--aph-grey);
+}
+
+.dash-history-table th:not(:last-child) {
+    border-right: 0.15em solid var(--aph-grey);
 }
 
 .dash-history-table td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
-    color: (--aph-grey);
     text-align: center;
+    border-bottom: 0.1em solid var(--aph-grey);
+}
+
+.dash-history-table td:not(:last-child) {
+    border-right: 0.15em solid var(--aph-grey);
 }
 
 #dash-history-table-header {
