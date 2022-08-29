@@ -24,4 +24,10 @@
 </template>
 
 <style scoped>
+.help-layout {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 70%;
+}
 </style>

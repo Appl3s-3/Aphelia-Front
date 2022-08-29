@@ -6,7 +6,6 @@
         <h3>Current Loans</h3>
         <table class="dash-loans-table">
             <tr>
-                <th></th>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Info</th>
@@ -17,32 +16,28 @@
             TODO: If the due date has passed, make the table row red
             -->
             <tr>
-                <td>Icon</td>
                 <td>1</td>
-                <td>Item Name</td>
-                <td>How does this fit?</td>
-                <td>8/4/22</td>
+                <td>Sabre</td>
+                <td>A fencing Sabre.</td>
+                <td>17/6/22</td>
             </tr>
             <tr>
-                <td>Icon</td>
                 <td>1</td>
-                <td>Item Name</td>
-                <td>How does this fit?</td>
-                <td>8/4/22</td>
+                <td>Sabre</td>
+                <td>A fencing Sabre.</td>
+                <td>18/6/22</td>
             </tr>
             <tr>
-                <td>Icon</td>
                 <td>1</td>
-                <td>Item Name</td>
-                <td>How does this fit?</td>
-                <td>8/4/22</td>
+                <td>Epee</td>
+                <td>A fencing Epee</td>
+                <td>30/7/22</td>
             </tr>
             <tr>
-                <td>Icon</td>
                 <td>1</td>
-                <td>Item Name</td>
-                <td>How does this fit?</td>
-                <td>8/4/22</td>
+                <td>Camera</td>
+                <td>Snap!</td>
+                <td>14/8/22</td>
             </tr>
         </table>
     </div>
@@ -51,16 +46,21 @@
 <style scoped>
 .dash-loans-table {
     width: 100%;
-    border-collapse: collapse;
-    background-color: var(--aph-back2);
+    /*border-collapse: collapse;*/
+    background-color: var(--aph-back1);
+    border: 4px solid var(--aph-grey);
+    border-radius: 10px;
+
 }
 
 .dash-loans-table th {
     padding: var(--table-heading-vertical-padding) 0;
-    background-color: var(--aph-fore1);
+    border-collapse: separate;
 }
 
 .dash-loans-table td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
+    color: (--aph-grey);
+    text-align: center;
 }
 </style>

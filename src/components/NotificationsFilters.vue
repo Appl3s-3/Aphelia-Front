@@ -23,14 +23,16 @@
     flex-flow: row nowrap;
     justify-content: baseline;
     margin: 0;
+    padding-bottom: 10px;
 }
 
 #notifications-filters > li {
     display: inline;
-    border: 1px solid pink;
+    border: 1px solid white;
     padding: 10px;
-    background-color: blueviolet;
-
+    background-color: var(--aph-purple-light);
+    color: white;
+    border-radius: 5px;
 }
 
 </style>

@@ -44,9 +44,9 @@ setTimeout(load_settings, 10); // let page load first
 
 <template>
 <div class="settings settings-container">
-    <h2 class="apheleia">Settings {{settingsStore.darkTheme}}</h2>
     <div class="settings-layout">
         <ul id="settings-list">
+            <h2 class="apheleia" id="settings-title">settings. {{settingsStore.darkTheme}}</h2>
             <Notifications @enabledChange="(x) => state.notificationEnabled = x"
                            @remindersChange="(x) => state.notificationTime = x"
                            @emailChange="(x) => state.notificationEmail = x"
@@ -64,6 +64,7 @@ setTimeout(load_settings, 10); // let page load first
 <style scoped>
 @import "../css/settings.css";
 #settings-list {
+    padding-top: 30px;
     margin: 0 20%;
     display: flex;
     flex-flow: column nowrap;
@@ -96,5 +97,12 @@ input[type="text"] {
 button {
     width: 120px;
     height: 40px;
+}
+
+#settings-title {
+    font-family: "Montserrat";
+    font-size: 28pt;
+    font-weight: bold;
+    color: var(--aph-purple);
 }
 </style>

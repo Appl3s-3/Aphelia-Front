@@ -14,7 +14,7 @@ const selfStore = useSelf()
 
 <template>
 <div class="dashboard dashboard-container">
-    <input type="button" @click="createPdf()" value="Click me to create a PDF">
+    <!--<input type="button" @click="createPdf()" value="Click me to create a PDF">-->
     <div class="dashboard-layout">
         <h1 class="dashboard-panel" id="dashboard-title">Logged in as: {{selfStore.fullName}}</h1>
         <DashLoans         class="dashboard-panel"/>
@@ -45,7 +45,7 @@ const selfStore = useSelf()
 
 .dashboard-panel {
     padding: 1%;
-    border: 1px solid green;
+    /*border: 1px solid green;*/
     background-color: var(--aph-back1);
 }
 

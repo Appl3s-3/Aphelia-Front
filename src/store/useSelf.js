@@ -31,41 +31,18 @@ export const useSelf = defineStore('selfStore', {
             },
             history: {
                 loans: [
-                    "MEEEEEE",
-                    "REEEEEE",
-                    "SEEEEEE"
+                    "Loan 1",
+                    "Loan 2",
+                    "Loan 3",
+                    "Loan 4",
+                    "Loan 5",
+                    "Loan 6",
+                    "Loan 7",
+                    "Loan 8"
                 ],
                 notifications: [
-                    {
-                        information: {
-                            item: {
-                                archetype_id: 5,
-                                item_id: 6,
-                                item_name: "Huggy Wuggy"
-                            },
-                            dates: {
-                                current: "1st Jan",
-                                due: "31st Dec"
-                            }
-                        },
-                        type: "Return reminder"
-                    },
-                    {
-                        information: {
-                            item: "None"
-                        },
-                        type: "Update"
-                    },
-                    "(Archetype) (Item Name) #(Item ID) is due today! (Date Due)",
-                    "(Archetype) (Item Name) #(Item ID) is due in 1 day. (Date Due)",
-                    "(Archetype) (Item Name) #(Item ID) is due in 2 days. (Date Due)",
-                    "(Archetype) (Item Name) #(Item ID) is due in 3 days. (Date Due)",
-                    "(Archetype) (Item Name) #(Item ID) is due soon! (Date Due)",
-                    "You returned (Archetype) (Item Name) #(Item ID). (Date)",
-                    "You borrowed (Archetype) (Item Name) #(Item ID). (Date)",
-                    "The due date for (Archetype) (Item Name) #(Item ID) has been changed to an earlier date. (Date Due)",
-                    "The due date for (Archetype) (Item Name) #(Item ID) has been changed to a later date. (Date Due)",
-                    "Announcement.",
+                    "Item 1 is due today!",
+                    "The due date for Item 2 has been changed to an earlier date.",
                     "Did you know? The developers have misspelt Apheleia as 'Aphelia' about 99% of the time! (Including just now!)"
                 ]
             }
