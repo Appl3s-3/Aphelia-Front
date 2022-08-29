@@ -7,7 +7,6 @@ const peopleStore = usePeople()
 <template>
 <div id="people-display">
     <!-- List of users, might merge this with items and add some parameters -->
-    <h1>Users</h1>
     <table id="user-table">
         <tr>
             <th>Internal ID</th>
