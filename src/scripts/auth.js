@@ -63,7 +63,7 @@ export async function handle_code(params) {
     } else { // good state
         let code = params.query.code;
         await get_token(code);
-        set_info();
+        await set_info();
     }
 }
 
