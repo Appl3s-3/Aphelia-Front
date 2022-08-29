@@ -166,7 +166,7 @@ export async function auth_setup() {
     if (accessTokenExpiry !== undefined && new Date(Date.parse(accessTokenExpiry)) > new Date(Date.now())) {
         if (localStorage["refreshToken"] !== undefined && localStorage["refreshTokenExpiry"] !== undefined) {
             await refresh_token();
-            await set_info();
+            await set_info(false);
         } else { // not logged in
     
         }
