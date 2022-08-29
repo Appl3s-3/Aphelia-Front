@@ -14,13 +14,13 @@ const selfStore = useSelf()
             <div id="loans-table-border-container">
                 <table class="loans-table">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Borrow Date</th>
-                    <th>Due Date</th>
-                    <th>Return Date</th>
-                    <th>Info</th>
+                    <th><a href="#">ID</a></th>
+                    <th><a href="#">Name</a></th>
+                    <th><a href="#">Type</a></th>
+                    <th><a href="#">Borrow Date</a></th>
+                    <th><a href="#">Due Date</a></th>
+                    <th><a href="#">Return Date</a></th>
+                    <th><a href="#">Info</a></th>
                 </tr>
                 <tr v-for="loan in selfStore.history.loans">
                     <td>1234</td>
@@ -81,51 +81,6 @@ const selfStore = useSelf()
     background-color: rgba(200, 200, 200, 0.2);
 }
 
-
-/* Filters */
-
-/* .loans-filters-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--aph-back2);
-} */
-
-/* loans-filters-left and loans-filters-right (The children, which are divs, of the loans-filters-container) */
-/* .loans-filters-container > div {
-    display: inline-flex;
-    flex-flow: row nowrap;
-} */
-
-/* .loans-filters-left {
-    justify-content: space-between;
-    align-items: center;
-    margin: var(--left-filter-vertical-margin) 0;
-} */
-
-/* .loans-filters-right {
-} */
-
-/* .loans-filter {
-    margin: auto var(--filter-horizontal-margin);
-} */
-
-/* Jump List */
-/* .loans-jump-list-container {
-    position: fixed;
-    background-color: var(--aph-back2);
-} */
-
-/* .loans-jump-list {
-} */
-
-/* .loans-jump-list-element-container {
-} */
-
-/* .loans-jump-list-element {
-} */
-
 /* Table */
 
 .loans-table-container {
@@ -141,6 +96,17 @@ const selfStore = useSelf()
 .loans-table {
     width: 70vw;
     border-collapse: collapse;
+}
+
+.loans-table tr th a {
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+    color: var(--aph-text-dark);
+    transition: 0.2s;
+}
+
+.loans-table tr th a:hover {
+    text-decoration-color: rgba(45, 28, 77, 1);
+    color: var(--aph-purple)
 }
 
 .loans-table th {
