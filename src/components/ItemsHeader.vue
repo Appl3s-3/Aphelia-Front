@@ -2,7 +2,7 @@
 import { reactive } from 'vue'
 import { itemsLocal } from '../store/itemsLocal'
 import { useInventory } from '../store/useInventory'
-import { createPdf } from '../scripts/pdf.js'
+import { createPdf } from '../scripts/pdf2.js'
 
 import ItemsFilters from './ItemsFilters.vue'
 import ItemsPdfPreview from './ItemsPdfPreview.vue'

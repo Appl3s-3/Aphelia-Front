@@ -11,6 +11,7 @@ const settingsStore = useSettings()
 
 const n = useNav()
 let showNavigationBar = n.showNav
+
 </script>
 
 <template>
