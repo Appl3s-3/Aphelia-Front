@@ -3,7 +3,6 @@
 
 <template>
 <div id="items-filters">
-        <!--
     <div id="filters-left">
         <span>
             Loaned in the past n days (insert slider here)
@@ -12,7 +11,6 @@
             (insert other filters here)
         </span>
     </div>
-        -->
     <div id="filters-right">
         <input class="filter" id="search-bar" type="text" name="search-items" placeholder="Search Name" @input="event => $emit('search', event.target.value)">
     </div>

@@ -1,6 +1,14 @@
 <script setup>
 import LandingTitle from '../components/LandingTitle.vue'
 import LandingBanner from '../components/LandingBanner.vue'
+
+import { useNav } from '../store/thegoddamnnavbar'
+const n = useNav()
+
+const disableNav = () => {
+    n.disableNavBar()
+}
+setTimeout(disableNav, 1);
 </script>
 
 <template>

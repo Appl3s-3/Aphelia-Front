@@ -7,6 +7,7 @@ export const itemsLocal = defineStore('itemsLocal', {
             showManageMenu: false,
             searchParams: "",
             tabbedScheme: "",
+            pdf_preview: false
         }
     },
     getters: {
