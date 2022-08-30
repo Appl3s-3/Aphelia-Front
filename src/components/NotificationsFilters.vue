@@ -24,6 +24,7 @@
     justify-content: baseline;
     margin: 0;
     padding-bottom: 10px;
+    cursor: grab;
 }
 
 #notifications-filters > li {

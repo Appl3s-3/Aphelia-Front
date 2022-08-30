@@ -21,6 +21,7 @@ const itemsSt = itemsLocal()
     justify-content: stretch;
     align-items: baseline;
     width: 100%;
+    cursor: grab;
 }
 
 #items-tabs > li {

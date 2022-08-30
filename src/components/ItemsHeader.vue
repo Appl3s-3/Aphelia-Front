@@ -15,7 +15,7 @@ const inventoryStore = useInventory()
 <template>
 <div id="items-header">
     <div id="items-top-row">
-        <h1 style="color: var(--aph-purple-light); font-size: 40px;">
+        <h1 style="color: var(--aph-purple); font-size: 40px;">
             items.
         </h1>
         <div id="toggle-buttons-container">
