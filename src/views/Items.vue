@@ -34,7 +34,7 @@ const state = reactive({
         }
     }
 })
-document.getElementById("items-container").onload = get_items;
+get_items(); // testing code
 
 /*
 const find_scheme = (schemeID) => {
