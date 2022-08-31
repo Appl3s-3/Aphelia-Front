@@ -34,7 +34,6 @@ const state = reactive({
         }
     }
 })
-get_items(); // testing code
 
 /*
 const find_scheme = (schemeID) => {
@@ -62,6 +61,7 @@ const set_active_scheme_from_ID = (schemeID) => {
     <div id="items-layout">
         <ItemsHeader/>
         <ItemsDisplay/>
+        <input id="tempTestButton" @click="get_items() value="Test">
     </div>
     <ManageMenu v-if="itemsSt.manage_state"/>
 </div>
