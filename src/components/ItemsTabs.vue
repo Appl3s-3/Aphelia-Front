@@ -8,7 +8,7 @@ const itemsSt = itemsLocal()
 
 <template>
 <ul id="items-tabs">
-    <li v-for="scheme in inventoryStore.schemes" @click="itemsSt.tabbedScheme = scheme">
+    <li v-for="scheme in inventoryStore.schemes" @click="itemsSt.set_tabbed(scheme)" :class="[itemsSt.tabbedSchemeName == scheme.name ? 'selected-tab' : 'unselected-tab', '']">
         <h2 class="tab-text" :id="scheme.id">{{ scheme.name }}</h2>
     </li>
 </ul>
@@ -51,14 +51,11 @@ h2 {
 }
 
 #items-tabs :hover {
-    background-color: var(--aph-back2);
+    background-color: var(--aph-back15);
 }
 
-#items-table th {
-    padding: var(--table-heading-vertical-padding) 0;
-    background-color: var(--aph-back15);
-    border-top: 0.25em solid var(--aph-border);
-    border-bottom: 0.25em solid var(--aph-border);
-    height: 3.5em;
+.selected-tab {
+    border-bottom: 0 solid var(--aph-back1);
 }
+
 </style>
