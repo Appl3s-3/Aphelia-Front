@@ -7,5 +7,6 @@ export async function get_items() {
         'Accept': 'application/json'}
         }
         ).then(r => response=r).catch(e => console.log(e));
-    let data = response.json();
+    //let data = response.json();
+    console.log(response);
 }
