@@ -61,7 +61,7 @@ const set_active_scheme_from_ID = (schemeID) => {
     <div id="items-layout">
         <ItemsHeader/>
         <ItemsDisplay/>
-        <input id="tempTestButton" @click="get_items() value="Test">
+        <input id="tempTestButton" @click="get_items()" value="Test">
     </div>
     <ManageMenu v-if="itemsSt.manage_state"/>
 </div>
