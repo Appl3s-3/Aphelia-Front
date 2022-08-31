@@ -3,6 +3,7 @@ import { reactive } from 'vue'
 import { useInventory } from '../store/useInventory'
 import { itemsLocal } from '../store/itemsLocal'
 
+import { get_items } from '../scripts/backendApi.js'
 import ItemsHeader from '../components/ItemsHeader.vue'
 import ItemsDisplay from '../components/ItemsDisplay.vue'
 import ManageMenu from '../components/ItemsManage.vue'
@@ -33,6 +34,7 @@ const state = reactive({
         }
     }
 })
+document.getElementById("items-container").onload = get_items;
 
 /*
 const find_scheme = (schemeID) => {
