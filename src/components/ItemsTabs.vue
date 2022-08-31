@@ -22,14 +22,43 @@ const itemsSt = itemsLocal()
     align-items: baseline;
     width: 100%;
     cursor: pointer;
-}
-
-#items-tabs > li {
-    width: 20%;
+    height: 3.5em;
+    padding: 0;
     margin: 0;
 }
 
-#items-tabs > li :hover {
+#items-tabs > li {
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+    border-right: 0.25em solid var(--aph-border);
+    border-bottom: 0.25em solid var(--aph-border);
+}
+
+#items-tabs > li th:not(:last-child) {
+    border-right: 0.3em solid var(--aph-border);
+}
+   
+
+h2 {
+    margin: 0;
+}
+
+#items-tabs :hover {
     background-color: var(--aph-back2);
+}
+
+#items-table th {
+    padding: var(--table-heading-vertical-padding) 0;
+    background-color: var(--aph-back15);
+    border-top: 0.25em solid var(--aph-border);
+    border-bottom: 0.25em solid var(--aph-border);
+    height: 3.5em;
 }
 </style>

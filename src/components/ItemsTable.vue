@@ -56,10 +56,8 @@ function check_item(item, filter) { // check if item passes search filter
 
 <style scoped>
 #items-table-container {
-    width: var(--display-content-width);
+    width: 100%;
     margin: 0;
-    border: var(--table-container-border-width) solid var(--aph-border);
-    border-radius: var(--table-container-border-radius);
     padding: var(--table-vertical-padding) var(--table-horizontal-padding);
     background-color: var(--aph-back1);
 }
@@ -73,22 +71,27 @@ function check_item(item, filter) { // check if item passes search filter
 
 #items-table th {
     padding: var(--table-heading-vertical-padding) 0;
-    background-color: var(--aph-back1);
-    border-bottom: 0.15em solid var(--aph-grey);
+    background-color: var(--aph-back15);
+    border-top: 0.25em solid var(--aph-border);
+    border-bottom: 0.25em solid var(--aph-border);
+    height: 3.5em;
 }
 
 #items-table th:not(:last-child) {
-    border-right: 0.15em solid var(--aph-grey);
+    border-right: 0.3em solid var(--aph-border);
 }
 
+#items-table tr:not(:last-child) {
+    border-bottom: 0.25em solid var(--aph-border);
+}
 #items-table td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
     background-color: var(--aph-back1);
     text-align: center;
-    border-bottom: 0.1em solid var(--aph-grey);
 }
 
 #items-table td:not(:last-child) {
-    border-right: 0.15em solid var(--aph-grey);
+    border-right: 0.3em solid var(--aph-border);
 }
+
 </style>

@@ -30,6 +30,7 @@
 
 div.wrapper-dark {
     --aph-back1: rgb(12, 12, 12);
+    --aph-back15: rgb(18, 18, 18);
     --aph-back2: rgb(24, 24, 24);
 
     --aph-fore1: rgb(32, 32, 32);
@@ -49,6 +50,7 @@ div.wrapper-dark {
 
 div.wrapper-light {
     --aph-back1: rgb(255, 255, 255);
+    --aph-back15: rgb(250, 250, 250);
     --aph-back2: rgb(200, 200, 200);
 
     --aph-fore1: rgb(180, 180, 180);

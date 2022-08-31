@@ -6,6 +6,9 @@
     <div id="filters-left">
         <span>
             Loaned in the past n days (insert slider here)
+            <input type="checkbox" value="0" class="checkbox" id="loan-past-days-enable">
+            <input type="range" min="1" max="14" value="1" class="slider" id="loan-past-days">
+            <!-- <span>{{ document.getElementById("loan-past-days").value }}</span> -->
         </span>
         <span>
             (insert other filters here)
@@ -21,7 +24,7 @@
 #items-filters {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: baseline;
 }
 

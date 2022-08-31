@@ -27,5 +27,8 @@ const itemsSt = itemsLocal()
 
     padding: var(--display-vertical-padding) var(--display-horizontal-padding);
     background-color: var(--aph-back1);
+    border: var(--table-container-border-width) solid var(--aph-border);
+    border-radius: var(--table-container-border-radius);
+    padding: 1px;
 }
 </style>
