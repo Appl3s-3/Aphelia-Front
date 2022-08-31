@@ -1,4 +1,4 @@
-const uri = "http://0.0.0.1:8080"
+const uri = "http://0.0.0.1:8000"
 
 export async function get_items() {
     let response = false;
