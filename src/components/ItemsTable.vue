@@ -71,7 +71,7 @@ function check_item(item, filter) { // check if item passes search filter
 
 #items-table th {
     padding: var(--table-heading-vertical-padding) 0;
-    background-color: var(--aph-back15);
+    background-color: var(--aph-back1);
     border-top: 0.25em solid var(--aph-border);
     border-bottom: 0.25em solid var(--aph-border);
     height: 3.5em;
@@ -84,6 +84,7 @@ function check_item(item, filter) { // check if item passes search filter
 #items-table tr:not(:last-child) {
     border-bottom: 0.25em solid var(--aph-border);
 }
+
 #items-table td {
     padding: var(--table-data-vertical-padding) var(--table-data-horizontal-padding);
     background-color: var(--aph-back1);
@@ -93,5 +94,6 @@ function check_item(item, filter) { // check if item passes search filter
 #items-table td:not(:last-child) {
     border-right: 0.3em solid var(--aph-border);
 }
+
 
 </style>
